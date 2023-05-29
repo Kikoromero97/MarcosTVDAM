@@ -5,13 +5,13 @@ public class InfoUsuario extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JComboBox comboBox1;
+    private JTextField idUsuario;
+    private JTextField txtname;
+    private JTextField txtDir;
+    private JTextField txtTel;
+    private JTextField txtEmail;
+    private JTextField txtedad;
+    private JComboBox txtNacion;
     private JButton btnTarjeta;
     
     public InfoUsuario() {
@@ -50,10 +50,10 @@ public class InfoUsuario extends JDialog {
         btnTarjeta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JDialog frame = new CrearTarjetas();
+                /*JDialog frame = new CrearTarjetas();
                 frame.setSize(500, 500);
                 frame.setVisible(true);
-                frame.setLocationRelativeTo(null);
+                frame.setLocationRelativeTo(null);*/
                 
             }
         });

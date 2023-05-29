@@ -5,6 +5,7 @@ public class CrearPerfUsuario extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JTextField textField1;
     
     public CrearPerfUsuario() {
         setContentPane(contentPane);

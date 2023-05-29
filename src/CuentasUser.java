@@ -1,5 +1,7 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
+import java.util.Objects;
 
 public class CuentasUser extends JDialog {
     private JPanel contentPane;
@@ -13,7 +15,8 @@ public class CuentasUser extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-        
+        Image icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("imagen/iconoMarcosVentana.png"))).getImage();
+        setIconImage(icon);
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
@@ -53,9 +56,11 @@ public class CuentasUser extends JDialog {
     }
     
     public static void main(String[] args) {
-        CuentasUser dialog = new CuentasUser();
-        dialog.pack();
-        dialog.setVisible(true);
+        JDialog frame = new CuentasUser();
+        frame.setSize(700, 500);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.pack();
         System.exit(0);
     }
 }
