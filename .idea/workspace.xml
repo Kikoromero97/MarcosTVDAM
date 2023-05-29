@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="3 tablas: Tarjeta, Idioma, Pais">
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="2 tablas: Director, Categoria">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarCategoria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,14 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.EditarCategoria">
+  <component name="RunManager" selected="Application.CrearCategoria">
+    <configuration name="CrearCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CrearCategoria" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CrearDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CrearDirector" />
       <module name="MarcosTVProgramacion" />
@@ -70,20 +76,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerDirector" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CrearCategoria" />
         <item itemvalue="Application.EditarCategoria" />
         <item itemvalue="Application.VerCategoria" />
         <item itemvalue="Application.EditarDirector" />
         <item itemvalue="Application.CrearDirector" />
-        <item itemvalue="Application.VerDirector" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685355216838</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2 tablas: Director, Categoria">
+      <created>1685377804246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685377804246</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +141,7 @@
     <MESSAGE value="commit 2" />
     <MESSAGE value="commit Tarjeta" />
     <MESSAGE value="3 tablas: Tarjeta, Idioma, Pais" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 tablas: Tarjeta, Idioma, Pais" />
+    <MESSAGE value="2 tablas: Director, Categoria" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 tablas: Director, Categoria" />
   </component>
 </project>
