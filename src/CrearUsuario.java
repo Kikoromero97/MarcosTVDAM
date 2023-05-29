@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class UserLogin extends JDialog {
+public class CrearUsuario extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -11,9 +11,9 @@ public class UserLogin extends JDialog {
     private JTextField textField4;
     private JTextField textField5;
     private JTextField textField6;
-    private JTextField textField7;
-
-    public UserLogin() {
+    private JComboBox comboBox1;
+    
+    public CrearUsuario() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -46,7 +46,7 @@ public class UserLogin extends JDialog {
     }
 
     public static void main(String[] args) {
-        UserLogin dialog = new UserLogin();
+        CrearUsuario dialog = new CrearUsuario();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
