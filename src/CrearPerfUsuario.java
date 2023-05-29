@@ -1,15 +1,12 @@
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Suscripciones extends JDialog {
+public class CrearPerfUsuario extends JDialog {
     private JPanel contentPane;
-    private JTable table1;
-    private JTextField textField1;
-    private JButton btnbuscar;
     private JButton buttonOK;
     private JButton buttonCancel;
     
-    public Suscripciones() {
+    public CrearPerfUsuario() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -53,7 +50,7 @@ public class Suscripciones extends JDialog {
     }
     
     public static void main(String[] args) {
-        Suscripciones dialog = new Suscripciones();
+        CrearPerfUsuario dialog = new CrearPerfUsuario();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

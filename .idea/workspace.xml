@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Form de usuarios y suscripciones.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CuentasUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Suscripciones.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suscripciones.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Suscripciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suscripciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685347418965</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Form de usuarios y suscripciones.">
+      <created>1685347617916</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685347617916</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
