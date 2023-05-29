@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="commit Tarjeta">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="3 tablas: Tarjeta, Idioma, Pais">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tarjeta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditarCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarCategoria.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,37 +41,37 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.VerPaises">
-    <configuration name="CrearTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+  <component name="RunManager" selected="Application.EditarCategoria">
+    <configuration name="CrearDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CrearDirector" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EditarTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
+    <configuration name="EditarCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EditarCategoria" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerIdiomas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerIdiomas" />
+    <configuration name="EditarDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EditarDirector" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerPaises (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerPaises" />
+    <configuration name="VerCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VerCategoria" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerPaises" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerPaises" />
+    <configuration name="VerDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VerDirector" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,11 +79,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VerPaises" />
-        <item itemvalue="Application.VerIdiomas" />
-        <item itemvalue="Application.EditarTarjetas" />
-        <item itemvalue="Application.VerPaises (1)" />
-        <item itemvalue="Application.CrearTarjetas" />
+        <item itemvalue="Application.EditarCategoria" />
+        <item itemvalue="Application.VerCategoria" />
+        <item itemvalue="Application.EditarDirector" />
+        <item itemvalue="Application.CrearDirector" />
+        <item itemvalue="Application.VerDirector" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685343850009</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="3 tablas: Tarjeta, Idioma, Pais">
+      <created>1685355216838</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685355216838</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +134,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit 2" />
     <MESSAGE value="commit Tarjeta" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit Tarjeta" />
+    <MESSAGE value="3 tablas: Tarjeta, Idioma, Pais" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 tablas: Tarjeta, Idioma, Pais" />
   </component>
 </project>
