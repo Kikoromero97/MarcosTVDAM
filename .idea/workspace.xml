@@ -4,29 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Form de usuarios y suscripciones.">
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ListarEmpleados.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ListarEmpleados.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ModificarEmpleado.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ModificarEmpleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VerEmpleado.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VerEmpleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CuentasUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CuentasUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarUser.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Perfiles.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SeleccionUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/SeleccionUser.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suscripciones.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suscripciones.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -36,57 +26,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="UsuariosSuscripciones" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GitToolBoxStore">
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="UsuariosSuscripcion" />
-                    <option name="lastUsedInstant" value="1685343067" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1685343061" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="UsuariosSuscripciones" />
-                    <option name="lastUsedInstant" value="1685343022" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
-  </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="a5674a1d-416d-45e4-b09f-c5a643c49772" />
-        <option name="url" value="https://github.com/Kikoromero97/MarcosTVDAM.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QSKOa6St9dRyNvY2AMsTDw7C0W" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -99,16 +42,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "765",
-    "last_opened_file_path": "C:/Users/dam_mbc/Desktop/MarcosTVDAM/src"
+    "last_opened_file_path": "C:/Users/troy_/Documents/MarcosTV/src"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dam_mbc\Desktop\MarcosTVDAM\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dam_mbc\Desktop\MarcosTVDAM\src" />
+      <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -120,63 +59,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685341512459</updated>
     </task>
-    <task id="LOCAL-00001" summary="Mensaje">
-      <created>1685343117398</created>
+    <task id="LOCAL-00001" summary="Pantalla inicio de sesion">
+      <created>1685352671244</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1685343117398</updated>
+      <updated>1685352671244</updated>
     </task>
-    <task id="LOCAL-00002" summary="Mensaje x">
-      <created>1685343752118</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1685343752118</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Mensaje x">
-      <created>1685345217716</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1685345217716</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Form de usuarios y suscripciones.">
-      <created>1685345744007</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1685345744007</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Form de usuarios y suscripciones.">
-      <created>1685347418965</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685347418965</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Form de usuarios y suscripciones.">
-      <created>1685347617916</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1685347617916</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Form de usuarios y suscripciones.">
-      <created>1685349793029</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1685349793029</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Form de usuarios y suscripciones.">
-      <created>1685352217443</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1685352217443</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,16 +74,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="empleado" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mensaje" />
-    <MESSAGE value="Mensaje x" />
-    <MESSAGE value="Form de usuarios y suscripciones." />
-    <option name="LAST_COMMIT_MESSAGE" value="Form de usuarios y suscripciones." />
+    <MESSAGE value="Pantalla inicio de sesion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pantalla inicio de sesion" />
   </component>
 </project>
