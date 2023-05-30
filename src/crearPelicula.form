@@ -50,7 +50,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="25145" class="javax.swing.JFormattedTextField" binding="formattedTextField1" default-binding="true">
+          <component id="25145" class="javax.swing.JFormattedTextField" binding="introCodigo">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -58,7 +58,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="43310" class="javax.swing.JFormattedTextField" binding="formattedTextField2" default-binding="true">
+          <component id="43310" class="javax.swing.JFormattedTextField" binding="introFecha">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -66,7 +66,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="42330" class="javax.swing.JFormattedTextField" binding="formattedTextField10" default-binding="true">
+          <component id="42330" class="javax.swing.JFormattedTextField" binding="introNombreDirector">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -74,7 +74,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="e211e" class="javax.swing.JFormattedTextField" binding="formattedTextField11" default-binding="true">
+          <component id="e211e" class="javax.swing.JFormattedTextField" binding="introApellidosDIrector">
             <constraints>
               <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -82,7 +82,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="264c5" class="javax.swing.JFormattedTextField" binding="formattedTextField3" default-binding="true">
+          <component id="264c5" class="javax.swing.JFormattedTextField" binding="introTitulo">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -90,7 +90,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="594ef" class="javax.swing.JFormattedTextField" binding="formattedTextField12" default-binding="true">
+          <component id="594ef" class="javax.swing.JFormattedTextField" binding="introDuracion">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -127,7 +127,7 @@
           </component>
         </children>
       </grid>
-      <component id="1f661" class="javax.swing.JFormattedTextField" binding="formattedTextField5" default-binding="true">
+      <component id="1f661" class="javax.swing.JFormattedTextField" binding="introFechaAlta">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -135,7 +135,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="dd030" class="javax.swing.JFormattedTextField" binding="formattedTextField6" default-binding="true">
+      <component id="dd030" class="javax.swing.JFormattedTextField" binding="introContenido">
         <constraints>
           <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -143,7 +143,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="519f" class="javax.swing.JFormattedTextField" binding="formattedTextField7" default-binding="true">
+      <component id="519f" class="javax.swing.JFormattedTextField" binding="IntroEdadRecomendada">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -151,7 +151,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="aa6c1" class="javax.swing.JFormattedTextField" binding="formattedTextField8" default-binding="true">
+      <component id="aa6c1" class="javax.swing.JFormattedTextField" binding="introPresupuesto">
         <constraints>
           <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -159,7 +159,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="713fb" class="javax.swing.JFormattedTextField" binding="formattedTextField9" default-binding="true">
+      <component id="713fb" class="javax.swing.JFormattedTextField" binding="introDescripcion">
         <constraints>
           <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -221,7 +221,7 @@
           <text value="Código"/>
         </properties>
       </component>
-      <component id="cf972" class="javax.swing.JFormattedTextField" binding="formattedTextField4" default-binding="true">
+      <component id="cf972" class="javax.swing.JFormattedTextField" binding="introValoracion">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
