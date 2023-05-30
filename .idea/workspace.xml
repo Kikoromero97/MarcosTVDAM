@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Pantalla crear serie">
-      <change afterPath="$PROJECT_DIR$/src/verDocumental.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/verDocumental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/verPeliculas.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/verPeliculas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/verSeries.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/verSeries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
+      <change afterPath="$PROJECT_DIR$/src/Temporada.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Temporada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685445918435</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
+      <created>1685446749519</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685446749519</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +126,7 @@
     <MESSAGE value="Pantalla inicio de sesion" />
     <MESSAGE value="Pantalla crear pelicula" />
     <MESSAGE value="Pantalla crear serie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pantalla crear serie" />
+    <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
   </component>
 </project>

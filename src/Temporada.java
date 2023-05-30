@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class Temporada {
-    private JPanel panel1;
+    private JPanel panelTemporada;
     private JPanel JPanelTemporada;
     private JTextField introNombre;
     private JTextField introNumero;
