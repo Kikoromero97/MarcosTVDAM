@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ListarEmpleados.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ListarEmpleados.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ModificarEmpleado.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ModificarEmpleado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerEmpleado.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VerEmpleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crearPelicula.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/crearPelicula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/troy_/Documents/MarcosTV/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/troy_/Documents/MarcosTV/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
