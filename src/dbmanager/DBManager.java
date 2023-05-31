@@ -17,8 +17,8 @@ public abstract class DBManager {
 
     // Configuración del usuario de la base de datos
 
-    private static final String DB_USER = "programa";
-    private static final String DB_PASS = "1234";
+    private static String user;
+    private static String pass;
 
     // Configuración de mensajes de respuesta
     private static final String DB_MSQ_CONN_OK = "CONEXIÓN CORRECTA";
@@ -38,7 +38,7 @@ public abstract class DBManager {
     public static boolean connect() {
         try {
             System.out.print("Conectando a la base de datos... ");
-            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+            conn = DriverManager.getConnection(DB_URL, user, pass);
             System.out.println(DB_MSQ_CONN_OK);
             return true;
         } catch (SQLException ex) {
@@ -46,6 +46,20 @@ public abstract class DBManager {
             System.out.println(DB_MSQ_CONN_NO);
             return false;
         }
+    }
+
+    public DBManager(String user, String pass){
+        this.user = user;
+        this.pass = pass;
+        loadDriver();
+        connect();
+    }
+
+    public DBManager(Usuario_bd usuario){
+        this.user = usuario.getUser_name();
+        this.pass = usuario.getPass();
+        loadDriver();
+        connect();
     }
 
     public DBManager(){
