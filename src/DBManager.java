@@ -1,5 +1,3 @@
-package dbmanager;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,6 +22,11 @@ public abstract class DBManager {
     private static final String DB_MSQ_CONN_OK = "CONEXIÓN CORRECTA";
     private static final String DB_MSQ_CONN_NO = "ERROR EN LA CONEXIÓN";
 
+    /**
+     * Class para cargar el driver de SQL Server.
+     *
+     * @return boolean Devuelve true si consigue cargarlo y false si no lo consigue.
+     */
     public static boolean loadDriver(){
         try{
             System.out.print("Cargando Driver...");
@@ -35,6 +38,12 @@ public abstract class DBManager {
             return false;
         }
     }
+
+    /**
+     * Class que se encarga de conectar con la base de datos.
+     *
+     * @return boolean Devuelve true si se ha realizado la conexión con exito y false en caso contrario.
+     */
     public static boolean connect() {
         try {
             System.out.print("Conectando a la base de datos... ");
@@ -48,21 +57,16 @@ public abstract class DBManager {
         }
     }
 
+    /**
+     * Constructor para implementar en las class que lo extienden.
+     *
+     * @param user Se pasa el nombre del usuario con el que se conecta a la base de datos.
+     * @param pass Se pasa la contraseña del usuario con el que se conecta a la base de datos.
+     */
+
     public DBManager(String user, String pass){
-        this.user = user;
-        this.pass = pass;
-        loadDriver();
-        connect();
-    }
-
-    public DBManager(Usuario_bd usuario){
-        this.user = usuario.getUser_name();
-        this.pass = usuario.getPass();
-        loadDriver();
-        connect();
-    }
-
-    public DBManager(){
+        DBManager.user = user;
+        DBManager.pass = pass;
         loadDriver();
         connect();
     }

@@ -1,5 +1,3 @@
-package dbmanager;
-
 public class Usuario_bd {
     private String user_name;
     private String pass;
@@ -12,7 +10,6 @@ public class Usuario_bd {
     }
 
     public String getUser_name() {
-
         return user_name;
     }
 
@@ -22,5 +19,10 @@ public class Usuario_bd {
 
     public String getRol() {
         return rol;
+    }
+
+    @Override
+    public String toString() {
+        return user_name + ";" + pass + ";" + rol;
     }
 }
