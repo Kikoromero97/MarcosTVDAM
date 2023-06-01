@@ -48,7 +48,7 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Button"/>
+              <text value="Buscar"/>
             </properties>
           </component>
           <component id="d62bf" class="javax.swing.JTextField" binding="textField1" default-binding="true">
@@ -80,7 +80,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="84bb7" class="javax.swing.JButton">
+          <component id="84bb7" class="javax.swing.JButton" binding="btnCancelar">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

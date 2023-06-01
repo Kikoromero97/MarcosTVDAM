@@ -16,13 +16,48 @@ public class SeleccionUser extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
-        buttonOK.addActionListener(new ActionListener() {
+        VerSuscripciones.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                JDialog subsdia = new Suscripciones();
+                subsdia.setSize(700, 500);
+                subsdia.setLocationRelativeTo(null);
+                subsdia.setVisible(true);
+
             }
         });
 
-        buttonCancel.addActionListener(new ActionListener() {
+        PerfilesUsers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JDialog perfus = new Perfiles();
+                perfus.setSize(700, 500);
+                perfus.setLocationRelativeTo(null);
+                perfus.setVisible(true);
+            }
+        });
+
+
+        CrearUsers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JDialog crearU = new CrearUsuario();
+                crearU.setSize(700, 500);
+                crearU.setLocationRelativeTo(null);
+                crearU.setVisible(true);
+            }
+        });
+
+        VerUsers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JDialog VerU = new CuentasUser();
+                VerU.setSize(700, 500);
+                VerU.setLocationRelativeTo(null);
+                VerU.setVisible(true);
+            }
+        });
+
+        cancelarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -44,11 +79,6 @@ public class SeleccionUser extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-    private void onOK() {
-        // add your code here
-        dispose();
-    }
-
     private void onCancel() {
         // add your code here if necessary
         dispose();
@@ -57,6 +87,7 @@ public class SeleccionUser extends JDialog {
     public static void main(String[] args) {
         SeleccionUser dialog = new SeleccionUser();
         dialog.pack();
+        dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
         System.exit(0);
     }

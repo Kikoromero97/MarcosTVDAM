@@ -6,6 +6,7 @@ public class Suscripciones extends JDialog {
     private JTable table1;
     private JTextField textField1;
     private JButton btnbuscar;
+    private JButton btnCancelar;
     private JButton buttonOK;
     private JButton buttonCancel;
     
@@ -13,14 +14,10 @@ public class Suscripciones extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-        
-        buttonOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onOK();
-            }
-        });
-        
-        buttonCancel.addActionListener(new ActionListener() {
+
+
+
+        btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
