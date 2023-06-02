@@ -1,6 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public abstract class DBManager {
 
@@ -69,5 +67,39 @@ public abstract class DBManager {
         DBManager.pass = pass;
         loadDriver();
         connect();
+    }
+
+    /**
+     * Función que realiza un SELECT (SOLO LECTURA).
+     *
+     * @param select select que deseas realizar.
+     * @return ResultSet con los datos devueltos de la base de datos (SOLO LECTURA).
+     */
+    public ResultSet verSelect(String select){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = st.executeQuery(select);
+            return rs;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Función que realiza un SELECT (EDITABLE).
+     *
+     * @param select select que deseas realizar.
+     * @return ResultSet con los datos devueltos de la base de datos (EDITABLE).
+     */
+    public ResultSet getSelect(String select){
+        try{
+            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = st.executeQuery(select);
+            return rs;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }
