@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado." />
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
+      <change afterPath="$PROJECT_DIR$/src/Temporada.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Temporada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,17 +18,24 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="empleado" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5beebe44-43d8-4a8a-9e5f-ece31605591c" />
+        <option name="url" value="https://github.com/Kikoromero97/MarcosTVDAM.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,36 +46,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/dam_bt/IdeaProjects/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/troy_/Documents/MarcosTV/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="dbmanager" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,35 +75,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685352671244</updated>
     </task>
-    <task id="LOCAL-00002" summary="DBManager iniciado.">
-      <created>1685429791646</created>
+    <task id="LOCAL-00002" summary="Pantalla crear pelicula">
+      <created>1685444628173</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1685429791646</updated>
+      <updated>1685444628173</updated>
     </task>
-    <task id="LOCAL-00003" summary="DBManager loadDriver, connect, constructor creado.&#10;Driver vinculado">
-      <created>1685522488531</created>
+    <task id="LOCAL-00003" summary="Pantalla crear serie">
+      <created>1685445918435</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1685522488531</updated>
+      <updated>1685445918435</updated>
     </task>
-    <task id="LOCAL-00004" summary="DBManager aclarado">
-      <created>1685534084150</created>
+    <task id="LOCAL-00004" summary="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
+      <created>1685446749519</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1685534084150</updated>
+      <updated>1685446749519</updated>
     </task>
-    <task id="LOCAL-00005" summary="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado.">
-      <created>1685614146795</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685614146795</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,10 +124,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pantalla inicio de sesion" />
-    <MESSAGE value="DBManager iniciado." />
-    <MESSAGE value="DBManager loadDriver, connect, constructor creado.&#10;Driver vinculado" />
-    <MESSAGE value="DBManager aclarado" />
-    <MESSAGE value="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado." />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado." />
+    <MESSAGE value="Pantalla crear pelicula" />
+    <MESSAGE value="Pantalla crear serie" />
+    <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
   </component>
 </project>
