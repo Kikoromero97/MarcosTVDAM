@@ -156,7 +156,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="6bc5e" class="javax.swing.JButton" binding="buttonOK">
+          <component id="6bc5e" class="javax.swing.JButton" binding="btnCrear">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -164,7 +164,7 @@
               <text value="Crear"/>
             </properties>
           </component>
-          <component id="964f" class="javax.swing.JButton" binding="buttonCancel">
+          <component id="964f" class="javax.swing.JButton" binding="btnCancelar">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
