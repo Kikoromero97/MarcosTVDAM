@@ -50,10 +50,9 @@ public class SeleccionUser extends JDialog {
         VerUsers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 JDialog VerU = new CuentasUser();
-                VerU.setSize(700, 500);
-                VerU.setLocationRelativeTo(null);
-                VerU.setVisible(true);
+               
             }
         });
 
@@ -89,6 +88,5 @@ public class SeleccionUser extends JDialog {
         dialog.pack();
         dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
-        System.exit(0);
     }
 }
