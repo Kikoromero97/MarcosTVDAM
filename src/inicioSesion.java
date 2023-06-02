@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class inicioSesion {
+public class inicioSesion{
     public JPanel JPanelprincipalInicioSesion;
     private JPanel JPanelRegistro;
     private JPanel JPanelInicioSesion;
