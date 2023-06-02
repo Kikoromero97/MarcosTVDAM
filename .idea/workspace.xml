@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="DBManager aclarado">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MarcosTVProgramacion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MarcosTVProgramacion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbmanager/DBManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbmanager/DBTarjeta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbmanager/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbmanager/Usuario_bd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbmanager/prueba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inicioSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inicioSesion.java" afterDir="false" />
-    </list>
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685534084150</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado.">
+      <created>1685614146795</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685614146795</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +142,7 @@
     <MESSAGE value="DBManager iniciado." />
     <MESSAGE value="DBManager loadDriver, connect, constructor creado.&#10;Driver vinculado" />
     <MESSAGE value="DBManager aclarado" />
-    <option name="LAST_COMMIT_MESSAGE" value="DBManager aclarado" />
+    <MESSAGE value="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado." />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminado el paquete de DBManager y añadido un UserManager.&#10;Código documentado." />
   </component>
 </project>

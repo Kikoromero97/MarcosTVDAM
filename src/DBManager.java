@@ -23,7 +23,7 @@ public abstract class DBManager {
     private static final String DB_MSQ_CONN_NO = "ERROR EN LA CONEXIÓN";
 
     /**
-     * Class para cargar el driver de SQL Server.
+     * Función para cargar el driver de SQL Server.
      *
      * @return boolean Devuelve true si consigue cargarlo y false si no lo consigue.
      */
@@ -40,7 +40,7 @@ public abstract class DBManager {
     }
 
     /**
-     * Class que se encarga de conectar con la base de datos.
+     * Función que se encarga de conectar con la base de datos.
      *
      * @return boolean Devuelve true si se ha realizado la conexión con exito y false en caso contrario.
      */
