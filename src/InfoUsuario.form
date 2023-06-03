@@ -214,7 +214,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="3c7b7" class="javax.swing.JButton" binding="buttonOK">
+              <component id="3c7b7" class="javax.swing.JButton" binding="btnEditar">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -222,7 +222,7 @@
                   <text value="Editar usuario"/>
                 </properties>
               </component>
-              <component id="13bd8" class="javax.swing.JButton" binding="buttonCancel">
+              <component id="13bd8" class="javax.swing.JButton" binding="btnCancelar">
                 <constraints>
                   <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>

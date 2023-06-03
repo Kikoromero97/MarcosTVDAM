@@ -3,8 +3,8 @@ import java.awt.event.*;
 
 public class EditarUser extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton btnguardar;
+    private JButton btnCancelar;
     private JTextField idUsuario;
     private JTextField txtname;
     private JTextField txtDir;
@@ -15,21 +15,32 @@ public class EditarUser extends JDialog {
     
     public EditarUser() {
         setContentPane(contentPane);
+        setTitle("Menú de usuarios y suscripciones");
+        setVisible(true);
         setModal(true);
         setSize(700, 500);
         setLocationRelativeTo(null);
-        setVisible(true);
-        getRootPane().setDefaultButton(buttonOK);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        getRootPane().setDefaultButton(btnCancelar);
         
-        buttonOK.addActionListener(new ActionListener() {
+        btnguardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                JOptionPane.showMessageDialog(null, "usuario editado", "Success", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                new InfoUsuario();
+                /*TODO DB Manager editar un usuario*/
+
+                /*
+                * Si no se pudo editar
+                * JOptionPane.showMessageDialog(null, "Error al editar el usuario", "Fail", JOptionPane.ERROR_MESSAGE);
+                 * */
             }
         });
         
-        buttonCancel.addActionListener(new ActionListener() {
+        btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCancel();
+                dispose();
+                new InfoUsuario();
             }
         });
         
@@ -37,32 +48,21 @@ public class EditarUser extends JDialog {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                onCancel();
+                dispose();
             }
         });
         
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCancel();
+                dispose();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-    }
-    
-    private void onOK() {
-        // add your code here
-        dispose();
-    }
-    
-    private void onCancel() {
-        // add your code here if necessary
-        dispose();
     }
     
     public static void main(String[] args) {
         EditarUser dialog = new EditarUser();
         dialog.pack();
         dialog.setVisible(true);
-        System.exit(0);
     }
 }

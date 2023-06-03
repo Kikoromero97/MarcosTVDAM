@@ -3,27 +3,34 @@ import java.awt.event.*;
 
 public class CrearPerfUsuario extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton btnCrear;
+    private JButton btnCancelar;
     private JTextField textField1;
     
     public CrearPerfUsuario() {
         setContentPane(contentPane);
+        setTitle("Menú de usuarios y suscripciones");
+        setVisible(true);
         setModal(true);
         setSize(700, 500);
         setLocationRelativeTo(null);
-        setVisible(true);
-        getRootPane().setDefaultButton(buttonOK);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        getRootPane().setDefaultButton(btnCancelar);
         
-        buttonOK.addActionListener(new ActionListener() {
+        btnCrear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                dispose();
+                JOptionPane.showMessageDialog(null, "Perfil creado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+                new Perfiles();
+
+                /*TODO Crear Perfil en la BBDD*/
             }
         });
-        
-        buttonCancel.addActionListener(new ActionListener() {
+
+        btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCancel();
+                dispose();
+                new Perfiles();
             }
         });
         
@@ -31,32 +38,22 @@ public class CrearPerfUsuario extends JDialog {
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                onCancel();
+                dispose();
             }
         });
         
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onCancel();
+                dispose();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
-    
-    private void onOK() {
-        // add your code here
-        dispose();
-    }
-    
-    private void onCancel() {
-        // add your code here if necessary
-        dispose();
-    }
-    
+
     public static void main(String[] args) {
         CrearPerfUsuario dialog = new CrearPerfUsuario();
         dialog.pack();
         dialog.setVisible(true);
-        System.exit(0);
+
     }
 }

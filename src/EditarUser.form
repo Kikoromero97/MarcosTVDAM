@@ -186,15 +186,15 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="e3bad" class="javax.swing.JButton" binding="buttonOK">
+          <component id="e3bad" class="javax.swing.JButton" binding="btnguardar">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Crear"/>
+              <text value="Guardar Cambios"/>
             </properties>
           </component>
-          <component id="4ea50" class="javax.swing.JButton" binding="buttonCancel">
+          <component id="4ea50" class="javax.swing.JButton" binding="btnCancelar">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

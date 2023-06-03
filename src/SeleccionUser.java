@@ -7,24 +7,26 @@ public class SeleccionUser extends JDialog {
     private JButton CrearUsers;
     private JButton PerfilesUsers;
     private JButton VerSuscripciones;
-    private JButton cancelarButton;
+    private JButton btnCancelar;
     private JButton buttonOK;
     private JButton buttonCancel;
 
     public SeleccionUser() {
         setContentPane(contentPane);
+        setTitle("Menú de usuarios y suscripciones");
+        setVisible(true);
         setModal(true);
         setSize(700, 500);
         setLocationRelativeTo(null);
-        setVisible(true);
-        getRootPane().setDefaultButton(buttonOK);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+        /*Descomentar esto cuando se vaya a hacer un push*/
+        getRootPane().setDefaultButton(btnCancelar);
 
         VerSuscripciones.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JDialog subsdia = new Suscripciones();
-                subsdia.setSize(700, 500);
-                subsdia.setLocationRelativeTo(null);
-                subsdia.setVisible(true);
+                dispose();
+                Suscripciones subsdia = new Suscripciones();
 
             }
         });
@@ -32,10 +34,8 @@ public class SeleccionUser extends JDialog {
         PerfilesUsers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JDialog perfus = new Perfiles();
-                perfus.setSize(700, 500);
-                perfus.setLocationRelativeTo(null);
-                perfus.setVisible(true);
+                dispose();
+                Perfiles perfus = new Perfiles();
             }
         });
 
@@ -43,10 +43,9 @@ public class SeleccionUser extends JDialog {
         CrearUsers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JDialog crearU = new CrearUsuario();
-                crearU.setSize(700, 500);
-                crearU.setLocationRelativeTo(null);
-                crearU.setVisible(true);
+                dispose();
+                CrearUsuario CU = new CrearUsuario();
+
             }
         });
 
@@ -54,12 +53,12 @@ public class SeleccionUser extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                JDialog VerU = new CuentasUser();
+                CuentasUser CUSER = new CuentasUser();
                
             }
         });
 
-        cancelarButton.addActionListener(new ActionListener() {
+        btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -88,8 +87,7 @@ public class SeleccionUser extends JDialog {
 
     public static void main(String[] args) {
         SeleccionUser dialog = new SeleccionUser();
-        dialog.pack();
-        dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
+
     }
 }

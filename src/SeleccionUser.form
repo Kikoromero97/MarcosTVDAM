@@ -121,7 +121,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="abcd6" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+      <component id="abcd6" class="javax.swing.JButton" binding="btnCancelar">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="6" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
