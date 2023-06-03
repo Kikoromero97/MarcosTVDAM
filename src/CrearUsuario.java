@@ -3,8 +3,8 @@ import java.awt.event.*;
 
 public class CrearUsuario extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton btnCrear;
+    private JButton btnCancelar;
     private JTextField txtname;
     private JTextField txtDir;
     private JTextField txtTel;
@@ -15,14 +15,22 @@ public class CrearUsuario extends JDialog {
     public CrearUsuario() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(btnCrear);
 
-        buttonCancel.addActionListener(new ActionListener() {
+        btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
         });
 
+        btnCrear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            /*Insert usuario en la DB*/
+                dispose();
+                JOptionPane.showMessageDialog(null, "Usuario Creado Correctamente", "Usuario", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {

@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class CuentasUser extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
+    private JButton btnAceptar;
+    private JButton btnCancelar;
     private JTable table1;
     private JTextField textField1;
     private JButton btnbuscar;
@@ -14,18 +14,23 @@ public class CuentasUser extends JDialog {
     public CuentasUser() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        setSize(700, 500);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        getRootPane().setDefaultButton(btnAceptar);
+        
         Image icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("imagen/iconoMarcosVentana.png"))).getImage();
         setIconImage(icon);
-        buttonOK.addActionListener(new ActionListener() {
+        btnAceptar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
         });
         
-        buttonCancel.addActionListener(new ActionListener() {
+        btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
+                JDialog usuarios = new SeleccionUser();
             }
         });
         
@@ -51,7 +56,6 @@ public class CuentasUser extends JDialog {
     }
     
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
     
