@@ -13,6 +13,9 @@ public class Suscripciones extends JDialog {
     public Suscripciones() {
         setContentPane(contentPane);
         setModal(true);
+        setSize(700, 500);
+        setLocationRelativeTo(null);
+        setVisible(true);
         getRootPane().setDefaultButton(buttonOK);
 
 

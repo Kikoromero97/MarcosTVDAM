@@ -14,6 +14,9 @@ public class SeleccionUser extends JDialog {
     public SeleccionUser() {
         setContentPane(contentPane);
         setModal(true);
+        setSize(700, 500);
+        setLocationRelativeTo(null);
+        setVisible(true);
         getRootPane().setDefaultButton(buttonOK);
 
         VerSuscripciones.addActionListener(new ActionListener() {

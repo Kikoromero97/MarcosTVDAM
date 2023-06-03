@@ -12,6 +12,9 @@ public class Perfiles extends JDialog {
     public Perfiles() {
         setContentPane(contentPane);
         setModal(true);
+        setSize(700, 500);
+        setLocationRelativeTo(null);
+        setVisible(true);
         getRootPane().setDefaultButton(buttonOK);
         
         buttonOK.addActionListener(new ActionListener() {

@@ -10,6 +10,9 @@ public class CrearPerfUsuario extends JDialog {
     public CrearPerfUsuario() {
         setContentPane(contentPane);
         setModal(true);
+        setSize(700, 500);
+        setLocationRelativeTo(null);
+        setVisible(true);
         getRootPane().setDefaultButton(buttonOK);
         
         buttonOK.addActionListener(new ActionListener() {
