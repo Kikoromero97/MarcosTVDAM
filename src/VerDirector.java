@@ -1,25 +1,57 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class VerDirector extends JDialog {
     private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
-    private JButton volverButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JButton buscarButton;
-    private JTable table1;
+    private JButton BtnCrear;
+    private JButton BtnEliminar;
+    private JButton BtnVolver;
+    private JTextField txtFldNombre;
+    private JTextField txtFldApellidos;
+    private JButton BtnBuscar;
+    private JTable TablaDirectores;
 
     public VerDirector() {
         setContentPane(contentPane);
+        setTitle("Directores");
+        setVisible(true);
+        setSize(700, 500);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
+        getRootPane().setDefaultButton(BtnVolver);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        BtnVolver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                JFrame frame = new menuPrincipal();
+            }
+        });
+        BtnCrear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                JDialog dialog = new CrearDirector();
+            }
+        });
+        BtnEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar este director?", "Confirmación de borrado", JOptionPane.YES_NO_OPTION);
+                if (opcion == 0) {
+                    JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        });
     }
+
+
 
     public static void main(String[] args) {
         VerDirector dialog = new VerDirector();
         dialog.setSize(700, 500);
         dialog.setVisible(true);
-        System.exit(0);
     }
 }

@@ -3,7 +3,7 @@
   <grid id="cbd77" binding="contentPane" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="30" bottom="10" right="30"/>
     <constraints>
-      <xy x="48" y="54" width="575" height="303"/>
+      <xy x="48" y="54" width="578" height="303"/>
     </constraints>
     <properties>
       <background color="-2500135"/>
@@ -129,13 +129,14 @@
                           <text value="Numero de tarjeta:"/>
                         </properties>
                       </component>
-                      <component id="40e4d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                      <component id="40e4d" class="javax.swing.JTextField" binding="txtFldNum">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
                         <properties>
+                          <enabled value="false"/>
                           <text value=""/>
                         </properties>
                       </component>
@@ -151,20 +152,22 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <component id="c5d3c" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
-                        <constraints>
-                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                            <preferred-size width="150" height="-1"/>
-                          </grid>
-                        </constraints>
-                        <properties/>
-                      </component>
                       <component id="a34c5" class="javax.swing.JLabel">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
                           <text value="Caducidad:"/>
+                        </properties>
+                      </component>
+                      <component id="cac79" class="javax.swing.JTextField" binding="txtFldCaducidad">
+                        <constraints>
+                          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                            <preferred-size width="150" height="-1"/>
+                          </grid>
+                        </constraints>
+                        <properties>
+                          <enabled value="false"/>
                         </properties>
                       </component>
                     </children>
@@ -189,13 +192,15 @@
                       <text value="Nombre del banco:"/>
                     </properties>
                   </component>
-                  <component id="cbd22" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+                  <component id="cbd22" class="javax.swing.JTextField" binding="txtFldBanco">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <enabled value="false"/>
+                    </properties>
                   </component>
                 </children>
               </grid>
@@ -227,13 +232,15 @@
                           <text value="Titular:"/>
                         </properties>
                       </component>
-                      <component id="1f011" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+                      <component id="1f011" class="javax.swing.JTextField" binding="txtFldTitular">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <enabled value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
@@ -255,13 +262,15 @@
                           <text value="CVV:"/>
                         </properties>
                       </component>
-                      <component id="53717" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+                      <component id="53717" class="javax.swing.JTextField" binding="txtFldCVV">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
                           </grid>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <enabled value="false"/>
+                        </properties>
                       </component>
                     </children>
                   </grid>
