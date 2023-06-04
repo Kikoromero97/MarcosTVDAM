@@ -30,7 +30,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="5723f" class="javax.swing.JButton" binding="buttonCancel">
+              <component id="5723f" class="javax.swing.JButton" binding="btnEliminar">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -45,7 +45,7 @@
               </hspacer>
             </children>
           </grid>
-          <component id="e7465" class="javax.swing.JButton" binding="buttonOK">
+          <component id="e7465" class="javax.swing.JButton" binding="btnVolver">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -63,7 +63,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="71e0c" class="javax.swing.JButton" binding="crearButton" default-binding="true">
+              <component id="71e0c" class="javax.swing.JButton" binding="btnCrear">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -136,7 +136,7 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="5fe88" class="javax.swing.JButton" binding="buscarButton" default-binding="true">
+                  <component id="5fe88" class="javax.swing.JButton" binding="btnBuscar">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -164,7 +164,7 @@
                       <text value="Nombre:"/>
                     </properties>
                   </component>
-                  <component id="46cc5" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+                  <component id="46cc5" class="javax.swing.JTextField" binding="txtFldNombre">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>

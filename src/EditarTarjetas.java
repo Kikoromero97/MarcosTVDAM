@@ -26,15 +26,16 @@ public class EditarTarjetas extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                JDialog dialog = new CrearTarjetas();
+                JDialog dialog = new VerTarjetas();
             }
         });
+
         BtnEditar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                JDialog dialog = new CrearTarjetas();
+                JDialog dialog = new VerTarjetas();
             }
         });
     }

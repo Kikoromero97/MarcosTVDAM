@@ -5,49 +5,41 @@ import java.awt.event.ActionListener;
 public class CrearTarjetas extends JDialog {
     private JPanel contentPane;
     private JButton btnVolver;
-    private JButton btnEliminar;
-    private JButton btnEditar;
+    private JButton btnCrear;
     private JTextField txtFldNum;
-    private JTextField txtFldTitular;
-    private JTextField txtFldCVV;
-    private JTextField txtFldBanco;
     private JTextField txtFldCaducidad;
+    private JTextField txtFldCVV;
+    private JTextField txtFldTitular;
+    private JTextField txtFldBanco;
 
     public CrearTarjetas() {
         setContentPane(contentPane);
-        setTitle("Tarjetas del usuario");
+        setTitle("Creando tarjeta");
         setVisible(true);
         setSize(700, 500);
         setModal(true);
         getRootPane().setDefaultButton(btnVolver);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        btnEliminar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar?", "Confirmación de eliminación", JOptionPane.YES_NO_OPTION);
-                if (opcion == 0) {
-                    JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        });
+        UIManager.put("OptionPane.yesButtonText", "Confirmar");
+        UIManager.put("OptionPane.noButtonText", "Cancelar");
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                JDialog dialog = new InfoUsuario();
+                JDialog dialog = new VerTarjetas();
             }
         });
-        btnEditar.addActionListener(new ActionListener() {
+        btnCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                JDialog dialog = new EditarTarjetas();
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas crearlo?", "Confirmación de creación", JOptionPane.YES_NO_OPTION);
+                if (opcion == 0) {
+                    JOptionPane.showMessageDialog(null, "Se ha creado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
     }
-
-
 
     public static void main(String[] args) {
         CrearTarjetas dialog = new CrearTarjetas();
