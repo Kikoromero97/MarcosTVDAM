@@ -5,6 +5,8 @@ import java.sql.SQLException;
 
 public class Utilitis {
 
+    private static final int ROW_INTERVALS = 16;
+
     /**
      * Centra todas las celdas de un JTable.
      *
@@ -92,5 +94,17 @@ public class Utilitis {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * Función que devuelve el contenido de una celda JTable
+     * @param table
+     * @param columna
+     * @param rowY
+     * @return
+     */
+    private int getCell(JTable table, int columna, int rowY) {
+        int rowLine = rowY / ROW_INTERVALS;
+        return Integer.parseInt((String) table.getValueAt(rowLine, columna));
     }
 }
