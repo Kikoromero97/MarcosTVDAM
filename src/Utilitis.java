@@ -5,12 +5,14 @@ import java.sql.SQLException;
 
 public class Utilitis {
 
+    private static final int ROW_INTERVALS = 16;
+
     /**
      * Centra todas las celdas de un JTable.
      *
      * @param table tabla que se desea centrar.
      */
-    public void centerTable(JTable table) {
+    public static void centerTable(JTable table) {
         DefaultTableCellRenderer centerCell = new DefaultTableCellRenderer();
         centerCell.setHorizontalAlignment(JLabel.CENTER);
         for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
@@ -24,7 +26,7 @@ public class Utilitis {
      * @param data Datos que deseas
      * @return
      */
-    private String[][] deleteNulls(String[][] data) {
+    private static String[][] deleteNulls(String[][] data) {
         int count = 0;
         for (String[] strings : data) {
             if (strings[0] != null) {
@@ -49,7 +51,7 @@ public class Utilitis {
      * @param cantidadColumnas La cantidad de columnas que desea convertir.
      * @return String[][] devuelve los datos del ResultSet.
      */
-    public String[][] getDataFromResultSet(ResultSet rs, int cantidadColumnas) {
+    public static String[][] getDataFromResultSet(ResultSet rs, int cantidadColumnas) {
         try {
             String[][] result = new String[rs.getFetchSize()][cantidadColumnas];
             int count = 0;
@@ -75,7 +77,7 @@ public class Utilitis {
      * @param columnas Las columnas que desea convertir.
      * @return String[][] devuelve los datos del ResultSet.
      */
-    public String[][] getDataFromResultSet(ResultSet rs, String[] columnas) {
+    public static String[][] getDataFromResultSet(ResultSet rs, String[] columnas) {
         try {
             String[][] result = new String[rs.getFetchSize()][columnas.length];
             int count = 0;
@@ -92,5 +94,19 @@ public class Utilitis {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * Función que devuelve el contenido de una celda de un JTable.
+     *
+     * @param table JTable que deseas sacar información.
+     * @param columna Número de columna que deseas sacar.
+     * @param rowY Número Y de la row (AcctionLisener e.getChild().getY())
+     *
+     * @return String con el contenido de la celda.
+     */
+    private String getCell(JTable table, int columna, int rowY) {
+        int rowLine = rowY / ROW_INTERVALS;
+        return (String) table.getValueAt(rowLine, columna);
     }
 }
