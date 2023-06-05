@@ -6,9 +6,10 @@ public abstract class DBManager {
 
     // Configuración de la conexión a la base de datos
     private static final String DB_HOST = "192.168.7.208\\SQLEXPRESS";
+    private static final String DB_NAME = "databaseName=MARCOSTV";
     private static final String DB_PORT = "1433";
     private static final String DB_TRUST_SERVER = "TrustServerCertificate=true";
-    private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";" + DB_TRUST_SERVER;
+    private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";" + DB_TRUST_SERVER + ";" + DB_NAME;
 
 
     // Configuración del usuario de la base de datos
