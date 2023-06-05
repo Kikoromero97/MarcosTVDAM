@@ -1,5 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ListarEmpleados extends JFrame{
     private JPanel panelBusqueda;
@@ -28,6 +30,12 @@ public class ListarEmpleados extends JFrame{
         setContentPane(panelPrincipal);
         loadEmpleados();
         UserManager.user.getRol();
+        confirmarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
     public void loadEmpleados(){
         String[][] datos = Utilitis.getDataFromResultSet(db.listarEmpleadosLimitado(), COLUMNAS);
