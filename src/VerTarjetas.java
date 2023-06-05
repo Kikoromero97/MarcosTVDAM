@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +20,7 @@ public class VerTarjetas extends JDialog {
         getRootPane().setDefaultButton(btnVolver);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        crearTabla();
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,6 +50,15 @@ public class VerTarjetas extends JDialog {
                 JDialog dialog = new CrearTarjetas();
             }
         });
+    }
+
+    public void crearTabla () {
+        UserManager.loadSession();
+        DBTarjetas tarjetas = new DBTarjetas();
+        String [][] tabla = Utilitis.getDataFromResultSet(tarjetas.verTarjeta(1), 5);
+        String[] columnasVisitas = {"numero", "caducidad", "titular", "cvv", "banco"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        tablaTarjetas.setModel(table);
     }
 
     public static void main(String[] args) {

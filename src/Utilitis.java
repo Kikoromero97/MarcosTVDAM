@@ -105,7 +105,7 @@ public class Utilitis {
      *
      * @return String con el contenido de la celda.
      */
-    private String getCell(JTable table, int columna, int rowY) {
+    public static String getCell(JTable table, int columna, int rowY) {
         int rowLine = rowY / ROW_INTERVALS;
         return (String) table.getValueAt(rowLine, columna);
     }
