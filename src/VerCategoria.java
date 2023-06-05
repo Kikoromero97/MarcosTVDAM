@@ -29,6 +29,7 @@ public class VerCategoria extends JDialog {
                 JFrame frame = new PanelPrincipalContenido();
             }
         });
+
         btnEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,6 +44,7 @@ public class VerCategoria extends JDialog {
                 }
             }
         });
+
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,6 +53,7 @@ public class VerCategoria extends JDialog {
                 }
             }
         });
+
         btnCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

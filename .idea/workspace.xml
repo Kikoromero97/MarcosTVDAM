@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Nueva branch creada: FeaturePanelesKiko">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearCategoria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearCategoria.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDirector.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerTarjetas.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerTarjetas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarCategoria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarCategoria.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarDirector.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarTarjetas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarTarjetas.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerCategoria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerCategoria.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerIdiomas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerIdiomas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerPaises.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerPaises.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,27 +54,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/elord/OneDrive/Escritorio/AcademiaMZ"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;251&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elord/OneDrive/Escritorio/ClinicaBD - Programacion&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VerIdiomas">
-    <configuration name="CrearCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CrearCategoria" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.VerTarjetas (2)">
     <configuration name="VerCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="VerCategoria" />
       <module name="MarcosTVProgramacion" />
@@ -103,15 +83,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerPaises (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerPaises" />
+    <configuration name="VerTarjetas (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VerTarjetas" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerPaises" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerPaises" />
+    <configuration name="VerTarjetas (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VerTarjetas" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VerIdiomas" />
-        <item itemvalue="Application.VerPaises" />
-        <item itemvalue="Application.VerPaises (1)" />
+        <item itemvalue="Application.VerTarjetas (2)" />
+        <item itemvalue="Application.VerTarjetas" />
         <item itemvalue="Application.VerCategoria" />
-        <item itemvalue="Application.CrearCategoria" />
+        <item itemvalue="Application.VerTarjetas (1)" />
+        <item itemvalue="Application.VerIdiomas" />
       </list>
     </recent_temporary>
   </component>
