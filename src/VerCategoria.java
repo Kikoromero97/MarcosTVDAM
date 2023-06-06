@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class VerCategoria extends JDialog {
@@ -47,26 +46,10 @@ public class VerCategoria extends JDialog {
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DBCategorias categorias = new DBCategorias();
-                String codSinParsear = txtFldNombre.getText();
-                int codigo;
-                try {
-                    codigo = Integer.parseInt(txtFldNombre.getText());
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                if (!categorias.existsCategoria(codigo)) {
-                    JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    if (codSinParsear.equals("")) {
-                        crearTabla();
-                    } else {
-                        crearTablaEsp(Integer.parseInt(txtFldNombre.getText()));
-                    }
-                }
+                buscarCampo();
             }
         });
+
         btnCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,12 +57,34 @@ public class VerCategoria extends JDialog {
                 JDialog dialog = new CrearCategoria();
             }
         });
+
         tablaCat.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionarInsert(e);
             }
         });
+    }
+
+    public void buscarCampo () {
+        DBCategorias categorias = new DBCategorias();
+        String codSinParsear = txtFldNombre.getText();
+        int codigo;
+        try {
+            codigo = Integer.parseInt(txtFldNombre.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!categorias.existsCategoria(codigo)) {
+            JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (codSinParsear.equals("")) {
+                crearTabla();
+            } else {
+                crearTablaEsp(codigo);
+            }
+        }
     }
 
     public void eliminarCampo() {
