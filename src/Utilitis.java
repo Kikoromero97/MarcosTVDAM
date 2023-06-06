@@ -58,7 +58,7 @@ public class Utilitis {
             while (rs.next()) {
                 if (result[count] != null) {
                     for (int i = 0; i < cantidadColumnas; i++) {
-                        result[count][i] = rs.getString(i);
+                        result[count][i] = rs.getString(i + 1);
                     }
                 }
                 count++;

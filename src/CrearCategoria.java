@@ -31,11 +31,22 @@ public class CrearCategoria extends JDialog {
         btnCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer crear esta categoría?", "Confirmación de creación", JOptionPane.YES_NO_OPTION);
-                if (opcion == 0) {
-                    JOptionPane.showMessageDialog(null, "Se ha creado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
-                    JDialog dialog = new VerCategoria();
+                UserManager.loadSession();
+                DBCategorias categoria = new DBCategorias();
+                if (txtFldCodigo.getText().equals("") || txtFldNombre.getText().equals("") || txtFldDescrip.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Todos los campos deben de estar completos.", "Error al crear", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer crear esta categoría?", "Confirmación de creación", JOptionPane.YES_NO_OPTION);
+                    if (opcion == 0) {
+                        JOptionPane.showMessageDialog(null, "Se ha creado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+                        int codigo = Integer.parseInt(txtFldCodigo.getText());
+                        String nombre = txtFldNombre.getText();
+                        String descrip = txtFldDescrip.getText();
+                        Categoria cat = new Categoria(codigo, nombre, descrip);
+                        categoria.crearCategoria(cat);
+                        dispose();
+                        JDialog dialog = new VerCategoria();
+                    }
                 }
             }
         });

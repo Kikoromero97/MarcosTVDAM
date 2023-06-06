@@ -1,6 +1,11 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class VerCategoria extends JDialog {
     private JPanel contentPane;
@@ -9,7 +14,7 @@ public class VerCategoria extends JDialog {
     private JButton btnCrear;
     private JTextField txtFldNombre;
     private JButton btnBuscar;
-    private JTable table1;
+    private JTable tablaCat;
 
     public VerCategoria() {
         setContentPane(contentPane);
@@ -22,6 +27,7 @@ public class VerCategoria extends JDialog {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         UIManager.put("OptionPane.yesButtonText", "Confirmar");
         UIManager.put("OptionPane.noButtonText", "Cancelar");
+        crearTabla();
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,15 +39,7 @@ public class VerCategoria extends JDialog {
         btnEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (txtFldNombre.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar esta categoría?", "Confirmación de borrado", JOptionPane.YES_NO_OPTION);
-                    if (opcion == 0) {
-                        JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
-                        txtFldNombre.setText("");
-                    }
-                }
+                eliminarCampo();
             }
         });
 
@@ -49,11 +47,12 @@ public class VerCategoria extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (txtFldNombre.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+                    crearTabla();
+                } else {
+                    crearTablaEsp(Integer.parseInt(txtFldNombre.getText()));
                 }
             }
         });
-
         btnCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,7 +60,77 @@ public class VerCategoria extends JDialog {
                 JDialog dialog = new CrearCategoria();
             }
         });
+        tablaCat.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionarInsert(e);
+            }
+        });
     }
+
+    public void eliminarCampo () {
+        DBCategorias categorias = new DBCategorias();
+        int codigo;
+        String codSinParsear = txtFldNombre.getText();
+        try {
+            codigo = Integer.parseInt(txtFldNombre.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (codSinParsear.equals("")) {
+            JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (!categorias.existsCategoria(codigo)) {
+                JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            } else {
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar esta categoría?", "Confirmación de borrado", JOptionPane.YES_NO_OPTION);
+                if (opcion == 0) {
+                    categorias.deleteCategoria(codigo);
+                    JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+                    txtFldNombre.setText("");
+                    crearTabla();
+                }
+            }
+        }
+    }
+
+    public void seleccionarInsert (MouseEvent e) {
+        if (e.getClickCount() == 1) {
+            JTable table = (JTable) e.getSource();
+            int row = table.getSelectedRow();
+            String codigo = (String) table.getValueAt(row, 0);
+            String nombre = (String) table.getValueAt(row, 1);
+            String descripcion = (String) table.getValueAt(row, 2);
+            ArrayList<String> datos = new ArrayList<>();
+            datos.add(codigo);
+            datos.add(nombre);
+            datos.add(descripcion);
+            EditarCategoria edit = new EditarCategoria();
+            edit.llenarCampos(datos);
+            dispose();
+        }
+    }
+
+    public void crearTabla () {
+        UserManager.loadSession();
+        DBCategorias categoria = new DBCategorias();
+        String [][] tabla = Utilitis.getDataFromResultSet(categoria.verCategorias(), 3);
+        String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        tablaCat.setModel(table);
+    }
+
+    public void crearTablaEsp (int codigo) {
+        UserManager.loadSession();
+        DBCategorias categoria = new DBCategorias();
+        String [][] tabla = Utilitis.getDataFromResultSet(categoria.verCategoriaEsp(codigo), 3);
+        String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        tablaCat.setModel(table);
+    }
+
+
 
     public static void main(String[] args) {
         VerCategoria dialog = new VerCategoria();
