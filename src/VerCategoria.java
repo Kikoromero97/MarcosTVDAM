@@ -18,6 +18,7 @@ public class VerCategoria extends JDialog {
 
     public VerCategoria() {
         setContentPane(contentPane);
+        UserManager.loadSession();
         setVisible(true);
         setSize(700, 500);
         setTitle("Categorías");
@@ -46,10 +47,23 @@ public class VerCategoria extends JDialog {
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (txtFldNombre.getText().equals("")) {
-                    crearTabla();
+                DBCategorias categorias = new DBCategorias();
+                String codSinParsear = txtFldNombre.getText();
+                int codigo;
+                try {
+                    codigo = Integer.parseInt(txtFldNombre.getText());
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                if (!categorias.existsCategoria(codigo)) {
+                    JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    crearTablaEsp(Integer.parseInt(txtFldNombre.getText()));
+                    if (codSinParsear.equals("")) {
+                        crearTabla();
+                    } else {
+                        crearTablaEsp(Integer.parseInt(txtFldNombre.getText()));
+                    }
                 }
             }
         });
@@ -68,7 +82,7 @@ public class VerCategoria extends JDialog {
         });
     }
 
-    public void eliminarCampo () {
+    public void eliminarCampo() {
         DBCategorias categorias = new DBCategorias();
         int codigo;
         String codSinParsear = txtFldNombre.getText();
@@ -95,7 +109,7 @@ public class VerCategoria extends JDialog {
         }
     }
 
-    public void seleccionarInsert (MouseEvent e) {
+    public void seleccionarInsert(MouseEvent e) {
         if (e.getClickCount() == 1) {
             JTable table = (JTable) e.getSource();
             int row = table.getSelectedRow();
@@ -112,25 +126,23 @@ public class VerCategoria extends JDialog {
         }
     }
 
-    public void crearTabla () {
-        UserManager.loadSession();
+    public void crearTabla() {
         DBCategorias categoria = new DBCategorias();
-        String [][] tabla = Utilitis.getDataFromResultSet(categoria.verCategorias(), 3);
+        String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategorias(), 3);
         String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         tablaCat.setModel(table);
+        Utilitis.centerTable(tablaCat);
     }
 
-    public void crearTablaEsp (int codigo) {
-        UserManager.loadSession();
+    public void crearTablaEsp(int codigo) {
         DBCategorias categoria = new DBCategorias();
-        String [][] tabla = Utilitis.getDataFromResultSet(categoria.verCategoriaEsp(codigo), 3);
+        String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategoriaEsp(codigo), 3);
         String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         tablaCat.setModel(table);
+        Utilitis.centerTable(tablaCat);
     }
-
-
 
     public static void main(String[] args) {
         VerCategoria dialog = new VerCategoria();
