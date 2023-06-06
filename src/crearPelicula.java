@@ -18,4 +18,11 @@ public class crearPelicula {
     private JLabel logoMarcosTV;
     private JButton crearButton;
     private JButton cancelarButton;
+
+    public static void verPanelCrearPelicula(){
+        JFrame frame = new JFrame("crearPelicula");
+        frame.setContentPane(new crearPelicula().JPanelCrearPelicula);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
 }

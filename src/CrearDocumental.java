@@ -18,4 +18,6 @@ public class CrearDocumental {
     private JLabel logoMarcosTV;
     private JButton crearButtonDocumental;
     private JButton cancelarButtonDocumental;
+
+
 }
