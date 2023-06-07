@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
-      <change afterPath="$PROJECT_DIR$/src/DB_Contenido.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Contenidos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Peliculas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB_Contenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB_Contenido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/crearPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crearPelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/verPeliculas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/verPeliculas.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/verPeliculas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/verPeliculas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,12 +53,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "D:/Raquel/DAM/Programacion/Repositorios/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.menuPrincipal">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MarcosTVProgramacion" />
@@ -71,8 +83,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.menuPrincipal" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.menuPrincipal" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +150,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pantalla inicio de sesion" />
@@ -146,5 +157,16 @@
     <MESSAGE value="Pantalla crear serie" />
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
     <option name="LAST_COMMIT_MESSAGE" value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DB_Contenido.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

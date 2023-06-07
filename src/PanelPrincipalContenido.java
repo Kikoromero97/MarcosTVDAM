@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class PanelPrincipalContenido {
     public JPanel JPanelVerPeliculas;
@@ -15,6 +16,8 @@ public class PanelPrincipalContenido {
     private JButton documentalButton;
     private JButton salirButton;
     private JLabel logoMarcosTV;
+    private static final DB_Contenido dbContenido = new DB_Contenido();
+
 
     public static void mostrarpanelPrincipalContenido(){
         JFrame frame = new JFrame("PanelPrincipalContenido");
@@ -29,7 +32,10 @@ public class PanelPrincipalContenido {
     peliculaButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            verPeliculas.mostrarPatallaVerPelicula();
+
+            verPeliculas.mostrarPatallaVerPelicula(dbContenido);
+            dbContenido.printTablaPeliculas();
+
         }
     });
 
@@ -56,4 +62,6 @@ public class PanelPrincipalContenido {
         }
     });
     }
+
+
 }
