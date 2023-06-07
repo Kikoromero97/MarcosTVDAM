@@ -16,7 +16,10 @@ public class PanelPrincipalContenido {
     private JButton documentalButton;
     private JButton salirButton;
     private JLabel logoMarcosTV;
-    private static final DB_Contenido dbContenido = new DB_Contenido();
+    private static DB_Contenido dbContenido = new DB_Contenido();
+
+    private static verPeliculas panelVerPeliculas;
+
 
 
     public static void mostrarpanelPrincipalContenido(){
@@ -25,6 +28,7 @@ public class PanelPrincipalContenido {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700,500);
         frame.setVisible(true);
+
     }
 
     public PanelPrincipalContenido() {
@@ -33,7 +37,8 @@ public class PanelPrincipalContenido {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            verPeliculas.mostrarPatallaVerPelicula(dbContenido);
+            dbContenido = new DB_Contenido();
+            panelVerPeliculas.mostrarPatallaVerPelicula(dbContenido);
             dbContenido.printTablaPeliculas();
 
         }

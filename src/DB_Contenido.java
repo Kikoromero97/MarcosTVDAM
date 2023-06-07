@@ -11,7 +11,7 @@ public class DB_Contenido extends DBManager{
     public DB_Contenido() {
         super();
     }
-   private static List<Peliculas> tablaPeliculas;
+    private static List<Peliculas> tablaPeliculas;
 
     public void verPeliSerieDoc(){
 
@@ -54,16 +54,15 @@ public class DB_Contenido extends DBManager{
                 String descripcion = rs.getString("descripcion");
                 int duracion = rs.getInt("duracionSegundos");
                 float valoracion = rs.getFloat("valoracion");
-                Date anyo_lanzamiento = rs.getDate("anyo_lanzamiento");
+                java.sql.Date anyo_lanzamiento = rs.getDate("anyo_lanzamiento");
                 float presupuesto = rs.getFloat("presupuesto");
                 int edad_recomendada = rs.getInt("edad_recomendada");
-                Date fecha_alta = rs.getDate("fecha_alta");
-                int codigoPelicula =  rs.getInt("codigoPelicula");
+                java.sql.Date fecha_alta = rs.getDate("fecha_alta");
                 int director = rs.getInt("director");
-                String tipoContenido = rs.getString("tipoContenido");
+                String  tipoContenido = rs.getString("tipoContenido");
 
 
-                Peliculas pelicula = new Peliculas(codigo,titulo,descripcion,duracion,valoracion,anyo_lanzamiento,presupuesto,edad_recomendada,fecha_alta, codigoPelicula,director,tipoContenido);
+                Peliculas pelicula = new Peliculas(codigo,titulo,descripcion,duracion,valoracion,anyo_lanzamiento,presupuesto,edad_recomendada,fecha_alta, director,tipoContenido);
                 tablaPeliculas.add(pelicula);
 
                 System.out.println(pelicula);
@@ -74,5 +73,70 @@ public class DB_Contenido extends DBManager{
         }
         return null;
     }
+
+
+    public boolean anyadirPelicula(Peliculas pelicula){
+        try {
+
+            anyadirContenido(pelicula);
+            ResultSet rs =  getSelect("SELECT p.* FROM pelicula p");
+
+            rs.moveToInsertRow();
+            rs.updateInt("codigoPelicula", pelicula.getCodigo());
+            rs.updateInt("director",pelicula.getDirector());
+            rs.updateString("tipoContenido", pelicula.getTipoContenido());
+
+            rs.insertRow();
+            System.out.println("Datos insertados");
+            rs.close();
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean anyadirContenido(Contenidos contenido){
+        try{
+            ResultSet rs =  getSelect("SELECT c.* FROM contenido c");
+
+            rs.moveToInsertRow();
+            rs.updateInt("codigo",contenido.getCodigo());
+            rs.updateString("titulo",contenido.getTitulo());
+            rs.updateString("descripcion",contenido.getDescripcion());
+            rs.updateInt("duracionSegundos", contenido.getDuracionSegundos());
+            rs.updateFloat("valoracion", contenido.getValoracion());
+            rs.updateDate("anyo_lanzamiento", contenido.getAnyo_lanzamiento());
+            rs.updateFloat("presupuesto", contenido.getPresupuesto());
+            rs.updateInt("edad_recomendada", contenido.getEdad_recomendada());
+            rs.updateDate("fecha_alta", contenido.getFecha_alta());
+
+            rs.insertRow();
+            System.out.println("Datos insertados");
+            rs.close();
+            return true;
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public Peliculas buscarPelicula(String nombre)
+    {
+        for(Peliculas pelicula : tablaPeliculas)
+        {
+            String nombreEnBD = pelicula.getTitulo().toLowerCase();
+            String nombreAComparar = nombre.toLowerCase();
+
+            if (nombreEnBD.equals(nombreAComparar))
+            {
+                return pelicula;
+            }
+        }
+        return  null;
+    }
+
 
 }

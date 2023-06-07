@@ -1,4 +1,4 @@
-import java.util.Date;
+
 
 public class Contenidos {
 
@@ -12,15 +12,15 @@ public class Contenidos {
 
     private float valoracion;
 
-    private Date anyo_lanzamiento;
+    private java.sql.Date anyo_lanzamiento;
 
     private float presupuesto;
 
     private int edad_recomendada;
 
-    private Date fecha_alta;
+    private java.sql.Date fecha_alta;
 
-    public Contenidos(int codigo, String titulo, String descripcion, int duracionSegundos, float valoracion, Date anyo_lanzamiento, float presupuesto, int edad_recomendada, Date fecha_alta) {
+    public Contenidos(int codigo, String titulo, String descripcion, int duracionSegundos, float valoracion, java.sql.Date anyo_lanzamiento, float presupuesto, int edad_recomendada, java.sql.Date fecha_alta) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -72,11 +72,11 @@ public class Contenidos {
         this.valoracion = valoracion;
     }
 
-    public Date getAnyo_lanzamiento() {
+    public java.sql.Date getAnyo_lanzamiento() {
         return anyo_lanzamiento;
     }
 
-    public void setAnyo_lanzamiento(Date anyo_lanzamiento) {
+    public void setAnyo_lanzamiento(java.sql.Date anyo_lanzamiento) {
         this.anyo_lanzamiento = anyo_lanzamiento;
     }
 
@@ -96,11 +96,11 @@ public class Contenidos {
         this.edad_recomendada = edad_recomendada;
     }
 
-    public Date getFecha_alta() {
+    public java.sql.Date getFecha_alta() {
         return fecha_alta;
     }
 
-    public void setFecha_alta(Date fecha_alta) {
+    public void setFecha_alta(java.sql.Date fecha_alta) {
         this.fecha_alta = fecha_alta;
     }
 
