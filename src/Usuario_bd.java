@@ -1,7 +1,7 @@
 public class Usuario_bd {
     private String user_name;
     private String pass;
-    private String rol;
+    private UserRols rol;
 
     /**
      * Constructor de la Class.
@@ -13,7 +13,7 @@ public class Usuario_bd {
     public Usuario_bd(String user_name, String pass, String rol) {
         this.user_name = user_name;
         this.pass = pass;
-        this.rol = rol;
+        this.rol = UserRols.valueOf(rol.toLowerCase());
     }
 
     /**
@@ -39,7 +39,7 @@ public class Usuario_bd {
      *
      * @return String.
      */
-    public String getRol() {
+    public UserRols getRol() {
         return rol;
     }
 
