@@ -28,6 +28,7 @@ public class VerCategoria extends JDialog {
         UIManager.put("OptionPane.yesButtonText", "Confirmar");
         UIManager.put("OptionPane.noButtonText", "Cancelar");
         crearTabla();
+
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -154,4 +155,11 @@ public class VerCategoria extends JDialog {
         dialog.setSize(700, 500);
         dialog.setVisible(true);
     }
+
+    public static void mostrarPanelVerCategoria() {
+        VerCategoria dialog = new VerCategoria();
+        dialog.setSize(700, 500);
+        dialog.setVisible(true);
+    }
+
 }

@@ -15,5 +15,4 @@ public class DBTarjetas extends DBManager{
     public ResultSet deleteTarjeta(int codigo){
         return verSelect(SELECT_TARJETA + codigo);
     }
-
 }

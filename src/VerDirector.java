@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,6 +15,7 @@ public class VerDirector extends JDialog {
 
     public VerDirector() {
         setContentPane(contentPane);
+        UserManager.loadSession();
         setTitle("Directores");
         setVisible(true);
         setSize(700, 500);
@@ -23,6 +25,8 @@ public class VerDirector extends JDialog {
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         UIManager.put("OptionPane.yesButtonText", "Confirmar");
         UIManager.put("OptionPane.noButtonText", "Cancelar");
+        crearTabla();
+
         BtnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,6 +58,7 @@ public class VerDirector extends JDialog {
                 }
             }
         });
+
         BtnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,9 +69,28 @@ public class VerDirector extends JDialog {
         });
     }
 
+    public void crearTabla() {
+        DBDirector director = new DBDirector();
+        String[][] tabla = Utilitis.getDataFromResultSet(director.verDirector(), 9);
+        String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Genero", "Nacionalidad", "Pais"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        TablaDirectores.setModel(table);
+        Utilitis.centerTable(TablaDirectores);
+    }
+
+    public void crearTablaEsp(int codigo) {
+        DBDirector director = new DBDirector();
+        String[][] tabla = Utilitis.getDataFromResultSet(director.verDirectorEsp(codigo), 9);
+        String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Num Premios", "Años Exp", "Edad", "Genero", "Nacionalidad", "Pais"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        TablaDirectores.setModel(table);
+        Utilitis.centerTable(TablaDirectores);
+    }
+
     public static void main(String[] args) {
         VerDirector dialog = new VerDirector();
         dialog.setSize(700, 500);
         dialog.setVisible(true);
     }
+
 }

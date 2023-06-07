@@ -21,6 +21,7 @@ public class VerTarjetas extends JDialog {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         crearTabla();
+
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,4 +67,5 @@ public class VerTarjetas extends JDialog {
         dialog.setSize(700, 500);
         dialog.setVisible(true);
     }
+
 }
