@@ -14,6 +14,10 @@ public class menuPrincipal extends JFrame{
     private JPanel JPanelBotonSalir;
     private JButton areaDirectoresButton;
 
+
+    /**
+     * Constructor de menuPrincipal.
+     */
     public menuPrincipal() {
         super("MARCOS TV");
         setSize(700, 500);
@@ -75,6 +79,10 @@ public class menuPrincipal extends JFrame{
             }
         });
     }
+
+    /**
+     * Función que ejecuta la pantalla mostrarMenuPrincipal.
+     */
     public static void  mostrarMenuPrincipal(){
         JFrame frame = new menuPrincipal();
     }
