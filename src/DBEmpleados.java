@@ -11,7 +11,7 @@ public class DBEmpleados extends DBManager{
     /**
      * Constructor que implementa DBManager.
      */
-    public DBEmpleados() {
+    public DBEmpleados(){
         super();
     }
 

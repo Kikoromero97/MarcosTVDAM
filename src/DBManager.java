@@ -6,15 +6,16 @@ public abstract class DBManager {
 
     // Configuración de la conexión a la base de datos
     private static final String DB_HOST = "192.168.7.208\\SQLEXPRESS";
+    private static final String DB_NAME = "databaseName=MARCOSTV";
     private static final String DB_PORT = "1433";
     private static final String DB_TRUST_SERVER = "TrustServerCertificate=true";
-    private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";" + DB_TRUST_SERVER;
+    private static final String DB_URL = "jdbc:sqlserver://"+ DB_HOST + ":" + DB_PORT +";" + DB_TRUST_SERVER + ";" + DB_NAME;
 
 
     // Configuración del usuario de la base de datos
 
-    private static String user;
-    private static String pass;
+    private static String user = "programa";
+    private static String pass = "1234";
 
     // Configuración de mensajes de respuesta
     private static final String DB_MSQ_CONN_OK = "CONEXIÓN CORRECTA";
@@ -56,15 +57,9 @@ public abstract class DBManager {
     }
 
     /**
-     * Constructor para implementar en las class que lo extienden.
-     *
-     * @param user Se pasa el nombre del usuario con el que se conecta a la base de datos.
-     * @param pass Se pasa la contraseña del usuario con el que se conecta a la base de datos.
+     * Constructor que realiza la carga del driver y la conexión con la base de datos.
      */
-
-    public DBManager(String user, String pass){
-        DBManager.user = user;
-        DBManager.pass = pass;
+    public DBManager(){
         loadDriver();
         connect();
     }
