@@ -27,7 +27,6 @@ public class ListarEmpleados extends JFrame{
         setVisible(true);
         setContentPane(panelPrincipal);
         loadEmpleados();
-        UserManager.user.getRol();
     }
     public void loadEmpleados(){
         String[][] datos = Utilitis.getDataFromResultSet(db.listarEmpleadosLimitado(), COLUMNAS);
