@@ -2,14 +2,16 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class VerDirector extends JDialog {
     private JPanel contentPane;
     private JButton BtnCrear;
     private JButton BtnEliminar;
     private JButton BtnVolver;
-    private JTextField txtFldNombre;
-    private JTextField txtFldApellidos;
+    private JTextField txtFldCodigo;
     private JButton BtnBuscar;
     private JTable TablaDirectores;
 
@@ -46,33 +48,80 @@ public class VerDirector extends JDialog {
         BtnEliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (txtFldNombre.getText().equals("") || txtFldApellidos.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "¡Ambos campos deben estar completos para buscar!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar este director?", "Confirmación de borrado", JOptionPane.YES_NO_OPTION);
-                    if (opcion == 0) {
-                        JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
-                        txtFldNombre.setText("");
-                        txtFldApellidos.setText("");
-                    }
-                }
+                eliminarCampo();
             }
         });
 
         BtnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (txtFldNombre.getText().equals("") || txtFldApellidos.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "¡Ambos campos deben estar completos para buscar!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
-                }
+                buscarCampo();
             }
         });
+        TablaDirectores.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionarInsert(e);
+            }
+        });
+    }
+
+    public void buscarCampo() {
+        DBDirector director = new DBDirector();
+        String codSinParsear = txtFldCodigo.getText();
+        if (codSinParsear.isEmpty()) {
+            crearTabla();
+            return;
+        }
+        int codigo;
+        try {
+            codigo = Integer.parseInt(txtFldCodigo.getText());
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "¡El campo \"código\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!director.existsDirector(codigo)) {
+            JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+        } else {
+            crearTablaEsp(codigo);
+        }
+    }
+
+    public void eliminarCampo() {
+        DBDirector director = new DBDirector();
+        String codSinParsear = txtFldCodigo.getText();
+        int codigo;
+        try {
+            codigo = Integer.parseInt(txtFldCodigo.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "¡El campo \"código\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (codSinParsear.equals("")) {
+            JOptionPane.showMessageDialog(null, "¡El campo \"código\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (!director.existsDirector(codigo)) {
+                JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            } else {
+                int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar este director?", "Confirmación de borrado", JOptionPane.YES_NO_OPTION);
+                if (opcion == 0) {
+                    if (director.existsSeriesByDirector(codigo)) {
+                        JOptionPane.showMessageDialog(null, "Este director ya pertenece a un contenido. No puede borrarse.", "Error de FK", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        director.deleteDirector(codigo);
+                        JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+                        txtFldCodigo.setText("");
+                        crearTabla();
+                    }
+                }
+            }
+        }
     }
 
     public void crearTabla() {
         DBDirector director = new DBDirector();
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirector(), 9);
-        String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Genero", "Nacionalidad", "Pais"};
+        String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         TablaDirectores.setModel(table);
         Utilitis.centerTable(TablaDirectores);
@@ -81,16 +130,48 @@ public class VerDirector extends JDialog {
     public void crearTablaEsp(int codigo) {
         DBDirector director = new DBDirector();
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirectorEsp(codigo), 9);
-        String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Num Premios", "Años Exp", "Edad", "Genero", "Nacionalidad", "Pais"};
+        String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         TablaDirectores.setModel(table);
         Utilitis.centerTable(TablaDirectores);
     }
 
-    public static void main(String[] args) {
-        VerDirector dialog = new VerDirector();
-        dialog.setSize(700, 500);
-        dialog.setVisible(true);
+    public void seleccionarInsert(MouseEvent e) {
+        if (e.getClickCount() == 1) {
+            JTable table = (JTable) e.getSource();
+            int row = table.getSelectedRow();
+            String codigo = (String) table.getValueAt(row, 0);
+            String nombre = (String) table.getValueAt(row, 1);
+            String apellido = (String) table.getValueAt(row, 2);
+            String edad = (String) table.getValueAt(row, 3);
+            String nacionalidad = (String) table.getValueAt(row, 4);
+            String genero = (String) table.getValueAt(row, 5);
+            String numpremios = (String) table.getValueAt(row, 6);
+            String anyosexp = (String) table.getValueAt(row, 7);
+            String idPais = (String) table.getValueAt(row, 8);
+            ArrayList<String> datos = new ArrayList<>();
+            datos.add(codigo);
+            datos.add(nombre);
+            datos.add(apellido);
+            datos.add(numpremios);
+            datos.add(anyosexp);
+            datos.add(edad);
+            datos.add(genero);
+            datos.add(nacionalidad);
+            datos.add(idPais);
+            EditarDirector edit = new EditarDirector();
+            edit.llenarCampos(datos);
+            dispose();
+        }
     }
 
+    public static void main(String[] args) {
+        JDialog dialog = new VerDirector();
+        dialog.setVisible(true);
+        dialog.setSize(700, 500);
+    }
+
+    public static void mostrarDirector() {
+        JDialog dialog = new VerDirector();
+    }
 }

@@ -7,7 +7,7 @@ public class DBCategorias extends DBManager {
     private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo = ";
 
     public DBCategorias() {
-        super(UserManager.user.getUser_name(), UserManager.user.getPass());
+        super();
     }
 
     public ResultSet verCategorias() {

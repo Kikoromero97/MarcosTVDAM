@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.image.DirectColorModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -8,7 +9,7 @@ public class DBDirector extends DBManager {
     private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo = ";
 
     public DBDirector() {
-        super(UserManager.user.getUser_name(), UserManager.user.getPass());
+        super();
     }
 
     public ResultSet verDirector() {
@@ -48,22 +49,27 @@ public class DBDirector extends DBManager {
             rs.updateString("nacionalidad", dir.getNacionalidad());
             rs.updateString("sexo", dir.getGenero().toString());
             rs.updateInt("NumPremios", dir.getNumPremios());
-            rs.updateInt("AñosExp", dir.getAnyosExp());
-
-
+            rs.updateInt("anyosexperiencia", dir.getAnyosExp());
+            rs.updateInt("idPais", dir.getIdPais());
             rs.insertRow();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void editarDirector(Categoria cat) {
+    public void editarDirector(Director dir) {
         try (ResultSet rs = edityCrearDirector()) {
             while (rs.next()) {
                 int codigo = rs.getInt("codigo");
-                if (codigo == cat.getCodigo()) {
-                    rs.updateString("nombre", cat.getNombre());
-                    rs.updateString("descripcion", cat.getDescripcion());
+                if (codigo == dir.getCodigo()) {
+                    rs.updateString("nombre", dir.getNombre());
+                    rs.updateString("apellidos", dir.getApellidos());
+                    rs.updateInt("edad", dir.getEdad());
+                    rs.updateString("nacionalidad", dir.getNacionalidad());
+                    rs.updateString("sexo", dir.getGenero().toString());
+                    rs.updateInt("NumPremios", dir.getNumPremios());
+                    rs.updateInt("anyosexperiencia", dir.getAnyosExp());
+                    rs.updateInt("idPais", dir.getIdPais());
                     rs.updateRow();
                     break;
                 }
@@ -82,4 +88,12 @@ public class DBDirector extends DBManager {
         }
     }
 
+    public boolean existsSeriesByDirector(int codigo) {
+        try (ResultSet rs = getSelect("SELECT * FROM serie WHERE director = " + codigo)) {
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

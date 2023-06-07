@@ -17,7 +17,6 @@ public class VerCategoria extends JDialog {
 
     public VerCategoria() {
         setContentPane(contentPane);
-        UserManager.loadSession();
         setVisible(true);
         setSize(700, 500);
         setTitle("Categorías");
@@ -67,24 +66,24 @@ public class VerCategoria extends JDialog {
         });
     }
 
-    public void buscarCampo () {
+    public void buscarCampo() {
         DBCategorias categorias = new DBCategorias();
         String codSinParsear = txtFldNombre.getText();
+        if (codSinParsear.isEmpty()) {
+            crearTabla();
+            return;
+        }
         int codigo;
         try {
             codigo = Integer.parseInt(txtFldNombre.getText());
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡El campo \"código\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
             return;
         }
         if (!categorias.existsCategoria(codigo)) {
             JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
         } else {
-            if (codSinParsear.equals("")) {
-                crearTabla();
-            } else {
-                crearTablaEsp(codigo);
-            }
+            crearTablaEsp(codigo);
         }
     }
 
@@ -95,11 +94,11 @@ public class VerCategoria extends JDialog {
         try {
             codigo = Integer.parseInt(txtFldNombre.getText());
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡El campo \"código\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
             return;
         }
         if (codSinParsear.equals("")) {
-            JOptionPane.showMessageDialog(null, "¡El campo \"nombre\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡El campo \"código\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
         } else {
             if (!categorias.existsCategoria(codigo)) {
                 JOptionPane.showMessageDialog(null, "¡Este código no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
@@ -158,8 +157,6 @@ public class VerCategoria extends JDialog {
 
     public static void mostrarPanelVerCategoria() {
         VerCategoria dialog = new VerCategoria();
-        dialog.setSize(700, 500);
-        dialog.setVisible(true);
     }
 
 }

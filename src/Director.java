@@ -7,9 +7,9 @@ public class Director {
     private int edad;
     private generoDirector genero;
     private String nacionalidad;
-    private String pais;
+    private int idpais;
 
-    public Director(int codigo, String nombre, String apellidos, int numPremios, int anyosExp, int edad, generoDirector genero, String nacionalidad, String pais) {
+    public Director(int codigo, String nombre, String apellidos, int numPremios, int anyosExp, int edad, generoDirector genero, String nacionalidad, int idpais) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -18,7 +18,7 @@ public class Director {
         this.edad = edad;
         this.genero = genero;
         this.nacionalidad = nacionalidad;
-        this.pais = pais;
+        this.idpais = idpais;
     }
 
     public int getCodigo() {
@@ -52,7 +52,7 @@ public class Director {
         return nacionalidad;
     }
 
-    public String getPais() {
-        return pais;
+    public int getIdPais() {
+        return idpais;
     }
 }

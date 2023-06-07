@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class VerTarjetas extends JDialog {
     private JPanel contentPane;
@@ -10,8 +11,14 @@ public class VerTarjetas extends JDialog {
     private JButton btnCrear;
     private JTable tablaTarjetas;
     private JTextField txtFldNumero;
+    private static final DBTarjetas tarjeta = new DBTarjetas();
+
+    private int idUsuario;
 
     public VerTarjetas() {
+        /*InfoUsuario info = new InfoUsuario();
+        int idUsuario = info.NumeroaPasar();*/
+        UserManager.loadSession();
         setContentPane(contentPane);
         setVisible(true);
         setSize(700, 500);
@@ -54,12 +61,12 @@ public class VerTarjetas extends JDialog {
     }
 
     public void crearTabla () {
-        UserManager.loadSession();
-        DBTarjetas tarjetas = new DBTarjetas();
-        String [][] tabla = Utilitis.getDataFromResultSet(tarjetas.verTarjeta(1), 5);
+        int codigo = 1;
+        String [][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaEsp(codigo), 5);
         String[] columnasVisitas = {"numero", "caducidad", "titular", "cvv", "banco"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         tablaTarjetas.setModel(table);
+        System.out.println(Arrays.deepToString(tabla));
     }
 
     public static void main(String[] args) {
@@ -67,5 +74,4 @@ public class VerTarjetas extends JDialog {
         dialog.setSize(700, 500);
         dialog.setVisible(true);
     }
-
 }
