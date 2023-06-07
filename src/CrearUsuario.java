@@ -32,11 +32,28 @@ public class CrearUsuario extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
             /*Insert usuario en la DB*/
+                String name = txtname.getText();
+                String dir = txtDir.getText();
+                String tlf = txtTel.getText();
+                String mail = txtEmail.getText();
+                String edad = txtedad.getText();
+                int loca = txtNacion.getSelectedIndex();
 
-                JOptionPane.showMessageDialog(null, "Usuario Creado Correctamente", "Usuario", JOptionPane.INFORMATION_MESSAGE);
-                dispose();
-                new SeleccionUser();
-                /*TODO OPERACION DB MANAGER*/
+                if (name.equals("") || dir.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || loca == 0){
+                    JOptionPane.showMessageDialog(null, "Campo vacio detectado, rellene todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+                } else {
+                    try{
+                      UsuariosClientes usu = new UsuariosClientes(name, dir, tlf, mail,edad);
+                    } catch(IncorrectMailException exc){
+                        exc.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
+                    JOptionPane.showMessageDialog(null, "Usuario Creado Correctamente", "Creado", JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                    new SeleccionUser();
+                    /*TODO OPERACION DB MANAGER*/
+                }
             }
         });
 

@@ -1,14 +1,15 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
 
 public class Perfiles extends JDialog {
     private JPanel contentPane;
     private JButton brnEditar;
     private JButton btnCancelar;
-    private JTable table1;
     private JTextField textField1;
     private JButton btnbuscar;
     private JButton btnNuevoPerfil;
+    private JTable TablaPerfiles;
 
     public Perfiles() {
         setContentPane(contentPane);
@@ -64,6 +65,26 @@ public class Perfiles extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
+
+
+
+    /*public void crearTabla() {
+        Perfiles categoria = new Perfiles();
+        String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategorias(), 3);
+        String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        TablaPerfiles.setModel(table);
+        Utilitis.centerTable(TablaPerfiles);
+    }*/
+
+    /*public void crearTablaEsp(int codigo) {
+        DBCategorias categoria = new DBCategorias();
+        String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategoriaEsp(codigo), 3);
+        String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        tablaCat.setModel(table);
+        Utilitis.centerTable(tablaCat);
+    }*/
 
     
     public static void main(String[] args) {

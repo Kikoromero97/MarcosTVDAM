@@ -81,7 +81,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="84cad" class="javax.swing.JTable" binding="table1" default-binding="true">
+                  <component id="84cad" class="javax.swing.JTable" binding="TablaPerfiles">
                     <constraints/>
                     <properties/>
                   </component>

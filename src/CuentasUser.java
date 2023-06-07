@@ -52,8 +52,7 @@ public class CuentasUser extends JDialog {
                 dispose();
             }
         });
-        
-        // call onCancel() on ESCAPE
+
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();

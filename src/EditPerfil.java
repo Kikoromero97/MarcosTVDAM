@@ -5,7 +5,7 @@ public class EditPerfil extends JDialog {
     private JPanel contentPane;
     private JButton btnguardar;
     private JButton btnCancelar;
-    private JTextField textField1;
+    private JTextField txtPerfil;
     private JTextField textField2;
     private JTextField textField3;
     
@@ -21,11 +21,17 @@ public class EditPerfil extends JDialog {
         
         btnguardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                JOptionPane.showMessageDialog(null, "Nombre de perfil modificado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
-                new Perfiles();
 
-                /*TODO Guardar Nombre Perfil en la BBDD*/
+                String perfname = txtPerfil.getText();
+
+                if (perfname.length() < 2){
+                    JOptionPane.showMessageDialog(null, "Nombre de perfil demasiado corto", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Nombre de perfil modificado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                    new Perfiles();
+                    /*TODO Guardar Nombre Perfil en la BBDD*/
+                }
             }
         });
         

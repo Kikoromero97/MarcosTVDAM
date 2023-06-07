@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
-      <change afterPath="$PROJECT_DIR$/src/DBUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SeleccionUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SeleccionUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CuentasUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditPerfil.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditarUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Perfiles.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Perfiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Suscripciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suscripciones.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

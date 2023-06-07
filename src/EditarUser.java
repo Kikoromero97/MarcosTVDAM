@@ -25,15 +25,28 @@ public class EditarUser extends JDialog {
         
         btnguardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "usuario editado", "Success", JOptionPane.INFORMATION_MESSAGE);
-                dispose();
-                new InfoUsuario();
-                /*TODO DB Manager editar un usuario*/
+                String name = txtname.getText();
+                String dir = txtDir.getText();
+                String tlf = txtTel.getText();
+                String mail = txtEmail.getText();
+                String edad = txtedad.getText();
+                int loca = txtNacion.getSelectedIndex();
 
-                /*
-                * Si no se pudo editar
-                * JOptionPane.showMessageDialog(null, "Error al editar el usuario", "Fail", JOptionPane.ERROR_MESSAGE);
-                 * */
+                if (name.equals("") || dir.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || loca == 0){
+                    JOptionPane.showMessageDialog(null, "Campo vacio detectado, rellene todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+                } else {
+                    try{
+                        UsuariosClientes usu = new UsuariosClientes(name, dir, tlf, mail,edad);
+                    } catch(IncorrectMailException exc){
+                        exc.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Error al editar el usuario, e-mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
+                    JOptionPane.showMessageDialog(null, "Usuario Editado Correctamente", "Creado", JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                    new InfoUsuario();
+                    /*TODO OPERACION DB MANAGER*/
+                }
             }
         });
         

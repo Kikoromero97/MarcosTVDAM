@@ -5,7 +5,7 @@ public class CrearPerfUsuario extends JDialog {
     private JPanel contentPane;
     private JButton btnCrear;
     private JButton btnCancelar;
-    private JTextField textField1;
+    private JTextField txtPerfil;
     
     public CrearPerfUsuario() {
         setContentPane(contentPane);
@@ -19,10 +19,15 @@ public class CrearPerfUsuario extends JDialog {
         
         btnCrear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                JOptionPane.showMessageDialog(null, "Perfil creado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
-                new Perfiles();
+                String perfname = txtPerfil.getText();
 
+                if (perfname.length() < 2){
+                    JOptionPane.showMessageDialog(null, "Nombre de perfil demasiado corto", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Nombre de perfil modificado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                    new Perfiles();
+                }
                 /*TODO Crear Perfil en la BBDD*/
             }
         });
