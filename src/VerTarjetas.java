@@ -6,7 +6,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class VerTarjetas extends JDialog {
     private JPanel contentPane;
@@ -137,21 +136,21 @@ public class VerTarjetas extends JDialog {
     }
 
     public void crearTabla() {
-        int codigo = 1;
-        String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaEsp(codigo), 5);
-        String[] columnasVisitas = {"numero", "caducidad", "titular", "cvv", "banco"};
+        String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaEsp(4), 5);
+        String[] columnasVisitas = {"Número tarjeta", "Caducidad", "Titular", "CVV", "Banco"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         tablaTarjetas.setModel(table);
+        Utilitis.centerTable(tablaTarjetas);
     }
 
     public void crearTablaEsp(int codigo, BigInteger numero) {
         codigo = 1;
         BigInteger number = new BigInteger("4929669928335");
         String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaMuyEsp(codigo, number), 5);
-        String[] columnasVisitas = {"numero", "caducidad", "titular", "cvv", "banco"};
+        String[] columnasVisitas = {"Número tarjeta", "Caducidad", "Titular", "CVV", "Banco"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         tablaTarjetas.setModel(table);
-        System.out.println(Arrays.deepToString(tabla));
+        Utilitis.centerTable(tablaTarjetas);
     }
 
     public static void main(String[] args) {

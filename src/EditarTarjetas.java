@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.sql.Date;
 
 public class EditarTarjetas extends JDialog {
@@ -29,6 +28,8 @@ public class EditarTarjetas extends JDialog {
         getRootPane().setDefaultButton(BtnVolver);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        UIManager.put("OptionPane.yesButtonText", "Confirmar");
+        UIManager.put("OptionPane.noButtonText", "Cancelar");
 
         BtnVolver.addActionListener(new ActionListener() {
             @Override
@@ -52,33 +53,32 @@ public class EditarTarjetas extends JDialog {
             DBTarjetas tarj = new DBTarjetas();
             BigInteger numero = new BigInteger(txtFldNum.getText());
             String caducidad = txtFldCaducidad.getText();
-            SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy");
-            Calendar calendar = Calendar.getInstance();
-            calendar.set(Calendar.DAY_OF_MONTH, 1); // Establecer día en 1
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date fechaCaducidad = null;
+
             try {
-                calendar.setTime(sdf.parse(caducidad));
+                fechaCaducidad = sdf.parse(caducidad);
             } catch (ParseException e) {
                 e.printStackTrace();
-                return;
             }
-            Date fechaCaducidad = (Date) calendar.getTime();
+            java.sql.Date fechaCaducidadSql = new java.sql.Date(fechaCaducidad.getTime());
             String titular = txtFldTitular.getText();
             int cvv = Integer.parseInt(txtFldCVV.getText());
             String banco = txtFldBanco.getText();
-            Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidad, titular, cvv, banco);
+            Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidadSql, titular, cvv, banco);
             tarj.editarTarjeta(tarjetaNew, idUsuario);
             JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
             dispose();
-            JDialog dialog = new VerCategoria();
+            JDialog dialog = new VerTarjetas();
         }
     }
 
     public void llenarCampos(ArrayList<String> datos) {
         txtFldNum.setText(datos.get(0));
-        txtFldCaducidad.setEditable(false);
-        txtFldTitular.setText(datos.get(1));
-        txtFldCVV.setText(datos.get(2));
-        txtFldBanco.setText(datos.get(3));
+        txtFldCaducidad.setText(datos.get(1));
+        txtFldTitular.setText(datos.get(2));
+        txtFldCVV.setText(datos.get(3));
+        txtFldBanco.setText(datos.get(4));
     }
 
     public static void main(String[] args) {

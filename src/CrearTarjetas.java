@@ -16,7 +16,6 @@ public class CrearTarjetas extends JDialog {
     private JTextField txtFldCVV;
     private JTextField txtFldTitular;
     private JTextField txtFldBanco;
-
     private static int idUsuario;
 
     public CrearTarjetas(int idUsuario) {
@@ -73,7 +72,7 @@ public class CrearTarjetas extends JDialog {
                 Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidad, titular, cvv, banco);
                 tarj.crearTarjeta(tarjetaNew, idUsuario);
                 dispose();
-                JDialog dialog = new VerCategoria();
+                JDialog dialog = new VerTarjetas();
             }
         }
     }
