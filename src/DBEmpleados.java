@@ -11,8 +11,8 @@ public class DBEmpleados extends DBManager{
     /**
      * Constructor que implementa DBManager.
      */
-    public DBEmpleados() {
-        super(UserManager.user.getUser_name(), UserManager.user.getPass());
+    public DBEmpleados(){
+        super();
     }
 
     /**
