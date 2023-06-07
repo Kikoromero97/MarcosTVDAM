@@ -1,0 +1,143 @@
+Index: src/ListarEmpleados.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\n\r\npublic class ListarEmpleados {\r\n    private JPanel panelBusqueda;\r\n    private JTextField txtFldNif;\r\n    private JTextField txtFldNombre;\r\n    private JTextField txtFldEmail;\r\n    private JTextField txtFldDepartamento;\r\n    private JTextField txtFldTelefono;\r\n    private JLabel logoMARCOSTV;\r\n    private JButton confirmarButton;\r\n    private JButton cancelarButton;\r\n    private JTextField txtFldCodigo;\r\n    private JTable tableEmpleados;\r\n    private JPanel panelPrincipal;\r\n    private JScrollPane scrollPanel;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ListarEmpleados.java b/src/ListarEmpleados.java
+--- a/src/ListarEmpleados.java	(revision 54939cb14a3ccb1a1dc938355f7c59a2d2e999f3)
++++ b/src/ListarEmpleados.java	(date 1685692934230)
+@@ -1,6 +1,7 @@
+ import javax.swing.*;
++import javax.swing.table.DefaultTableModel;
+ 
+-public class ListarEmpleados {
++public class ListarEmpleados extends JFrame{
+     private JPanel panelBusqueda;
+     private JTextField txtFldNif;
+     private JTextField txtFldNombre;
+@@ -14,4 +15,22 @@
+     private JTable tableEmpleados;
+     private JPanel panelPrincipal;
+     private JScrollPane scrollPanel;
++
++    private final String[] COLUMNAS = {"codigo", "NIF", "Nombre Completo"};
++
++    public ListarEmpleados(){
++        super("Empleados");
++        setSize(700, 500);
++        setContentPane(panelPrincipal);
++        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
++        setVisible(true);
++        setLocationRelativeTo(null);
++    }
++
++    private void loadTabla(String[][] data){
++        DefaultTableModel table = new DefaultTableModel(data, COLUMNAS);
++        tableEmpleados.setModel(table);
++        Utilitis. (tableEmpleados);
++        tableEmpleados.setVisible(true);
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9e01a84d-9f13-4afb-a118-0660f614f771\" name=\"Changes\" comment=\"PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/DBEmpleados.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/DBManager.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/DBManager.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"develop\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"5beebe44-43d8-4a8a-9e5f-ece31605591c\" />\r\n        <option name=\"url\" value=\"https://github.com/Kikoromero97/MarcosTVDAM.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2QSKOa6St9dRyNvY2AMsTDw7C0W\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/dam_bt/Downloads/Ejemplo Programa Gestión Clientes\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\troy_\\Documents\\MarcosTV\\src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9e01a84d-9f13-4afb-a118-0660f614f771\" name=\"Changes\" comment=\"\" />\r\n      <created>1685341512459</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1685341512459</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Pantalla inicio de sesion\">\r\n      <created>1685352671244</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685352671244</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Pantalla crear pelicula\">\r\n      <created>1685444628173</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685444628173</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Pantalla crear serie\">\r\n      <created>1685445918435</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685445918435</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL\">\r\n      <created>1685446749519</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685446749519</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"empleado\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Pantalla inicio de sesion\" />\r\n    <MESSAGE value=\"Pantalla crear pelicula\" />\r\n    <MESSAGE value=\"Pantalla crear serie\" />\r\n    <MESSAGE value=\"PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 54939cb14a3ccb1a1dc938355f7c59a2d2e999f3)
++++ b/.idea/workspace.xml	(date 1685701759366)
+@@ -4,11 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
+-      <change afterPath="$PROJECT_DIR$/src/DBEmpleados.java" afterDir="false" />
++    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Utilitis creado y documentado">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.form" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -52,14 +51,14 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "last_opened_file_path": "C:/Users/dam_bt/Downloads/Ejemplo Programa Gestión Clientes"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;E:/DAM/1º DAM/Programación/UD13-Acesso a la bd/Practica1&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
+@@ -102,7 +101,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1685446749519</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Utilitis creado y documentado">
++      <created>1685701649344</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1685701649344</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -116,7 +122,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="empleado" />
++                        <option value="utillitis" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -133,6 +139,7 @@
+     <MESSAGE value="Pantalla crear pelicula" />
+     <MESSAGE value="Pantalla crear serie" />
+     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
+-    <option name="LAST_COMMIT_MESSAGE" value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
++    <MESSAGE value="Utilitis creado y documentado" />
++    <option name="LAST_COMMIT_MESSAGE" value="Utilitis creado y documentado" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/ListarEmpleados.form
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<form xmlns=\"http://www.intellij.com/uidesigner/form/\" version=\"1\" bind-to-class=\"ListarEmpleados\">\r\n  <grid id=\"27dc6\" binding=\"panelPrincipal\" layout-manager=\"GridLayoutManager\" row-count=\"2\" column-count=\"3\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n    <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n    <constraints>\r\n      <xy x=\"20\" y=\"20\" width=\"631\" height=\"439\"/>\r\n    </constraints>\r\n    <properties>\r\n      <background color=\"-2960686\"/>\r\n    </properties>\r\n    <border type=\"none\"/>\r\n    <children>\r\n      <grid id=\"bbde4\" binding=\"panelBusqueda\" layout-manager=\"GridLayoutManager\" row-count=\"5\" column-count=\"7\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n        <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n        <constraints>\r\n          <grid row=\"0\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"3\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <background color=\"-2960686\"/>\r\n        </properties>\r\n        <border type=\"none\"/>\r\n        <children>\r\n          <vspacer id=\"240a5\">\r\n            <constraints>\r\n              <grid row=\"1\" column=\"0\" row-span=\"4\" col-span=\"1\" vsize-policy=\"6\" hsize-policy=\"1\" anchor=\"0\" fill=\"2\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n          </vspacer>\r\n          <vspacer id=\"a3359\">\r\n            <constraints>\r\n              <grid row=\"1\" column=\"6\" row-span=\"4\" col-span=\"1\" vsize-policy=\"6\" hsize-policy=\"1\" anchor=\"0\" fill=\"2\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n          </vspacer>\r\n          <component id=\"b19de\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"0\" column=\"2\" row-span=\"1\" col-span=\"4\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"MIEMBRO DE MARCOS TV:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"e90c4\" class=\"javax.swing.JTextField\" binding=\"txtFldEmail\">\r\n            <constraints>\r\n              <grid row=\"3\" column=\"4\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\r\n                <preferred-size width=\"150\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <editable value=\"true\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"a6bee\" class=\"javax.swing.JLabel\" binding=\"logoMARCOSTV\">\r\n            <constraints>\r\n              <grid row=\"0\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <icon value=\"imagen/iconoMarcos.png\"/>\r\n              <text value=\"\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"c6507\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"2\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"4\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"NOMBRE:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"606c5\" class=\"javax.swing.JTextField\" binding=\"txtFldNombre\">\r\n            <constraints>\r\n              <grid row=\"2\" column=\"2\" row-span=\"1\" col-span=\"4\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\r\n                <preferred-size width=\"150\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <editable value=\"true\"/>\r\n              <text value=\"\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"d8819\" class=\"javax.swing.JTextField\" binding=\"txtFldNif\">\r\n            <constraints>\r\n              <grid row=\"1\" column=\"4\" row-span=\"1\" col-span=\"2\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\r\n                <preferred-size width=\"150\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <editable value=\"true\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"5bf59\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"1\" column=\"3\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"4\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"NIF:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"55c57\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"3\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"5\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"TELÉFONO:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"c257f\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"3\" column=\"3\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"4\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"EMAIL:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"9f290\" class=\"javax.swing.JTextField\" binding=\"txtFldTelefono\">\r\n            <constraints>\r\n              <grid row=\"3\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"9\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\r\n                <preferred-size width=\"150\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <editable value=\"true\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"7ae3c\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"4\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"4\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"DEPARTAMENTO:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"71b9d\" class=\"javax.swing.JTextField\" binding=\"txtFldDepartamento\">\r\n            <constraints>\r\n              <grid row=\"4\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\r\n                <preferred-size width=\"150\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <editable value=\"true\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"67e99\" class=\"javax.swing.JButton\" binding=\"confirmarButton\" default-binding=\"true\">\r\n            <constraints>\r\n              <grid row=\"4\" column=\"5\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <text value=\"Confirmar\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"8b259\" class=\"javax.swing.JTextField\" binding=\"txtFldCodigo\">\r\n            <constraints>\r\n              <grid row=\"1\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"8\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\">\r\n                <preferred-size width=\"150\" height=\"-1\"/>\r\n              </grid>\r\n            </constraints>\r\n            <properties>\r\n              <editable value=\"true\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"a19d8\" class=\"javax.swing.JLabel\">\r\n            <constraints>\r\n              <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"4\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <foreground color=\"-16777216\"/>\r\n              <text value=\"Código:\"/>\r\n            </properties>\r\n          </component>\r\n          <component id=\"cb963\" class=\"javax.swing.JButton\" binding=\"cancelarButton\" default-binding=\"true\">\r\n            <constraints>\r\n              <grid row=\"4\" column=\"4\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n            </constraints>\r\n            <properties>\r\n              <text value=\"Cancelar\"/>\r\n            </properties>\r\n          </component>\r\n        </children>\r\n      </grid>\r\n      <scrollpane id=\"5e12d\" binding=\"scrollPanel\">\r\n        <constraints>\r\n          <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"7\" hsize-policy=\"7\" anchor=\"0\" fill=\"3\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <background color=\"-2960686\"/>\r\n        </properties>\r\n        <border type=\"none\"/>\r\n        <children>\r\n          <component id=\"28723\" class=\"javax.swing.JTable\" binding=\"tableEmpleados\">\r\n            <constraints/>\r\n            <properties>\r\n              <background color=\"-2960686\"/>\r\n              <foreground color=\"-16777216\"/>\r\n              <gridColor color=\"-16777216\"/>\r\n            </properties>\r\n            <clientProperties>\r\n              <Table.isFileList class=\"java.lang.Boolean\" value=\"false\"/>\r\n            </clientProperties>\r\n          </component>\r\n        </children>\r\n      </scrollpane>\r\n      <hspacer id=\"b855b\">\r\n        <constraints>\r\n          <grid row=\"0\" column=\"2\" row-span=\"1\" col-span=\"1\" vsize-policy=\"1\" hsize-policy=\"6\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n      </hspacer>\r\n      <hspacer id=\"fff08\">\r\n        <constraints>\r\n          <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"1\" hsize-policy=\"6\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n      </hspacer>\r\n    </children>\r\n  </grid>\r\n</form>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ListarEmpleados.form b/src/ListarEmpleados.form
+--- a/src/ListarEmpleados.form	(revision 54939cb14a3ccb1a1dc938355f7c59a2d2e999f3)
++++ b/src/ListarEmpleados.form	(date 1685691849863)
+@@ -3,7 +3,7 @@
+   <grid id="27dc6" binding="panelPrincipal" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+     <margin top="0" left="0" bottom="0" right="0"/>
+     <constraints>
+-      <xy x="20" y="20" width="631" height="439"/>
++      <xy x="20" y="20" width="643" height="439"/>
+     </constraints>
+     <properties>
+       <background color="-2960686"/>
