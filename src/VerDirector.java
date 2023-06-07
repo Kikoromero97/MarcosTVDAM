@@ -14,6 +14,7 @@ public class VerDirector extends JDialog {
     private JTextField txtFldCodigo;
     private JButton BtnBuscar;
     private JTable TablaDirectores;
+    private static final DBDirector director = new DBDirector();
 
     public VerDirector() {
         setContentPane(contentPane);
@@ -67,7 +68,6 @@ public class VerDirector extends JDialog {
     }
 
     public void buscarCampo() {
-        DBDirector director = new DBDirector();
         String codSinParsear = txtFldCodigo.getText();
         if (codSinParsear.isEmpty()) {
             crearTabla();
@@ -88,7 +88,6 @@ public class VerDirector extends JDialog {
     }
 
     public void eliminarCampo() {
-        DBDirector director = new DBDirector();
         String codSinParsear = txtFldCodigo.getText();
         int codigo;
         try {
@@ -119,7 +118,6 @@ public class VerDirector extends JDialog {
     }
 
     public void crearTabla() {
-        DBDirector director = new DBDirector();
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirector(), 9);
         String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
@@ -128,7 +126,6 @@ public class VerDirector extends JDialog {
     }
 
     public void crearTablaEsp(int codigo) {
-        DBDirector director = new DBDirector();
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirectorEsp(codigo), 9);
         String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);

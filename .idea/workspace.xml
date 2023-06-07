@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Subida">
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache/usr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cache/usr.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDirector.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBCategorias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBCategorias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBTarjetas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Director.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarDirector.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditarTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerIdiomas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerIdiomas.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerIdiomas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerIdiomas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerPaises.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerPaises.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerPaises.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerPaises.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerTarjetas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerTarjetas.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VerTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
     </list>
@@ -88,6 +77,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.VerTarjetas">
+    <configuration name="EditarTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VerDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="VerDirector" />
       <module name="MarcosTVProgramacion" />
@@ -97,13 +93,6 @@
     </configuration>
     <configuration name="VerIdiomas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="VerIdiomas" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VerPaises (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerPaises" />
       <module name="MarcosTVProgramacion" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,10 +115,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.VerTarjetas" />
+        <item itemvalue="Application.EditarTarjetas" />
         <item itemvalue="Application.VerDirector" />
         <item itemvalue="Application.VerIdiomas" />
         <item itemvalue="Application.VerPaises" />
-        <item itemvalue="Application.VerPaises (5)" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686130787534</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas.">
+      <created>1686162410592</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686162410592</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,7 +225,8 @@
     <MESSAGE value="Centrada la tabla de VerCategoria." />
     <MESSAGE value="Verificacion de solo int en el TextField &quot;codigo&quot; al pulsar el boton Buscar." />
     <MESSAGE value="Funciones Director." />
-    <option name="LAST_COMMIT_MESSAGE" value="Funciones Director." />
+    <MESSAGE value="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
