@@ -46,7 +46,7 @@ public class menuPrincipal extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 UserManager.exitSession();
-                inicioSesion.mostrarInicioSession();
+                InicioSesion.mostrarInicioSession();
                 dispose();
             }
         });
