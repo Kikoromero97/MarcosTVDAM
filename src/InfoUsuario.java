@@ -13,6 +13,7 @@ public class InfoUsuario extends JDialog {
     private JTextField txtedad;
     private JComboBox txtNacion;
     private JButton btnTarjeta;
+    public static int num = 5;
     
     public InfoUsuario() {
         setContentPane(contentPane);
@@ -41,8 +42,9 @@ public class InfoUsuario extends JDialog {
         btnTarjeta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                num = Integer.parseInt(idUsuario.getText());
                 dispose();
-                new VerTarjetas();
+                /*new VerTarjetas();*/
             }
         });
 
@@ -61,6 +63,10 @@ public class InfoUsuario extends JDialog {
                 dispose();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+    public static int NumeroaPasar(){
+        return InfoUsuario.num;
     }
     public static void main(String[] args) {
         InfoUsuario dialog = new InfoUsuario();

@@ -90,4 +90,7 @@ public class SeleccionUser extends JDialog {
         dialog.setVisible(true);
 
     }
+    public static void mostrarUsuarios(){
+        new SeleccionUser();
+    }
 }
