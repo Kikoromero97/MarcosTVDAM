@@ -1,0 +1,45 @@
+Index: src/ListarEmpleados.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\n\r\npublic class ListarEmpleados {\r\n    private JPanel panelBusqueda;\r\n    private JTextField txtFldNif;\r\n    private JTextField txtFldNombre;\r\n    private JTextField txtFldEmail;\r\n    private JTextField txtFldDepartamento;\r\n    private JTextField txtFldTelefono;\r\n    private JLabel logoMARCOSTV;\r\n    private JButton confirmarButton;\r\n    private JButton cancelarButton;\r\n    private JTextField txtFldCodigo;\r\n    private JTable tableEmpleados;\r\n    private JPanel panelPrincipal;\r\n    private JScrollPane scrollPanel;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ListarEmpleados.java b/src/ListarEmpleados.java
+--- a/src/ListarEmpleados.java	
++++ b/src/ListarEmpleados.java	
+@@ -1,6 +1,7 @@
+ import javax.swing.*;
++import javax.swing.table.DefaultTableModel;
+ 
+-public class ListarEmpleados {
++public class ListarEmpleados extends JFrame{
+     private JPanel panelBusqueda;
+     private JTextField txtFldNif;
+     private JTextField txtFldNombre;
+@@ -14,4 +15,25 @@
+     private JTable tableEmpleados;
+     private JPanel panelPrincipal;
+     private JScrollPane scrollPanel;
++
++    private static final String[] COLUMNAS = {"codigo", "nif", "Nombre Completo"};
++    private static final DBEmpleados db = new DBEmpleados();
++
++    public ListarEmpleados(){
++        super("Empleados");
++        setSize(700, 500);
++        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
++        setLocationRelativeTo(null);
++        setVisible(true);
++        setContentPane(panelPrincipal);
++        loadEmpleados();
++        UserManager.user.getRol();
++    }
++    public void loadEmpleados(){
++        String[][] datos = Utilitis.getDataFromResultSet(db.listarEmpleadosLimitado(), COLUMNAS);
++        DefaultTableModel table = new DefaultTableModel(datos, COLUMNAS);
++        tableEmpleados.setModel(table);
++        Utilitis.centerTable(tableEmpleados);
++        tableEmpleados.setVisible(true);
++    }
+ }

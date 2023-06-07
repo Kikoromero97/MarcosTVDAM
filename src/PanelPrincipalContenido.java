@@ -55,6 +55,5 @@ public class PanelPrincipalContenido {
            // VerCategoria.mostarPanelVerCategoria();
         }
     });
-
     }
 }
