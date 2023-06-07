@@ -31,6 +31,8 @@ public class VerTarjetas extends JDialog {
         getRootPane().setDefaultButton(btnVolver);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        UIManager.put("OptionPane.yesButtonText", "Confirmar");
+        UIManager.put("OptionPane.noButtonText", "Cancelar");
         crearTabla();
 
         btnVolver.addActionListener(new ActionListener() {
@@ -81,12 +83,12 @@ public class VerTarjetas extends JDialog {
         if (codSinParsear.equals("")) {
             JOptionPane.showMessageDialog(null, "¡El campo \"Nº Tarjeta\" no puede estar vacío!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
         } else {
-            if (!tarjeta.existsTarjeta(idUsuario, codigo)) {
+            if (!tarjeta.existsTarjeta(4, codigo)) {
                 JOptionPane.showMessageDialog(null, "¡Este número no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
             } else {
                 int opcion = JOptionPane.showConfirmDialog(null, "¿Estás seguro de querer eliminar esta tarjeta?", "Confirmación de borrado", JOptionPane.YES_NO_OPTION);
                 if (opcion == 0) {
-                    tarjeta.deleteTarjeta(idUsuario, codigo);
+                    tarjeta.deleteTarjeta(4, codigo);
                     JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
                     txtFldNumero.setText("");
                     crearTabla();
@@ -107,10 +109,10 @@ public class VerTarjetas extends JDialog {
             JOptionPane.showMessageDialog(null, "¡El campo \"Nº Tarjeta\" debe ser un número!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (!tarjeta.existsTarjeta(idUsuario, codigo)) {
+        if (!tarjeta.existsTarjeta(4, codigo)) {
             JOptionPane.showMessageDialog(null, "¡Este número no existe!", "Error de búsqueda", JOptionPane.ERROR_MESSAGE);
         } else {
-            crearTablaEsp(idUsuario, codigo);
+            crearTablaEsp(4, codigo);
         }
     }
 
@@ -129,7 +131,7 @@ public class VerTarjetas extends JDialog {
             datos.add(titular);
             datos.add(CVV);
             datos.add(banco);
-            EditarTarjetas tarjeta = new EditarTarjetas(idUsuario);
+            EditarTarjetas tarjeta = new EditarTarjetas(4);
             tarjeta.llenarCampos(datos);
             dispose();
         }
@@ -144,9 +146,8 @@ public class VerTarjetas extends JDialog {
     }
 
     public void crearTablaEsp(int codigo, BigInteger numero) {
-        codigo = 1;
         BigInteger number = new BigInteger("4929669928335");
-        String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaMuyEsp(codigo, number), 5);
+        String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaMuyEsp(codigo, numero), 5);
         String[] columnasVisitas = {"Número tarjeta", "Caducidad", "Titular", "CVV", "Banco"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         tablaTarjetas.setModel(table);

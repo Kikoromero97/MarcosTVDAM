@@ -55,7 +55,6 @@ public class EditarTarjetas extends JDialog {
             String caducidad = txtFldCaducidad.getText();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             java.util.Date fechaCaducidad = null;
-
             try {
                 fechaCaducidad = sdf.parse(caducidad);
             } catch (ParseException e) {
@@ -66,7 +65,7 @@ public class EditarTarjetas extends JDialog {
             int cvv = Integer.parseInt(txtFldCVV.getText());
             String banco = txtFldBanco.getText();
             Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidadSql, titular, cvv, banco);
-            tarj.editarTarjeta(tarjetaNew, idUsuario);
+            tarj.editarTarjeta(tarjetaNew, 4);
             JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
             dispose();
             JDialog dialog = new VerTarjetas();

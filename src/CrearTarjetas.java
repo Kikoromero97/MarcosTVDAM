@@ -56,21 +56,19 @@ public class CrearTarjetas extends JDialog {
                 JOptionPane.showMessageDialog(null, "Se ha creado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
                 BigInteger numero = new BigInteger(txtFldNum.getText());
                 String caducidad = txtFldCaducidad.getText();
-                SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy");
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(Calendar.DAY_OF_MONTH, 1);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                java.util.Date fechaCaducidad = null;
                 try {
-                    calendar.setTime(sdf.parse(caducidad));
+                    fechaCaducidad = sdf.parse(caducidad);
                 } catch (ParseException e) {
                     e.printStackTrace();
-                    return;
                 }
-                Date fechaCaducidad = (Date) calendar.getTime();
+                java.sql.Date fechaCaducidadSql = new java.sql.Date(fechaCaducidad.getTime());
                 String titular = txtFldTitular.getText();
                 int cvv = Integer.parseInt(txtFldCVV.getText());
                 String banco = txtFldBanco.getText();
-                Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidad, titular, cvv, banco);
-                tarj.crearTarjeta(tarjetaNew, idUsuario);
+                Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidadSql, titular, cvv, banco);
+                tarj.crearTarjeta(tarjetaNew, 4);
                 dispose();
                 JDialog dialog = new VerTarjetas();
             }

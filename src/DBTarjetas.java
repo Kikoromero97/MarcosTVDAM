@@ -4,11 +4,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBTarjetas extends DBManager{
-    private static final String SELECT_TARJETA = "SELECT t.* FROM tarjetaUsuario INNER JOIN tarjeta t ON tarjetaUsuario.NumTarjeta = t.numero " +
+    private static final String SELECT_TARJETA = "SELECT t.numero, t.caducidad, t.titular, t.cvv, t.banco FROM tarjetaUsuario INNER JOIN tarjeta t ON tarjetaUsuario.NumTarjeta = t.numero " +
             "INNER JOIN usuario u ON tarjetaUsuario.idUsuario = u.codigo";
     private static final String SELECT_TARJETAS_USUARIO = SELECT_TARJETA + " WHERE tarjetaUsuario.idUsuario = ";
     private static final String SELECT_TARJ_ESP = SELECT_TARJETA + " WHERE u.codigo = ";
     private static final String SELECT_TARJ_ESP_CONT = " AND t.numero = ";
+
+    private static final String SELECT_ANYADIR_TARJ = "SELECT * FROM tarjetaUsuario";
+
 
     private static final String SELECT_CADUCADAS =  "dbo.TarjetasCaducadas";
     public DBTarjetas() {
@@ -20,6 +23,10 @@ public class DBTarjetas extends DBManager{
     }
     public ResultSet edityCrearTarjeta(int codigo) {
         return getSelect(SELECT_TARJETAS_USUARIO + codigo);
+    }
+
+    public ResultSet anyadirTarjetaConUsuario() {
+        return getSelect(SELECT_ANYADIR_TARJ);
     }
 
     public ResultSet verTarjetaMuyEsp(int codigo, BigInteger numero){
@@ -49,6 +56,14 @@ public class DBTarjetas extends DBManager{
             rs.updateInt("cvv", tarj.getCvv());
             rs.updateString("banco", tarj.getBanco());
             rs.insertRow();
+
+            ResultSet rs_tarjUser = anyadirTarjetaConUsuario();
+            BigInteger numeroTarjeta = tarj.getNumTarjeta();
+
+            rs_tarjUser.moveToInsertRow();
+            rs_tarjUser.updateInt("idUsuario", codigo);
+            rs_tarjUser.updateObject("NumTarjeta", numeroTarjeta);
+            rs_tarjUser.insertRow();
         } catch (SQLException e) {
             e.printStackTrace();
         }
