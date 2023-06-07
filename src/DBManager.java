@@ -14,8 +14,8 @@ public abstract class DBManager {
 
     // Configuración del usuario de la base de datos
 
-    private static String user;
-    private static String pass;
+    private static String user = "programa";
+    private static String pass = "1234";
 
     // Configuración de mensajes de respuesta
     private static final String DB_MSQ_CONN_OK = "CONEXIÓN CORRECTA";
@@ -57,15 +57,9 @@ public abstract class DBManager {
     }
 
     /**
-     * Constructor para implementar en las class que lo extienden.
-     *
-     * @param user Se pasa el nombre del usuario con el que se conecta a la base de datos.
-     * @param pass Se pasa la contraseña del usuario con el que se conecta a la base de datos.
+     * Constructor que realiza la carga del driver y la conexión con la base de datos.
      */
-
-    public DBManager(String user, String pass){
-        DBManager.user = user;
-        DBManager.pass = pass;
+    public DBManager(){
         loadDriver();
         connect();
     }
