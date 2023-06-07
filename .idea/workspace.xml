@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SeleccionUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SeleccionUser.java" afterDir="false" />
-    </list>
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Menu principal Listro para revisiones" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,13 +14,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="BotonesUsuariosSubs" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,9 +31,6 @@
     &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
-  <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="5" />
-  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -60,8 +53,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/troy_/Documents/MarcosTV/src&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dam_bt/IdeaProjects/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -106,21 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685446749519</updated>
     </task>
-    <task id="LOCAL-00005" summary="Vinculación de botones de mi programa. Sin finalizar.">
-      <created>1685650468616</created>
+    <task id="LOCAL-00005" summary="Menu principal Listro para revisiones">
+      <created>1686134491407</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1685650468616</updated>
+      <updated>1686134491407</updated>
     </task>
-    <task id="LOCAL-00006" summary="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.">
-      <created>1685812380867</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1685812380867</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,7 +116,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="empleado" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -139,8 +139,7 @@
     <MESSAGE value="Pantalla crear pelicula" />
     <MESSAGE value="Pantalla crear serie" />
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
-    <MESSAGE value="Vinculación de botones de mi programa. Sin finalizar." />
-    <MESSAGE value="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar." />
+    <MESSAGE value="Menu principal Listro para revisiones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu principal Listro para revisiones" />
   </component>
 </project>
