@@ -44,6 +44,7 @@ public class VerEpisodio {
         frame.pack();
         frame.setVisible(true);
         panelVerEpisodio = this;
+        frame.setLocationRelativeTo(null);
     }
 
     public static void setIdSerieYTemporada(int idSerie, int idTemporada)

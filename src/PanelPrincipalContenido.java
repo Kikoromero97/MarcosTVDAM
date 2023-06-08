@@ -22,14 +22,16 @@ public class PanelPrincipalContenido {
     private static verDocumental panelVerDocumental = new verDocumental();
     private static verSeries panelVerSeries  = new verSeries();
 
+    private static JFrame frame = new JFrame("PanelPrincipalContenido");
+
 
 
     public static void mostrarpanelPrincipalContenido(){
-        JFrame frame = new JFrame("PanelPrincipalContenido");
         frame.setContentPane(new PanelPrincipalContenido().JPanelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700,500);
         frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
 
     }
 
@@ -73,6 +75,13 @@ public class PanelPrincipalContenido {
            // VerCategoria.mostarPanelVerCategoria();
         }
     });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new menuPrincipal();
+                frame.dispose();
+            }
+        });
     }
 
 
