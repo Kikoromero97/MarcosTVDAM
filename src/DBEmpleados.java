@@ -132,4 +132,27 @@ public class DBEmpleados extends DBManager{
     public ResultSet verEmpleadosCustom(String whereParameters){
         return verSelect(SELECT_EMPLEADO_CUSTOM_WHERE + whereParameters);
     }
+
+    public boolean modify(int codigo, String nif, String nombre, String primer_apellido, String segundo_apellido, String direccion, String email, int departamento, int telefono) {
+        try{
+            ResultSet rs = getSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
+
+            rs.last();
+            rs.updateString("nif", nif);
+            rs.updateString("nombre", nombre);
+            rs.updateString("primer_apellido", primer_apellido);
+            rs.updateString("segundo_apellido", segundo_apellido);
+            rs.updateString("direccion", direccion);
+            rs.updateString("email", email);
+            rs.updateInt("codigo_departamento", departamento);
+            rs.updateInt("telefono", telefono);
+
+            rs.updateRow();
+            rs.close();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
