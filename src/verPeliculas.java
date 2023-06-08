@@ -68,7 +68,7 @@ public class verPeliculas {
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Debes seleccionar la película que quieras borrar.");
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar la película que quieras borrar.","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -102,11 +102,11 @@ public class verPeliculas {
                 {
                     if (introPelicula.getText().equals(""))
                     {
-                        JOptionPane.showMessageDialog(null, "Debes escribir el nombre de la película para poder encontrarla.");
+                        JOptionPane.showMessageDialog(null, "Debes escribir el nombre de la película para poder encontrarla.","Error",JOptionPane.ERROR_MESSAGE);
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha encontrado ninguna película con el nombre: " + introPelicula.getText());
+                        JOptionPane.showMessageDialog(null, "No se ha encontrado ninguna película con el nombre: " + introPelicula.getText(),"Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }

@@ -81,17 +81,17 @@ public class crearPelicula {
                     if(creado == true)
                     {
                         panelVerPeliculas.pintarPeliculasTabla();
-                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película "+titulo);
+                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película "+titulo ,"Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha podido crear la nueva  película ");
+                        JOptionPane.showMessageDialog(null, "No se ha podido crear la nueva  película ","Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
+                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

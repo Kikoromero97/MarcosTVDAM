@@ -88,7 +88,7 @@ public class verTemporada {
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Debes seleccionar la temporada que quieras borrar.");
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar la temporada que quieras borrar.","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -97,7 +97,7 @@ public class verTemporada {
             public void actionPerformed(ActionEvent e) {
                 if (introTemporada.getText().equals(""))
                 {
-                    JOptionPane.showMessageDialog(null, "Debes escribir el número de la temporada para poder encontrarla.");
+                    JOptionPane.showMessageDialog(null, "Debes escribir el número de la temporada para poder encontrarla.","Error",JOptionPane.ERROR_MESSAGE);
                 }
                 else {
                     Temporada temporada = contenido_db.buscarTemporada(introTemporada.getText());
@@ -113,7 +113,7 @@ public class verTemporada {
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No existe la temporada " + introTemporada.getText());
+                        JOptionPane.showMessageDialog(null, "No existe la temporada " + introTemporada.getText(),"Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
@@ -139,7 +139,7 @@ public class verTemporada {
                     panelverEpisodio.pintarEpisodioTabla();
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "Debes seleccionar una temporada de la que ver los capítulos");
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar una temporada de la que ver los capítulos","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

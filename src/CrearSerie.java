@@ -84,17 +84,17 @@ public class CrearSerie {
                     {
                         panelVerSeries.pintarSeriesTabla();
 
-                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película " + titulo);
+                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película " + titulo,"Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha podido crear la nueva  serie ");
+                        JOptionPane.showMessageDialog(null, "No se ha podido crear la nueva  serie ","Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
+                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

@@ -74,7 +74,7 @@ public class verSeries {
                     }
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "Debes seleccionar la serie que quieras borrar.");
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar la serie que quieras borrar.","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -106,11 +106,11 @@ public class verSeries {
                 {
                     if (introSerie.getText().equals(""))
                     {
-                        JOptionPane.showMessageDialog(null, "Debes escribir el nombre de la película para poder encontrarla.");
+                        JOptionPane.showMessageDialog(null, "Debes escribir el nombre de la película para poder encontrarla.","Error",JOptionPane.ERROR_MESSAGE);
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha encontrado ninguna película con el nombre: " + introSerie.getText());
+                        JOptionPane.showMessageDialog(null, "No se ha encontrado ninguna película con el nombre: " + introSerie.getText(),"Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
@@ -130,7 +130,7 @@ public class verSeries {
 
                 if (selectedRow == -1) //GetSelectedRow Devuelve -1 si no hay nada seleccionado
                 {
-                    JOptionPane.showMessageDialog(null, "Para ver las temporadas primero debes seleccionar la serie.");
+                    JOptionPane.showMessageDialog(null, "Para ver las temporadas primero debes seleccionar la serie.","Error",JOptionPane.ERROR_MESSAGE);
                 }
                 else
                 {

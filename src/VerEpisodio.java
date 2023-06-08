@@ -95,7 +95,7 @@ public class VerEpisodio {
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Debes seleccionar el episodio que quieras borrar.");
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar el episodio que quieras borrar.","Error",JOptionPane.ERROR_MESSAGE);
                 }
 
 
@@ -108,7 +108,7 @@ public class VerEpisodio {
 
                 if (introEpisodio.getText().equals(""))
                 {
-                    JOptionPane.showMessageDialog(null, "Debes escribir el número del episodio para poder encontrarlo.");
+                    JOptionPane.showMessageDialog(null, "Debes escribir el número del episodio para poder encontrarlo.","Error",JOptionPane.ERROR_MESSAGE);
                 }
                 else {
                     List<Episodio> episodio = contenido_db.buscarEpisodio(introEpisodio.getText());
@@ -131,7 +131,7 @@ public class VerEpisodio {
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No existe la episodio " + introEpisodio.getText());
+                        JOptionPane.showMessageDialog(null, "No existe la episodio " + introEpisodio.getText(),"Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
 

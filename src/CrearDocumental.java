@@ -81,17 +81,17 @@ public class CrearDocumental {
                     if (creado == true)
                     {
                         panelVerDocumental.pintarDocumentalTabla();
-                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el documental " + titulo);
+                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el documental " + titulo,"Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha podido crear el nuevo documental");
+                        JOptionPane.showMessageDialog(null, "No se ha podido crear el nuevo documental","Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
+                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

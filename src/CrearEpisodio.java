@@ -73,17 +73,17 @@ public class CrearEpisodio {
                     if (creado == true)
                     {
                         panelVerEpisodio.pintarEpisodioTabla();
-                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el nuevo  episodio ");
+                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el nuevo  episodio ","Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha podido crear el nuevo  episodio ");
+                        JOptionPane.showMessageDialog(null, "No se ha podido crear el nuevo  episodio ","Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios");
+                    JOptionPane.showMessageDialog(null, "No puede haber campos vacios","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

@@ -3,6 +3,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Properties;
 
 public class verDocumental {
     final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO" , "DIRECTOR" , "TIPO CONTENIDO"};
@@ -71,7 +72,7 @@ public class verDocumental {
                     }
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "Debes seleccionar el documental que quieras borrar.");
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar el documental que quieras borrar.","Error",JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -103,11 +104,11 @@ public class verDocumental {
                 {
                     if (introDocumental.getText().equals(""))
                     {
-                        JOptionPane.showMessageDialog(null, "Debes escribir el nombre del documental para poder encontrarlo.");
+                        JOptionPane.showMessageDialog(null, "Debes escribir el nombre del documental para poder encontrarlo.","Error",JOptionPane.ERROR_MESSAGE);
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(null, "No se ha encontrado ningún documental con el nombre: " + introDocumental.getText());
+                        JOptionPane.showMessageDialog(null, "No se ha encontrado ningún documental con el nombre: " + introDocumental.getText(),"Error",JOptionPane.ERROR_MESSAGE);
                     }
                 }
             }
