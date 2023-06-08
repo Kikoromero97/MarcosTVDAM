@@ -156,7 +156,7 @@ public class ListarEmpleados extends JFrame{
         if (e.getClickCount() == 1){
             JTable table = (JTable) e.getSource();
             int row = table.getSelectedRow();
-            int codigo = (Integer) table.getValueAt(row, 0);
+            int codigo = Integer.parseInt((String) table.getValueAt(row, 0));
             VerEmpleado.mostrarVerEmpleado(codigo);
             dispose();
         }
