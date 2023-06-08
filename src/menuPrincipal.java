@@ -53,7 +53,7 @@ public class menuPrincipal extends JFrame{
         areaUsuarioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // SeleccionUser.mostrarUsuarios();
+                SeleccionUser.mostrarUsuarios();
                 dispose();
             }
         });

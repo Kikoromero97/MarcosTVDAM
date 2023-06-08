@@ -60,6 +60,7 @@ public class SeleccionUser extends JDialog {
 
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                new menuPrincipal();
                 dispose();
             }
         });
