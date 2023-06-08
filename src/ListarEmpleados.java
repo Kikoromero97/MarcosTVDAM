@@ -56,7 +56,7 @@ public class ListarEmpleados extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 clearTxtFlds();
-                //VerDepartamento.mostrarDepartamento();
+                VerDepartamento.mostrarVerDepartamento();
                 dispose();
             }
         });

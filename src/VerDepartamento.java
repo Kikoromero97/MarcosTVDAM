@@ -25,24 +25,25 @@ public class VerDepartamento extends JFrame{
     }
 
     public static void mostrarVerDepartamento() {
-        JFrame frame = new JFrame("VerDepartamento");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JFrame frame = new VerDepartamento();
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setSize(700, 500);
         frame.setVisible(true);
     }
 
     public VerDepartamento() {
+        setContentPane(panelPrincipal);
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             //   menuPrincipal.mostrarmenuPrincipal;
+                menuPrincipal.mostrarMenuPrincipal();
                 dispose();
             }
         });
         areaDeEmpleadosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //  AreaDeEmpleados.mostrarAreaDeEmpleados();
+                ListarEmpleados.mostrarListarEmpleados();
                 dispose();
             }
         });
@@ -57,7 +58,7 @@ public class VerDepartamento extends JFrame{
         modificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              // ModificarDepartamento.mostrarModificarDepartamento();
+                ModificarDepartamento.mostrarModificarDepartamento();
                 dispose();
             }
         });
@@ -71,13 +72,13 @@ public class VerDepartamento extends JFrame{
 
                 try {
                     if (rs.next()) {
-                        String value1 = rs.getString("nombre");
-                        String value2 = rs.getString("descripcion");
-                        int value3 = rs.getInt("codigo");
+                        String nombre = rs.getString("nombre");
+                        String descripcion = rs.getString("descripcion");
+                        int codigo = rs.getInt("codigo");
 
-                        txtFldCodigo.setText(value1);
-                        txtFldNombre.setText(value2);
-                        txtDescripcion.setText(String.valueOf(value3));
+                        txtFldCodigo.setText(String.valueOf(codigo));
+                        txtFldNombre.setText(nombre);
+                        txtDescripcion.setText(String.valueOf(descripcion));
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();

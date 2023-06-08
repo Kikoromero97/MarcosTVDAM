@@ -6,7 +6,7 @@ public class DBDepartamento extends DBManager {
     private static final String DB_DEP = "dbo.departamento";
     private static final String DB_DEP_LIMITED = "dbo.informacionLimitadaEmpleado";
     private static final String SELECT_DEPARTAMENTO = "SELECT * FROM " + DB_DEP;
-    private static final String SELECT_DESPECIFICO = SELECT_DEPARTAMENTO + "WHERE nombre = ";
+    private static final String SELECT_DESPECIFICO = SELECT_DEPARTAMENTO + " WHERE nombre LIKE ";
     private static final String SELECT_DEPARTAMENTO_POR_CODIGO = SELECT_DEPARTAMENTO + " WHERE codigo = ";
 
     private static final String SELECT_DEPARTAMENTO_POR_NOMBRE = SELECT_DEPARTAMENTO + " WHERE nombre LIKE ";
@@ -25,7 +25,7 @@ public class DBDepartamento extends DBManager {
     }
 
     public ResultSet verDespecifico(String nombre) {
-        return verSelect(SELECT_DESPECIFICO + nombre);
+        return verSelect(SELECT_DESPECIFICO + "'" + nombre + "' ");
     }
 
     public ResultSet editarDepartamentos() {

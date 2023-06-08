@@ -23,10 +23,9 @@ public class ModificarDepartamento extends JFrame {
         frame.setVisible(true);
     }
 
-    public static void mostrarModificarDepartamento(String[] args) {
-        JFrame frame = new JFrame("ModificarDepartamento");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
+    public static void mostrarModificarDepartamento() {
+        JFrame frame = new ModificarDepartamento();
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 
@@ -34,6 +33,7 @@ public class ModificarDepartamento extends JFrame {
     public ModificarDepartamento() {
         super("ModificarDepartamento");
         setContentPane(panelPrincipal);
+        setSize(700, 500);
 
         eliminarButton.addActionListener(new ActionListener() {
             @Override
@@ -56,9 +56,8 @@ public class ModificarDepartamento extends JFrame {
         confirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListarEmpleados.mostrarListarEmpleados();
+                VerDepartamento.mostrarVerDepartamento();
                 dispose();
-
             }
         });
 
@@ -71,13 +70,13 @@ public class ModificarDepartamento extends JFrame {
 
                 try {
                     if (rs.next()) {
-                        String value1 = rs.getString("nombre");
-                        String value2 = rs.getString("descripcion");
-                        int value3 = rs.getInt("codigo");
+                        String nombre = rs.getString("nombre");
+                        String descripcion = rs.getString("descripcion");
+                        int codigo = rs.getInt("codigo");
 
-                        txtFldCodigo.setText(value1);
-                        txtFldNombre.setText(value2);
-                        txtDescripcion.setText(String.valueOf(value3));
+                        txtFldCodigo.setText(String.valueOf(codigo));
+                        txtFldNombre.setText(nombre);
+                        txtDescripcion.setText(String.valueOf(descripcion));
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();

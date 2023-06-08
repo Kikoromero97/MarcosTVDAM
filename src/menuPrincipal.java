@@ -67,14 +67,14 @@ public class menuPrincipal extends JFrame{
         areaDepartamentoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VerDepartamento.mostrarDepartamentos();
+                VerDepartamento.mostrarVerDepartamento();
                 dispose();
             }
         });
         areaDirectoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // VerDirector.mostrarDirector();
+                VerDirector.mostrarDirector();
                 dispose();
             }
         });

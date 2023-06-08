@@ -40,8 +40,8 @@ public class VerPaises extends JDialog {
         btnVolver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
                 PanelPrincipalContenido.mostrarpanelPrincipalContenido();
+                dispose();
             }
         });
 
