@@ -39,6 +39,8 @@ public class InicioSesion extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(checkSession()){
                     JOptionPane.showMessageDialog(null, "Sesión iniciada correctamente", "MARCOS TV", JOptionPane.INFORMATION_MESSAGE);
+                    menuPrincipal.mostrarMenuPrincipal();
+                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Nombre o Contraseña incorrecto", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
                 }
