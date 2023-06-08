@@ -4,7 +4,7 @@ public class Main {
             UserManager.loadSession();
             menuPrincipal.mostrarMenuPrincipal();
         } else {
-            inicioSesion.mostrarInicioSession();
+            InicioSesion.mostrarInicioSession();
         }
     }
 }

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Creacion y modificacion de usuarios Y PERFILES HECHO">
+
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,41 +27,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="FeaturePanelesCarlos" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="5" />
-    <option name="recentBranches">
-      <RecentBranches>
-        <option name="branchesForRepo">
-          <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="BotonesUsuariosSubs" />
-                    <option name="lastUsedInstant" value="1686136297" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="FeaturePanelesCarlos" />
-                    <option name="lastUsedInstant" value="1686136128" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-          </list>
-        </option>
-      </RecentBranches>
-    </option>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
@@ -79,22 +49,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Nitropc/OneDrive/Escritorio/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;featuresInicioSession&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/troy_/Documents/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="menuPrincipal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="menuPrincipal" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.menuPrincipal" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -133,50 +126,54 @@
       <option name="project" value="LOCAL" />
       <updated>1685446749519</updated>
     </task>
-    <task id="LOCAL-00005" summary="Vinculación de botones de mi programa. Sin finalizar.">
-      <created>1685650468616</created>
+    <task id="LOCAL-00005" summary="por fin conexión">
+      <created>1686137928280</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1685650468616</updated>
+      <updated>1686137928280</updated>
     </task>
-    <task id="LOCAL-00006" summary="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.">
-      <created>1685812380867</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1685812380867</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Creacion y modificacion de usuarios HECHO">
-      <created>1686247423955</created>
+
+    <task id="LOCAL-00007" summary="InicioSesion completado y comentado.">
+      <created>1686214078777</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1686247423955</updated>
+      <updated>1686214078778</updated>
     </task>
-    <task id="LOCAL-00008" summary="Creacion y modificacion de usuarios HECHO">
-      <created>1686247446246</created>
+    <task id="LOCAL-00008" summary="Probando cosas">
+      <created>1686219903865</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1686247446246</updated>
+      <updated>1686219903865</updated>
     </task>
-    <task id="LOCAL-00009" summary="Creacion y modificacion de usuarios Y PERFILES HECHO">
-      <created>1686250649126</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1686250649126</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="89b7670c-834c-4d48-8a88-07be39e904cc">
           <value>
             <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/DBManager" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -187,10 +184,21 @@
     <MESSAGE value="Pantalla crear pelicula" />
     <MESSAGE value="Pantalla crear serie" />
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
-    <MESSAGE value="Vinculación de botones de mi programa. Sin finalizar." />
-    <MESSAGE value="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar." />
-    <MESSAGE value="Creacion y modificacion de usuarios HECHO" />
-    <MESSAGE value="Creacion y modificacion de usuarios Y PERFILES HECHO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion y modificacion de usuarios Y PERFILES HECHO" />
+    <MESSAGE value="Menu principal Listro para revisiones" />
+    <MESSAGE value="CrearSesion actualizado para comprobar el nombre de la sesión y comentado" />
+    <MESSAGE value="InicioSesion completado y comentado." />
+    <MESSAGE value="Probando cosas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Probando cosas" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ListarEmpleados.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
