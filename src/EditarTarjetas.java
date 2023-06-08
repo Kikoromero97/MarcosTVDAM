@@ -65,7 +65,7 @@ public class EditarTarjetas extends JDialog {
             int cvv = Integer.parseInt(txtFldCVV.getText());
             String banco = txtFldBanco.getText();
             Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidadSql, titular, cvv, banco);
-            tarj.editarTarjeta(tarjetaNew, 4);
+            tarj.editarTarjeta(tarjetaNew, 4, numero);
             JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
             dispose();
             JDialog dialog = new VerTarjetas();

@@ -135,16 +135,17 @@ public class VerCategoria extends JDialog {
         DBCategorias categoria = new DBCategorias();
         String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategorias(), 3);
         String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaCat.setModel(table);
         Utilitis.centerTable(tablaCat);
+
     }
 
     public void crearTablaEsp(int codigo) {
         DBCategorias categoria = new DBCategorias();
         String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategoriaEsp(codigo), 3);
         String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaCat.setModel(table);
         Utilitis.centerTable(tablaCat);
     }

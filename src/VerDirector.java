@@ -120,7 +120,7 @@ public class VerDirector extends JDialog {
     public void crearTabla() {
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirector(), 9);
         String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         TablaDirectores.setModel(table);
         Utilitis.centerTable(TablaDirectores);
     }
@@ -128,7 +128,7 @@ public class VerDirector extends JDialog {
     public void crearTablaEsp(int codigo) {
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirectorEsp(codigo), 9);
         String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         TablaDirectores.setModel(table);
         Utilitis.centerTable(TablaDirectores);
     }

@@ -140,16 +140,15 @@ public class VerTarjetas extends JDialog {
     public void crearTabla() {
         String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaEsp(4), 5);
         String[] columnasVisitas = {"Número tarjeta", "Caducidad", "Titular", "CVV", "Banco"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaTarjetas.setModel(table);
         Utilitis.centerTable(tablaTarjetas);
     }
 
     public void crearTablaEsp(int codigo, BigInteger numero) {
-        BigInteger number = new BigInteger("4929669928335");
         String[][] tabla = Utilitis.getDataFromResultSet(tarjeta.verTarjetaMuyEsp(codigo, numero), 5);
         String[] columnasVisitas = {"Número tarjeta", "Caducidad", "Titular", "CVV", "Banco"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaTarjetas.setModel(table);
         Utilitis.centerTable(tablaTarjetas);
     }

@@ -149,7 +149,7 @@ public class VerIdiomas extends JDialog {
     public void crearTabla() {
         String[][] tabla = Utilitis.getDataFromResultSet(idioma.verIdioma(), 2);
         String[] columnasVisitas = {"Código", "Nombre"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaIdiomas.setModel(table);
         Utilitis.centerTable(tablaIdiomas);
     }
@@ -157,7 +157,7 @@ public class VerIdiomas extends JDialog {
     public void crearTablaEsp(int codigo) {
         String[][] tabla = Utilitis.getDataFromResultSet(idioma.verIdiomaEsp(codigo), 2);
         String[] columnasVisitas = {"Código", "Nombre"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaIdiomas.setModel(table);
         Utilitis.centerTable(tablaIdiomas);
     }

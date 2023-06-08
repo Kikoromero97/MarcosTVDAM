@@ -155,7 +155,7 @@ public class VerPaises extends JDialog {
     public void crearTabla() {
         String[][] tabla = Utilitis.getDataFromResultSet(pais.verPais(), 2);
         String[] columnasVisitas = {"Código", "Nombre"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaPaises.setModel(table);
         Utilitis.centerTable(tablaPaises);
     }
@@ -163,7 +163,7 @@ public class VerPaises extends JDialog {
     public void crearTablaEsp(int codigo) {
         String[][] tabla = Utilitis.getDataFromResultSet(pais.verPaisEsp(codigo), 2);
         String[] columnasVisitas = {"Código", "Nombre"};
-        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
         tablaPaises.setModel(table);
         Utilitis.centerTable(tablaPaises);
     }

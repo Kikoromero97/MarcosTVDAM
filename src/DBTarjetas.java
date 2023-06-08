@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.math.BigInteger;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -9,11 +10,8 @@ public class DBTarjetas extends DBManager{
     private static final String SELECT_TARJETAS_USUARIO = SELECT_TARJETA + " WHERE tarjetaUsuario.idUsuario = ";
     private static final String SELECT_TARJ_ESP = SELECT_TARJETA + " WHERE u.codigo = ";
     private static final String SELECT_TARJ_ESP_CONT = " AND t.numero = ";
-
     private static final String SELECT_ANYADIR_TARJ = "SELECT * FROM tarjetaUsuario";
 
-
-    private static final String SELECT_CADUCADAS =  "dbo.TarjetasCaducadas";
     public DBTarjetas() {
         super();
     }
@@ -69,17 +67,28 @@ public class DBTarjetas extends DBManager{
         }
     }
 
-    public void editarTarjeta(Tarjeta tarj, int codigo) {
-        try (ResultSet rs = edityCrearTarjeta(codigo)) {
+    public void editarTarjeta(Tarjeta tarj, int codigo, BigInteger numero) {
+        try (ResultSet rs = verTarjetaMuyEsp(codigo, numero)) {
             while (rs.next()) {
                 BigInteger numTarj = BigInteger.valueOf(rs.getLong("numero"));
                 if (numTarj.equals(tarj.getNumTarjeta())) {
-                    rs.updateObject("numero", tarj.getNumTarjeta());
-                    rs.updateDate("caducidad", tarj.getCaducidad());
+                    rs.updateLong("numero", tarj.getNumTarjeta().longValue());
+                    rs.updateDate("caducidad", new java.sql.Date(tarj.getCaducidad().getTime()));
                     rs.updateString("titular", tarj.getTitular());
                     rs.updateInt("cvv", tarj.getCvv());
                     rs.updateString("banco", tarj.getBanco());
-                    rs.updateRow();
+
+                    // Actualizar la fila manualmente con una sentencia UPDATE
+                    PreparedStatement updateStatement = rs.getStatement().getConnection().prepareStatement(
+                            "UPDATE tarjeta SET numero = ?, caducidad = ?, titular = ?, cvv = ?, banco = ? WHERE numero = ?"
+                    );
+                    updateStatement.setLong(1, tarj.getNumTarjeta().longValue());
+                    updateStatement.setDate(2, new java.sql.Date(tarj.getCaducidad().getTime()));
+                    updateStatement.setString(3, tarj.getTitular());
+                    updateStatement.setInt(4, tarj.getCvv());
+                    updateStatement.setString(5, tarj.getBanco());
+                    updateStatement.setLong(6, tarj.getNumTarjeta().longValue());
+                    updateStatement.executeUpdate();
                     break;
                 }
             }
@@ -87,6 +96,8 @@ public class DBTarjetas extends DBManager{
             e.printStackTrace();
         }
     }
+
+
 
     public boolean existsTarjeta(int codigoUsuario, BigInteger codigo) {
         try (ResultSet rs = verTarjetaMuyEsp(codigoUsuario, codigo)) {
