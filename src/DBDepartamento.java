@@ -1,5 +1,7 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 
 public class DBDepartamento extends DBManager {
 
@@ -28,6 +30,7 @@ public class DBDepartamento extends DBManager {
         return getSelect(SELECT_DEPARTAMENTO);
     }
 
+
     public void crearDepartamento(Departamento departamento) {
         try (ResultSet rs = editarDepartamentos()) {
             rs.moveToInsertRow();
@@ -54,6 +57,7 @@ public class DBDepartamento extends DBManager {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 

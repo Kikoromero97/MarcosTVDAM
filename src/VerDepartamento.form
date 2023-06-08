@@ -34,7 +34,58 @@
           <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <model/>
+          <model>
+            <item value="Recursos Humanos"/>
+            <item value="Finanzas"/>
+            <item value="Ventas"/>
+            <item value="Marketing"/>
+            <item value="Tecnología de la Información"/>
+            <item value="Desarrollo de Productos"/>
+            <item value="Operaciones"/>
+            <item value="Logística"/>
+            <item value="Calidad"/>
+            <item value="Investigación y Desarrollo"/>
+            <item value="Compras"/>
+            <item value="Recursos Materiales"/>
+            <item value="Legal"/>
+            <item value="Comunicación"/>
+            <item value="Servicio al Cliente"/>
+            <item value="Proyectos"/>
+            <item value="Administración"/>
+            <item value="Desarrollo de Negocios"/>
+            <item value="Servicios Técnicos"/>
+            <item value="Planificación Estratégica"/>
+            <item value="Auditoría"/>
+            <item value="Relaciones Públicas"/>
+            <item value="Desarrollo Organizacional"/>
+            <item value="Formación y Desarrollo"/>
+            <item value="Gestión de Proveedores"/>
+            <item value="Relaciones Laborales"/>
+            <item value="Seguridad y Salud Laboral"/>
+            <item value="Asuntos Regulatorios"/>
+            <item value="Gestión Ambiental"/>
+            <item value="Compliance"/>
+            <item value="Desarrollo Sostenible"/>
+            <item value="Investigación de Mercados"/>
+            <item value="Desarrollo Web"/>
+            <item value="Diseño Gráfico"/>
+            <item value="Redes Sociales"/>
+            <item value="Comunicación Digital"/>
+            <item value="Soporte Técnico"/>
+            <item value="Infraestructura"/>
+            <item value="Seguridad de la Información"/>
+            <item value="Desarrollo de Software"/>
+            <item value="Base de Datos"/>
+            <item value="Soporte de Infraestructura"/>
+            <item value="Ciberseguridad"/>
+            <item value="Inteligencia Artificial"/>
+            <item value="Análisis de Datos"/>
+            <item value="Gestión de Proyectos de TI"/>
+            <item value="Innovación Tecnológica"/>
+            <item value="Arquitectura de Software"/>
+            <item value="Desarrollo Mobile"/>
+            <item value="E-commerce"/>
+          </model>
         </properties>
       </component>
       <component id="4b3e0" class="javax.swing.JLabel">

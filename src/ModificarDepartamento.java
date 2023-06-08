@@ -48,7 +48,7 @@ public class ModificarDepartamento extends JFrame {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // ListarEmpleados.mostrarListarEmpleados();
+               ListarEmpleados.mostrarListarEmpleados();
                 dispose();
             }
         });
@@ -56,7 +56,7 @@ public class ModificarDepartamento extends JFrame {
         confirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // ListarEmpleados.mostrarListarEmpleados();
+                ListarEmpleados.mostrarListarEmpleados();
                 dispose();
 
             }

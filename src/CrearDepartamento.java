@@ -13,6 +13,14 @@ public class CrearDepartamento extends JFrame{
     private JButton confirmarButton;
     private JButton cancelarButton;
 
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("CrearDepartamento");
+        frame.setContentPane(new CrearDepartamento().panelPrincipal);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
     public static void mostrarCrearDepartamento() {
         JFrame frame = new JFrame("CrearDepartamento");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,6 +54,18 @@ public class CrearDepartamento extends JFrame{
                 dispose();
             }
         });
+    }
 
+    public void editarDepartamento() {
+        int opcion = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres editar con estos datos?", "Confirmación de editado", JOptionPane.YES_NO_OPTION);
+        if (opcion == 0) {
+            DBDepartamento cat = new DBDepartamento();
+            int codigo = Integer.parseInt(txtFldCodigo.getText());
+            String nombre = txtFldNombre.getText();
+            String descrip = txtDescripcion.getText();
+            JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            JDialog dialog = new VerCategoria();
+        }
     }
 }

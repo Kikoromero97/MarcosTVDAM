@@ -71,9 +71,9 @@ public class VerDepartamento extends JFrame{
 
                 try {
                     if (rs.next()) {
-                        String value1 = rs.getString("columna1"); // Reemplaza "columna1" con el nombre real de la columna
-                        String value2 = rs.getString("columna2"); // Reemplaza "columna2" con el nombre real de la columna
-                        int value3 = rs.getInt("columna3"); // Reemplaza "columna3" con el nombre real de la columna
+                        String value1 = rs.getString("nombre");
+                        String value2 = rs.getString("descripcion");
+                        int value3 = rs.getInt("codigo");
 
                         txtFldCodigo.setText(value1);
                         txtFldNombre.setText(value2);
@@ -86,5 +86,17 @@ public class VerDepartamento extends JFrame{
 
 
         });
+    }
+    public void editarDepartamento() {
+        int opcion = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres editar con estos datos?", "Confirmación de editado", JOptionPane.YES_NO_OPTION);
+        if (opcion == 0) {
+            DBDepartamento cat = new DBDepartamento();
+            int codigo = Integer.parseInt(txtFldCodigo.getText());
+            String nombre = txtFldNombre.getText();
+            String descrip = txtDescripcion.getText();
+            JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            JDialog dialog = new VerCategoria();
+        }
     }
 }
