@@ -107,4 +107,13 @@ public abstract class DBManager {
             return null;
         }
     }
+
+    /**
+     * Getter de la conexión con la base de datos.
+     *
+     * @return Connection conexión de la base de datos.
+     */
+    public static Connection getConn() {
+        return conn;
+    }
 }

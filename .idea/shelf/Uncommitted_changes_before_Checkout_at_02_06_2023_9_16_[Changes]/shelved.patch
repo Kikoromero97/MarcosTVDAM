@@ -1,0 +1,127 @@
+Index: src/EditarTarjetas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class EditarTarjetas extends JDialog {\r\n    private JPanel contentPane;\r\n    private JTextField textField1;\r\n    private JTextField textField2;\r\n    private JTextField textField3;\r\n    private JTextField textField4;\r\n    private JTextField textField5;\r\n    private JButton editarButton;\r\n    private JButton volverButton;\r\n\r\n    public EditarTarjetas() {\r\n        setContentPane(contentPane);\r\n        setTitle(\"Editando tarjeta\");\r\n        setModal(true);\r\n        getRootPane().setDefaultButton(volverButton);\r\n        editarButton.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                JOptionPane.showMessageDialog(null, \"Se han editado los campos correctamente.\", \"Realizado con éxito.\", JOptionPane.INFORMATION_MESSAGE);\r\n                SwingUtilities.getWindowAncestor(contentPane).dispose();\r\n            }\r\n        });\r\n        volverButton.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                JDialog dialog = new CrearTarjetas();\r\n                dialog.setSize(700, 500);\r\n                dialog.setVisible(true);\r\n                SwingUtilities.getWindowAncestor(contentPane).dispose();\r\n            }\r\n        });\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        EditarTarjetas dialog = new EditarTarjetas();\r\n        dialog.setSize(700, 500);\r\n        dialog.setVisible(true);\r\n        System.exit(0);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/EditarTarjetas.java b/src/EditarTarjetas.java
+--- a/src/EditarTarjetas.java	(revision 5f1934c579326337f71921895dc3c42d5955d532)
++++ b/src/EditarTarjetas.java	(date 1685690168587)
+@@ -21,7 +21,8 @@
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(null, "Se han editado los campos correctamente.", "Realizado con éxito.", JOptionPane.INFORMATION_MESSAGE);
+-                SwingUtilities.getWindowAncestor(contentPane).dispose();
++                dispose();
++                JDialog dialog = new
+             }
+         });
+         volverButton.addActionListener(new ActionListener() {
+Index: src/CrearTarjetas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class CrearTarjetas extends JDialog {\r\n    private JPanel contentPane;\r\n    private JButton btnVolver;\r\n    private JButton btnEliminar;\r\n    private JButton btnEditar;\r\n    private JTextField textField1;\r\n    private JTextField textField2;\r\n    private JTextField textField3;\r\n    private JTextField textField4;\r\n    private JTextField textField5;\r\n\r\n    public CrearTarjetas() {\r\n        setContentPane(contentPane);\r\n        setTitle(\"Tarjeta\");\r\n        setModal(true);\r\n        getRootPane().setDefaultButton(btnVolver);\r\n        btnEliminar.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                int opcion = JOptionPane.showConfirmDialog(null, \"Estás seguro de que quieres borrar esta tarjeta?\", \"Confirmación de borrado\", JOptionPane.YES_NO_OPTION);\r\n                if (opcion == 0) {\r\n                    JOptionPane.showMessageDialog(null, \"Se ha eliminado correctamente.\");\r\n                }\r\n            }\r\n        });\r\n        btnEditar.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                JDialog dialog = new EditarTarjetas();\r\n                dialog.setSize(700, 500);\r\n                dialog.setVisible(true);\r\n                CrearTarjetas.this.dispose();\r\n            }\r\n        });\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        CrearTarjetas dialog = new CrearTarjetas();\r\n        dialog.setSize(700, 500);\r\n        dialog.setVisible(true);\r\n        System.exit(0);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CrearTarjetas.java b/src/CrearTarjetas.java
+--- a/src/CrearTarjetas.java	(revision 5f1934c579326337f71921895dc3c42d5955d532)
++++ b/src/CrearTarjetas.java	(date 1685690168607)
+@@ -17,6 +17,7 @@
+         setContentPane(contentPane);
+         setTitle("Tarjeta");
+         setModal(true);
++        setVisible(true);
+         getRootPane().setDefaultButton(btnVolver);
+         btnEliminar.addActionListener(new ActionListener() {
+             @Override
+@@ -31,9 +32,8 @@
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 JDialog dialog = new EditarTarjetas();
+-                dialog.setSize(700, 500);
+-                dialog.setVisible(true);
+-                CrearTarjetas.this.dispose();
++                SwingUtilities.invokeLater();
++
+             }
+         });
+     }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9e01a84d-9f13-4afb-a118-0660f614f771\" name=\"Changes\" comment=\"Terminada todas las pantallas.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/CrearTarjetas.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/CrearTarjetas.form\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/CrearTarjetas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/CrearTarjetas.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/EditarTarjetas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/EditarTarjetas.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"tarjetas_nuevo\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2QSKOa6St9dRyNvY2AMsTDw7C0W\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.CrearTarjetas\">\r\n    <configuration name=\"CrearTarjetas (2)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CrearTarjetas\" />\r\n      <module name=\"MarcosTVProgramacion\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"CrearTarjetas (3)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CrearTarjetas\" />\r\n      <module name=\"MarcosTVProgramacion\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"CrearTarjetas (4)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CrearTarjetas\" />\r\n      <module name=\"MarcosTVProgramacion\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"CrearTarjetas\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"CrearTarjetas\" />\r\n      <module name=\"MarcosTVProgramacion\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"EditarTarjetas\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"EditarTarjetas\" />\r\n      <module name=\"MarcosTVProgramacion\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.CrearTarjetas\" />\r\n        <item itemvalue=\"Application.CrearTarjetas (4)\" />\r\n        <item itemvalue=\"Application.CrearTarjetas (3)\" />\r\n        <item itemvalue=\"Application.CrearTarjetas (2)\" />\r\n        <item itemvalue=\"Application.EditarTarjetas\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9e01a84d-9f13-4afb-a118-0660f614f771\" name=\"Changes\" comment=\"\" />\r\n      <created>1685341512459</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1685341512459</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"commit 2\">\r\n      <created>1685343301149</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685343301149</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"commit Tarjeta\">\r\n      <created>1685343850009</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685343850009</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"3 tablas: Tarjeta, Idioma, Pais\">\r\n      <created>1685355216838</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685355216838</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"2 tablas: Director, Categoria\">\r\n      <created>1685377804246</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685377804246</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"commit 2\" />\r\n    <MESSAGE value=\"commit Tarjeta\" />\r\n    <MESSAGE value=\"3 tablas: Tarjeta, Idioma, Pais\" />\r\n    <MESSAGE value=\"2 tablas: Director, Categoria\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"2 tablas: Director, Categoria\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5f1934c579326337f71921895dc3c42d5955d532)
++++ b/.idea/workspace.xml	(date 1685689762033)
+@@ -2,8 +2,6 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Terminada todas las pantallas.">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearTarjetas.form" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearTarjetas.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/EditarTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarTarjetas.java" afterDir="false" />
+     </list>
+@@ -43,37 +41,37 @@
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+   }
+ }</component>
+-  <component name="RunManager" selected="Application.CrearTarjetas">
+-    <configuration name="CrearTarjetas (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="Application.CrearTarjetas (1)">
++    <configuration name="CrearTarjetas (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="CrearTarjetas (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="CrearTarjetas (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="CrearTarjetas (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="CrearTarjetas (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="CrearTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="CrearTarjetas (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="EditarTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
++    <configuration name="CrearTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -81,11 +79,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.CrearTarjetas (1)" />
+         <item itemvalue="Application.CrearTarjetas" />
+         <item itemvalue="Application.CrearTarjetas (4)" />
+         <item itemvalue="Application.CrearTarjetas (3)" />
+         <item itemvalue="Application.CrearTarjetas (2)" />
+-        <item itemvalue="Application.EditarTarjetas" />
+       </list>
+     </recent_temporary>
+   </component>

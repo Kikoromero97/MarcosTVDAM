@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class menuPrincipal {
+public class menuPrincipal extends JFrame{
     private JPanel JpanelPrincipalOpciones;
     private JLabel logoMarcosTV;
     private JButton areaDepartamentoButton;
@@ -14,30 +14,76 @@ public class menuPrincipal {
     private JPanel JPanelBotonSalir;
     private JButton areaDirectoresButton;
 
-    //MAIN CREADO SIMPLEMENTE PARA PODER EJECUTAR PANTALLA Y VER QUE FUNCIONA; CAMBIAR A QUIEN CORRESPONDA POR FUNCIÓN
 
+    /**
+     * Constructor de menuPrincipal.
+     */
+    public menuPrincipal() {
+        super("MARCOS TV");
+        setSize(700, 500);
+        setVisible(true);
+        setContentPane(JpanelPrincipalOpciones);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
 
-    public static void main(String[] args){
-        if(DBManager.loadDriver() && DBManager.connect()){
-            JFrame frame = new JFrame("menuPrincipal");
-            frame.setContentPane(new menuPrincipal().JpanelPrincipalOpciones);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-        }else{
-            System.out.println("No funciona nada");
+        switch (UserManager.user.getRol()){
+            case atc -> {
+                areaDepartamentoButton.setEnabled(false);
+                areaContenidoButton.setEnabled(false);
+                areaDirectoresButton.setEnabled(false);
+            }
+            case rrhh -> {
+                areaUsuarioButton.setEnabled(false);
+                areaContenidoButton.setEnabled(false);
+                areaDirectoresButton.setEnabled(false);
+            }
+            case calidad -> {
+                areaUsuarioButton.setEnabled(false);
+                areaDepartamentoButton.setEnabled(false);
+            }
         }
-
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UserManager.exitSession();
+                InicioSesion.mostrarInicioSession();
+                dispose();
+            }
+        });
+        areaUsuarioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // SeleccionUser.mostrarUsuarios();
+                dispose();
+            }
+        });
+        areaContenidoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // PanelPrincipalContenido.mostrarpanelPrincipalContenido();
+                dispose();
+            }
+        });
+        areaDepartamentoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // VerDepartamento.mostrarDepartamentos();
+                dispose();
+            }
+        });
+        areaDirectoresButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // VerDirector.mostrarDirector();
+                dispose();
+            }
+        });
     }
 
-    public menuPrincipal() {
-    areaContenidoButton.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            PanelPrincipalContenido.mostrarpanelPrincipalContenido();
-        }
-    });
-
-
-}
+    /**
+     * Función que ejecuta la pantalla mostrarMenuPrincipal.
+     */
+    public static void  mostrarMenuPrincipal(){
+        JFrame frame = new menuPrincipal();
+    }
 }
