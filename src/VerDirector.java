@@ -14,6 +14,7 @@ public class VerDirector extends JDialog {
     private JTextField txtFldCodigo;
     private JButton BtnBuscar;
     private JTable TablaDirectores;
+    private JButton buscarDirectorasButton;
     private static final DBDirector director = new DBDirector();
 
     public VerDirector() {
@@ -63,6 +64,12 @@ public class VerDirector extends JDialog {
             @Override
             public void mouseClicked(MouseEvent e) {
                 seleccionarInsert(e);
+            }
+        });
+        buscarDirectorasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                crearTablaOnlyWomen();
             }
         });
     }
@@ -121,6 +128,14 @@ public class VerDirector extends JDialog {
         String[][] tabla = Utilitis.getDataFromResultSet(director.verDirector(), 9);
         String[] columnasVisitas = {"Código", "Nombre", "Apellidos", "Edad", "Nacionalidad", "Género", "Nº de premios", "Años exp.", "idPais"};
         DefaultTableModel table = new DefaultTableModel(Utilitis.deleteNulls(tabla), columnasVisitas);
+        TablaDirectores.setModel(table);
+        Utilitis.centerTable(TablaDirectores);
+    }
+
+    public void crearTablaOnlyWomen() {
+        String[][] tabla = Utilitis.getDataFromResultSet(director.verDirectoras(), 4);
+        String[] columnasVisitas = {"Nombre", "Apellidos", "Edad", "Nº de premios"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         TablaDirectores.setModel(table);
         Utilitis.centerTable(TablaDirectores);
     }

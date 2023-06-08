@@ -7,6 +7,7 @@ public class DBDirector extends DBManager {
 
     private static final String SELECT_ALL = "SELECT * FROM DIRECTOR";
     private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo ";
+    private static final String SELECT_ONLY_WOMEN = "SELECT * FROM dbo.SoloDirectorasyPremios";
 
     public DBDirector() {
         super();
@@ -14,6 +15,10 @@ public class DBDirector extends DBManager {
 
     public ResultSet verDirector() {
         return verSelect(SELECT_ALL);
+    }
+
+    public ResultSet verDirectoras() {
+        return verSelect(SELECT_ONLY_WOMEN);
     }
 
     public ResultSet edityCrearDirector() {

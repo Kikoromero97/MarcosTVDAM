@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Pantalla Tarjeta totalmente funcional">
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/usr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cache/usr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBDirector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +75,7 @@
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VerCategoria">
+  <component name="RunManager" selected="Application.VerDirector">
     <configuration name="EditarTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
       <module name="MarcosTVProgramacion" />
@@ -107,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VerDirector" />
         <item itemvalue="Application.VerCategoria" />
         <item itemvalue="Application.VerTarjetas" />
         <item itemvalue="Application.EditarTarjetas" />
         <item itemvalue="Application.VerPaises" />
-        <item itemvalue="Application.VerDirector" />
       </list>
     </recent_temporary>
   </component>
