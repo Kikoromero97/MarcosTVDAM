@@ -63,6 +63,8 @@ public class CrearSerie {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (formularioValido() == true) {
+                    boolean creado = false;
+
                     int cod = Integer.parseInt(introCodigo.getText());
                     java.sql.Date fecha = java.sql.Date.valueOf(introFecha.getText());
                     String titulo = introTitulo.getText();
@@ -76,11 +78,19 @@ public class CrearSerie {
                     int duracion = Integer.parseInt(introDuracion.getText());
 
                     Series serie = new Series(cod, titulo, descripcion, duracion, valoracion, fecha, presupuesto, introEdad, fechaAlta, codDirector, introCont);
-                    contenido_db.anyadirSerie(serie);
-                    panelVerSeries.pintarSeriesTabla();
+                    creado = contenido_db.anyadirSerie(serie);
 
-                    JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película "+titulo);
-                    frame.dispose();
+                    if (creado == true)
+                    {
+                        panelVerSeries.pintarSeriesTabla();
+
+                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película " + titulo);
+                        frame.dispose();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "No se ha podido crear la nueva  serie ");
+                    }
                 }
                 else
                 {

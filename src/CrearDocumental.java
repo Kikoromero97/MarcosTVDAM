@@ -61,6 +61,8 @@ public class CrearDocumental {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (formularioValido() == true) {
+                    boolean creado = false;
+
                     int cod = Integer.parseInt(introCodigo.getText());
                     java.sql.Date fecha = java.sql.Date.valueOf(introFecha.getText());
                     String titulo = introTitulo.getText();
@@ -74,11 +76,18 @@ public class CrearDocumental {
                     int duracion = Integer.parseInt(introDuracion.getText());
 
                     Documental documental = new Documental(cod, titulo, descripcion, duracion, valoracion, fecha, presupuesto, introEdad, fechaAlta, codDirector, introCont);
-                    contenido_db.anyadirDocumental(documental);
-                    panelVerDocumental.pintarDocumentalTabla();
+                    creado = contenido_db.anyadirDocumental(documental);
 
-                    JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el documental "+titulo);
-                    frame.dispose();
+                    if (creado == true)
+                    {
+                        panelVerDocumental.pintarDocumentalTabla();
+                        JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el documental " + titulo);
+                        frame.dispose();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "No se ha podido crear el nuevo documental");
+                    }
                 }
                 else
                 {

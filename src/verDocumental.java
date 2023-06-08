@@ -57,13 +57,21 @@ public class verDocumental {
         buttonEliminarDocumental.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cod = (int) documentalContenido[table1Documental.getSelectedRow()][0];
-                int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar el documental " + documentalContenido[table1Documental.getSelectedRow()][1] + "?", "Borrando...",JOptionPane.YES_NO_OPTION);
 
-                if ( respuesta == 0 ) // Opción Si = borrar
-                {
-                    contenido_db.eliminarDocumental(cod);
-                    pintarDocumentalTabla();
+                int filaSeleccionada = table1Documental.getSelectedRow();
+
+                if (filaSeleccionada != -1) {
+                    int cod = (int) documentalContenido[table1Documental.getSelectedRow()][0];
+                    int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar el documental " + documentalContenido[table1Documental.getSelectedRow()][1] + "?", "Borrando...", JOptionPane.YES_NO_OPTION);
+
+                    if (respuesta == 0) // Opción Si = borrar
+                    {
+                        contenido_db.eliminarDocumental(cod);
+                        pintarDocumentalTabla();
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar el documental que quieras borrar.");
                 }
             }
         });

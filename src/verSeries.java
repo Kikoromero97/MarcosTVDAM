@@ -27,6 +27,9 @@ public class verSeries {
     static verSeries panelVerSeries = new verSeries();
     static JFrame frame = new JFrame("verSeries");
 
+    private static verTemporada panelVerTemporada  = new verTemporada();
+
+
     public static void mostrarPantallaVerSeries(DB_Contenido db_contenido) {
 
         frame.setContentPane( panelVerSeries.JPanelSeries);
@@ -57,13 +60,21 @@ public class verSeries {
         buttonEliminarSerie.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cod = (int) seriesContenido[table1Serie.getSelectedRow()][0];
-                int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar esta serie " + seriesContenido[table1Serie.getSelectedRow()][1] + "?", "Borrando...",JOptionPane.YES_NO_OPTION);
 
-                if ( respuesta == 0 ) // Opción Si = borrar
-                {
-                    contenido_db.eliminarSerie(cod);
-                    pintarSeriesTabla();
+                int filaSeleccionada = table1Serie.getSelectedRow();
+
+                if (filaSeleccionada != -1) {
+                    int cod = (int) seriesContenido[table1Serie.getSelectedRow()][0];
+                    int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar esta serie " + seriesContenido[table1Serie.getSelectedRow()][1] + "?", "Borrando...", JOptionPane.YES_NO_OPTION);
+
+                    if (respuesta == 0) // Opción Si = borrar
+                    {
+                        contenido_db.eliminarSerie(cod);
+                        pintarSeriesTabla();
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar la serie que quieras borrar.");
                 }
             }
         });
@@ -107,6 +118,25 @@ public class verSeries {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pintarSeriesTabla();
+            }
+        });
+        verTemporadasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = table1Serie.getSelectedRow();
+
+                if (selectedRow == -1) //GetSelectedRow Devuelve -1 si no hay nada seleccionado
+                {
+                    JOptionPane.showMessageDialog(null, "Para ver las temporadas primero debes seleccionar la serie.");
+                }
+                else
+                {
+                    int codigoSerie = (int) seriesContenido[selectedRow][0];
+                    verTemporada.setIdSerie(codigoSerie);
+                    panelVerTemporada.mostrarPantallaVerTemporada(contenido_db,codigoSerie);
+                    panelVerTemporada.pintarTemporadaTabla();
+
+                }
             }
         });
     }

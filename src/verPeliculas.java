@@ -32,7 +32,6 @@ public class verPeliculas {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-
     }
 
     public verPeliculas() {
@@ -56,12 +55,20 @@ public class verPeliculas {
         buttonEliminarPelicula.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int cod = (int) peliculasContenido[table1Pelicula.getSelectedRow()][0];
-                int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar la película " + peliculasContenido[table1Pelicula.getSelectedRow()][1] + "?", "Borrando...",JOptionPane.YES_NO_OPTION);
-                if ( respuesta == 0 ) // Opción Si = borrar
+                int filaSeleccionada = table1Pelicula.getSelectedRow();
+
+                if (filaSeleccionada != -1) {
+                    int cod = (int) peliculasContenido[table1Pelicula.getSelectedRow()][0];
+                    int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar la película " + peliculasContenido[table1Pelicula.getSelectedRow()][1] + "?", "Borrando...", JOptionPane.YES_NO_OPTION);
+                    if (respuesta == 0) // Opción Si = borrar
+                    {
+                        contenido_db.eliminarPelicula(cod);
+                        pintarPeliculasTabla();
+                    }
+                }
+                else
                 {
-                    contenido_db.eliminarPelicula(cod);
-                    pintarPeliculasTabla();
+                    JOptionPane.showMessageDialog(null, "Debes seleccionar la película que quieras borrar.");
                 }
             }
         });

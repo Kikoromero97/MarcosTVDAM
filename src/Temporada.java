@@ -13,4 +13,14 @@ public class Temporada {
     {
         return numero;
     }
+
+    public int getCodSerie()
+    {
+        return codSerie;
+    }
+
+    public String getResumen()
+    {
+        return resumen;
+    }
 }
