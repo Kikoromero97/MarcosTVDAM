@@ -61,8 +61,6 @@ public class EditarUser extends JDialog {
                     exc.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Error al editar el usuario, e-mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
-
-                /*TODO OPERACION DB MANAGER*/
             }
         });
 
