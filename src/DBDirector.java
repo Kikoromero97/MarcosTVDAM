@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class DBDirector extends DBManager {
 
     private static final String SELECT_ALL = "SELECT * FROM DIRECTOR";
-    private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo = ";
+    private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo ";
 
     public DBDirector() {
         super();
@@ -21,7 +21,7 @@ public class DBDirector extends DBManager {
     }
 
     public ResultSet verDirectorEsp(int codigo) {
-        return getSelect(SELECT_SPECIFIC + codigo);
+        return getSelect(SELECT_SPECIFIC + "LIKE '%" + codigo + "%'");
     }
 
     public void deleteDirector(int codigo) {

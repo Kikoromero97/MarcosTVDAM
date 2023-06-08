@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DBCategorias extends DBManager {
     private static final String SELECT_ALL = "SELECT * FROM CATEGORIA";
-    private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo = ";
+    private static final String SELECT_SPECIFIC = SELECT_ALL + " WHERE codigo ";
 
     public DBCategorias() {
         super();
@@ -19,7 +19,7 @@ public class DBCategorias extends DBManager {
     }
 
     public ResultSet verCategoriaEsp(int codigo) {
-        return getSelect(SELECT_SPECIFIC + codigo);
+        return getSelect(SELECT_SPECIFIC + " LIKE '%" + codigo + "%'");
     }
 
     public void deleteCategoria(int codigo) {

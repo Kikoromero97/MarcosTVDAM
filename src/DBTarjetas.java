@@ -9,7 +9,7 @@ public class DBTarjetas extends DBManager{
             "INNER JOIN usuario u ON tarjetaUsuario.idUsuario = u.codigo";
     private static final String SELECT_TARJETAS_USUARIO = SELECT_TARJETA + " WHERE tarjetaUsuario.idUsuario = ";
     private static final String SELECT_TARJ_ESP = SELECT_TARJETA + " WHERE u.codigo = ";
-    private static final String SELECT_TARJ_ESP_CONT = " AND t.numero = ";
+    private static final String SELECT_TARJ_ESP_CONT = " AND t.numero ";
     private static final String SELECT_ANYADIR_TARJ = "SELECT * FROM tarjetaUsuario";
 
     public DBTarjetas() {
@@ -28,7 +28,7 @@ public class DBTarjetas extends DBManager{
     }
 
     public ResultSet verTarjetaMuyEsp(int codigo, BigInteger numero){
-        return getSelect(SELECT_TARJ_ESP + codigo + SELECT_TARJ_ESP_CONT + numero);
+        return getSelect(SELECT_TARJ_ESP + codigo + SELECT_TARJ_ESP_CONT + "LIKE '%" + numero + "%'");
     }
     public void deleteTarjeta(int codigo, BigInteger numero) {
         try {
