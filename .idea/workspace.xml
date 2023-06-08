@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Pantalla Tarjeta totalmente funcional">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/usr.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cache/usr.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDirector.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
-    </list>
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,67 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/elord/OneDrive/Escritorio/AcademiaMZ&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "featuresInicioSession",
+    "last_opened_file_path": "C:/Users/troy_/Documents/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
-  </component>
-  <component name="RunManager" selected="Application.VerDirector">
-    <configuration name="EditarTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VerCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerCategoria" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VerDirector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerDirector" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VerPaises" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerPaises" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VerTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VerTarjetas" />
-      <module name="MarcosTVProgramacion" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.VerDirector" />
-        <item itemvalue="Application.VerCategoria" />
-        <item itemvalue="Application.VerTarjetas" />
-        <item itemvalue="Application.EditarTarjetas" />
-        <item itemvalue="Application.VerPaises" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -158,56 +102,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685446749519</updated>
     </task>
-    <task id="LOCAL-00005" summary="Añadidas funciones, DBTarjetas">
-      <created>1685964604256</created>
+    <task id="LOCAL-00005" summary="Menu principal Listro para revisiones">
+      <created>1686134491407</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1685964604256</updated>
+      <updated>1686134491407</updated>
     </task>
-    <task id="LOCAL-00006" summary="Añadido POJO Categoria, paneles Categoria completamente funcionales">
-      <created>1686038358576</created>
+    <task id="LOCAL-00006" summary="CrearSesion actualizado para comprobar el nombre de la sesión y comentado">
+      <created>1686212999101</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1686038358576</updated>
+      <updated>1686212999101</updated>
     </task>
-    <task id="LOCAL-00007" summary="Centrada la tabla de VerCategoria.">
-      <created>1686039500551</created>
+    <task id="LOCAL-00007" summary="InicioSesion completado y comentado.">
+      <created>1686214078777</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1686039500551</updated>
+      <updated>1686214078778</updated>
     </task>
-    <task id="LOCAL-00008" summary="Verificacion de solo int en el TextField &quot;codigo&quot; al pulsar el boton Buscar.">
-      <created>1686040426263</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1686040426263</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Funciones Director.">
-      <created>1686130787534</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1686130787534</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas.">
-      <created>1686162410592</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1686162410592</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Pantalla Tarjeta totalmente funcional">
-      <created>1686214039138</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1686214039138</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,7 +131,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="empleado" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -226,44 +154,9 @@
     <MESSAGE value="Pantalla crear pelicula" />
     <MESSAGE value="Pantalla crear serie" />
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
-    <MESSAGE value="Añadidas funciones, DBTarjetas" />
-    <MESSAGE value="Añadido POJO Categoria, paneles Categoria completamente funcionales" />
-    <MESSAGE value="Centrada la tabla de VerCategoria." />
-    <MESSAGE value="Verificacion de solo int en el TextField &quot;codigo&quot; al pulsar el boton Buscar." />
-    <MESSAGE value="Funciones Director." />
-    <MESSAGE value="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas." />
-    <MESSAGE value="Pantalla Tarjeta totalmente funcional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pantalla Tarjeta totalmente funcional" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/VerIdiomas.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DBIdioma.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DBIdioma.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DBIdioma.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DBIdioma.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Menu principal Listro para revisiones" />
+    <MESSAGE value="CrearSesion actualizado para comprobar el nombre de la sesión y comentado" />
+    <MESSAGE value="InicioSesion completado y comentado." />
+    <option name="LAST_COMMIT_MESSAGE" value="InicioSesion completado y comentado." />
   </component>
 </project>
