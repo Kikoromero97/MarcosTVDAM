@@ -58,7 +58,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <component id="2bb24" class="javax.swing.JFormattedTextField" binding="introCodigoDocumental">
+              <component id="2bb24" class="javax.swing.JFormattedTextField" binding="introCodigo">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -66,7 +66,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="a7e13" class="javax.swing.JFormattedTextField" binding="introFechaDocuemental">
+              <component id="a7e13" class="javax.swing.JFormattedTextField" binding="introFecha">
                 <constraints>
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -74,7 +74,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="620df" class="javax.swing.JFormattedTextField" binding="introNombreDirDocumental">
+              <component id="620df" class="javax.swing.JFormattedTextField" binding="introCodDirector">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -82,15 +82,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="ccb41" class="javax.swing.JFormattedTextField" binding="introApellidoDirDocuemntal">
-                <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="1f25b" class="javax.swing.JFormattedTextField" binding="introTituloDocumental">
+              <component id="1f25b" class="javax.swing.JFormattedTextField" binding="introTitulo">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -98,7 +90,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="6fde7" class="javax.swing.JFormattedTextField" binding="introDuracionDocumental">
+              <component id="6fde7" class="javax.swing.JFormattedTextField" binding="introDuracion">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -121,21 +113,12 @@
                 </constraints>
                 <properties>
                   <foreground color="-16777216"/>
-                  <text value="Nombre del director"/>
-                </properties>
-              </component>
-              <component id="dd65b" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <foreground color="-16777216"/>
-                  <text value="Apellido del director"/>
+                  <text value="Codigo director"/>
                 </properties>
               </component>
             </children>
           </grid>
-          <component id="b7400" class="javax.swing.JFormattedTextField" binding="introAltaDocumental">
+          <component id="b7400" class="javax.swing.JFormattedTextField" binding="introFechaAlta">
             <constraints>
               <grid row="6" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -143,7 +126,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="1713" class="javax.swing.JFormattedTextField" binding="introContenidoDocumental">
+          <component id="1713" class="javax.swing.JFormattedTextField" binding="introContenido">
             <constraints>
               <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -151,7 +134,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="550e" class="javax.swing.JFormattedTextField" binding="IntroEdadRecomendadaDocumental">
+          <component id="550e" class="javax.swing.JFormattedTextField" binding="IntroEdadRecomendada">
             <constraints>
               <grid row="8" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -159,7 +142,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="c64e4" class="javax.swing.JFormattedTextField" binding="introPresupuestoDocumental">
+          <component id="c64e4" class="javax.swing.JFormattedTextField" binding="introPresupuesto">
             <constraints>
               <grid row="9" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -167,7 +150,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="71b07" class="javax.swing.JFormattedTextField" binding="introDescripcionDocumental">
+          <component id="71b07" class="javax.swing.JFormattedTextField" binding="introDescripcion">
             <constraints>
               <grid row="10" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -229,7 +212,7 @@
               <text value="Código"/>
             </properties>
           </component>
-          <component id="49227" class="javax.swing.JFormattedTextField" binding="introValoracionDocumental">
+          <component id="49227" class="javax.swing.JFormattedTextField" binding="introValoracion">
             <constraints>
               <grid row="5" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -273,7 +256,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="9a130" class="javax.swing.JButton" binding="crearButtonDocumental">
+          <component id="9a130" class="javax.swing.JButton" binding="crearButton">
             <constraints>
               <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -281,7 +264,7 @@
               <text value="Crear"/>
             </properties>
           </component>
-          <component id="fda33" class="javax.swing.JButton" binding="cancelarButtonDocumental">
+          <component id="fda33" class="javax.swing.JButton" binding="cancelarButton">
             <constraints>
               <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

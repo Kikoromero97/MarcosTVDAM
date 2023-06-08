@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -26,8 +27,7 @@ public class verPeliculas {
     static verPeliculas panelVerPeliculas = new verPeliculas();
     static JFrame frame = new JFrame("verPeliculas");
 
-    public static void mostrarPatallaVerPelicula(DB_Contenido db_contenido) {
-
+    public static void mostrarPantallaVerPelicula(DB_Contenido db_contenido) {
         frame.setContentPane( panelVerPeliculas.JPanelPeliculas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -57,8 +57,12 @@ public class verPeliculas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int cod = (int) peliculasContenido[table1Pelicula.getSelectedRow()][0];
-                contenido_db.eliminarPelicula(cod);
-                pintarPeliculasTabla();
+                int respuesta = JOptionPane.showConfirmDialog(null, "¿Seguro que quieres borrar la película " + peliculasContenido[table1Pelicula.getSelectedRow()][1] + "?", "Borrando...",JOptionPane.YES_NO_OPTION);
+                if ( respuesta == 0 ) // Opción Si = borrar
+                {
+                    contenido_db.eliminarPelicula(cod);
+                    pintarPeliculasTabla();
+                }
             }
         });
         buscarButtonPelicula.addActionListener(new ActionListener() {

@@ -17,7 +17,6 @@ public class crearPelicula {
     private JFormattedTextField introPresupuesto;
     private JFormattedTextField introDescripcion;
     private JFormattedTextField introCodDirector;
-    private JFormattedTextField introApellidosDIrector;
     private JFormattedTextField introDuracion;
     private JLabel logoMarcosTV;
     private JButton crearButton;
@@ -38,7 +37,6 @@ public class crearPelicula {
                 || !validarCamposNoVacios(introPresupuesto.getText())
                 || !validarCamposNoVacios(introDescripcion.getText())
                 || !validarCamposNoVacios(introCodDirector.getText())
-                || !validarCamposNoVacios(introApellidosDIrector.getText())
                 || !validarCamposNoVacios(introDuracion.getText()))
         {
             return  false;
@@ -78,6 +76,9 @@ public class crearPelicula {
                     Peliculas pelicula = new Peliculas(cod, titulo, descripcion, duracion, valoracion, fecha, presupuesto, introEdad, fechaAlta, codDirector, introCont);
                     contenido_db.anyadirPelicula(pelicula);
                     panelVerPeliculas.pintarPeliculasTabla();
+
+                    JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película "+titulo);
+                    frame.dispose();
                 }
                 else
                 {
