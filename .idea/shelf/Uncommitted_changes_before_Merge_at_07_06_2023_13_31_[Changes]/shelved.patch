@@ -1,0 +1,124 @@
+Index: src/SeleccionUser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.event.*;\r\n\r\npublic class SeleccionUser extends JDialog {\r\n    private JPanel contentPane;\r\n    private JButton VerUsers;\r\n    private JButton CrearUsers;\r\n    private JButton PerfilesUsers;\r\n    private JButton VerSuscripciones;\r\n    private JButton btnCancelar;\r\n    private JButton buttonOK;\r\n    private JButton buttonCancel;\r\n\r\n    public SeleccionUser() {\r\n        setContentPane(contentPane);\r\n        setTitle(\"Menú de usuarios y suscripciones\");\r\n        setVisible(true);\r\n        setModal(true);\r\n        setSize(700, 500);\r\n        setLocationRelativeTo(null);\r\n        setDefaultCloseOperation(DISPOSE_ON_CLOSE);\r\n\r\n        /*Descomentar esto cuando se vaya a hacer un push*/\r\n        getRootPane().setDefaultButton(btnCancelar);\r\n\r\n        VerSuscripciones.addActionListener(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n                Suscripciones subsdia = new Suscripciones();\r\n\r\n            }\r\n        });\r\n\r\n        PerfilesUsers.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n                Perfiles perfus = new Perfiles();\r\n            }\r\n        });\r\n\r\n\r\n        CrearUsers.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n                CrearUsuario CU = new CrearUsuario();\r\n\r\n            }\r\n        });\r\n\r\n        VerUsers.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n                CuentasUser CUSER = new CuentasUser();\r\n               \r\n            }\r\n        });\r\n\r\n        btnCancelar.addActionListener(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                onCancel();\r\n            }\r\n        });\r\n\r\n        // call onCancel() when cross is clicked\r\n        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);\r\n        addWindowListener(new WindowAdapter() {\r\n            public void windowClosing(WindowEvent e) {\r\n                onCancel();\r\n            }\r\n        });\r\n\r\n        // call onCancel() on ESCAPE\r\n        contentPane.registerKeyboardAction(new ActionListener() {\r\n            public void actionPerformed(ActionEvent e) {\r\n                onCancel();\r\n            }\r\n        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);\r\n    }\r\n\r\n    private void onCancel() {\r\n        // add your code here if necessary\r\n        dispose();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        SeleccionUser dialog = new SeleccionUser();\r\n        dialog.setVisible(true);\r\n\r\n    }\r\n    public static void mostrarUsuarios(){\r\n        new SeleccionUser();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/SeleccionUser.java b/src/SeleccionUser.java
+--- a/src/SeleccionUser.java	(revision 891d426fb85a51442880b4d18aa026c54289afbc)
++++ b/src/SeleccionUser.java	(date 1686137508503)
+@@ -60,7 +60,7 @@
+ 
+         btnCancelar.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+-                onCancel();
++                dispose();
+             }
+         });
+ 
+@@ -68,21 +68,16 @@
+         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+         addWindowListener(new WindowAdapter() {
+             public void windowClosing(WindowEvent e) {
+-                onCancel();
++                dispose();
+             }
+         });
+ 
+         // call onCancel() on ESCAPE
+         contentPane.registerKeyboardAction(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+-                onCancel();
+-            }
+-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+-    }
+-
+-    private void onCancel() {
+-        // add your code here if necessary
+-        dispose();
++                dispose();
++            }
++        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+     }
+ 
+     public static void main(String[] args) {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9e01a84d-9f13-4afb-a118-0660f614f771\" name=\"Changes\" comment=\"Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/InfoUsuario.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/InfoUsuario.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/SeleccionUser.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/SeleccionUser.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"BotonesUsuariosSubs\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"5beebe44-43d8-4a8a-9e5f-ece31605591c\" />\r\n        <option name=\"url\" value=\"https://github.com/Kikoromero97/MarcosTVDAM.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2QSKOa6St9dRyNvY2AMsTDw7C0W\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/troy_/Documents/MarcosTV/src&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\troy_\\Documents\\MarcosTV\\src\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9e01a84d-9f13-4afb-a118-0660f614f771\" name=\"Changes\" comment=\"\" />\r\n      <created>1685341512459</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1685341512459</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Pantalla inicio de sesion\">\r\n      <created>1685352671244</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685352671244</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Pantalla crear pelicula\">\r\n      <created>1685444628173</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685444628173</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Pantalla crear serie\">\r\n      <created>1685445918435</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685445918435</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL\">\r\n      <created>1685446749519</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685446749519</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Vinculación de botones de mi programa. Sin finalizar.\">\r\n      <created>1685650468616</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685650468616</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.\">\r\n      <created>1685812380867</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1685812380867</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Pantalla inicio de sesion\" />\r\n    <MESSAGE value=\"Pantalla crear pelicula\" />\r\n    <MESSAGE value=\"Pantalla crear serie\" />\r\n    <MESSAGE value=\"PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL\" />\r\n    <MESSAGE value=\"Vinculación de botones de mi programa. Sin finalizar.\" />\r\n    <MESSAGE value=\"Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 891d426fb85a51442880b4d18aa026c54289afbc)
++++ b/.idea/workspace.xml	(date 1686137508503)
+@@ -4,10 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar.">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
++      <change afterPath="$PROJECT_DIR$/src/DBUsuarios.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/SeleccionUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SeleccionUser.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -25,7 +24,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="BotonesUsuariosSubs" />
++        <entry key="$PROJECT_DIR$" value="FeaturePanelesCarlos" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -37,6 +36,29 @@
+ }</component>
+   <component name="GitToolBoxStore">
+     <option name="projectConfigVersion" value="5" />
++    <option name="recentBranches">
++      <RecentBranches>
++        <option name="branchesForRepo">
++          <list>
++            <RecentBranchesForRepo>
++              <option name="branches">
++                <list>
++                  <RecentBranch>
++                    <option name="branchName" value="BotonesUsuariosSubs" />
++                    <option name="lastUsedInstant" value="1686136297" />
++                  </RecentBranch>
++                  <RecentBranch>
++                    <option name="branchName" value="FeaturePanelesCarlos" />
++                    <option name="lastUsedInstant" value="1686136128" />
++                  </RecentBranch>
++                </list>
++              </option>
++              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
++            </RecentBranchesForRepo>
++          </list>
++        </option>
++      </RecentBranches>
++    </option>
+   </component>
+   <component name="GithubPullRequestsUISettings">
+     <option name="selectedUrlAndAccountId">
+Index: src/DBUsuarios.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/DBUsuarios.java b/src/DBUsuarios.java
+new file mode 100644
+--- /dev/null	(date 1686137508503)
++++ b/src/DBUsuarios.java	(date 1686137508503)
+@@ -0,0 +1,6 @@
++public class DBUsuarios{
++
++    /*public DBUsuarios(){
++        super();
++    }*/
++}
