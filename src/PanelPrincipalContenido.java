@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class PanelPrincipalContenido {
+public class PanelPrincipalContenido extends JFrame{
     public JPanel JPanelVerPeliculas;
     private JPanel JPanelPrincipal;
     private JPanel JPanelBotones;
@@ -22,21 +22,20 @@ public class PanelPrincipalContenido {
     private static verDocumental panelVerDocumental = new verDocumental();
     private static verSeries panelVerSeries  = new verSeries();
 
-    private static JFrame frame = new JFrame("PanelPrincipalContenido");
-
 
 
     public static void mostrarpanelPrincipalContenido(){
-        frame.setContentPane(new PanelPrincipalContenido().JPanelPrincipal);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(700,500);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
+        JFrame frame = new PanelPrincipalContenido();
 
     }
 
     public PanelPrincipalContenido() {
 
+        setContentPane(JPanelPrincipal);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(700,500);
+        setVisible(true);
+        setLocationRelativeTo(null);
     peliculaButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -72,14 +71,29 @@ public class PanelPrincipalContenido {
     categoriaButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-           // VerCategoria.mostarPanelVerCategoria();
+           VerCategoria.mostrarPanelVerCategoria();
+           dispose();
         }
     });
         salirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new menuPrincipal();
-                frame.dispose();
+                dispose();
+            }
+        });
+        paisButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VerPaises.mostrarPais();
+                dispose();
+            }
+        });
+        idiomaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VerIdiomas.mostrarIdioma();
+                dispose();
             }
         });
     }

@@ -12,6 +12,7 @@ public class Departamento {
      * @param descripcion Descripción.
      * @param nombre Nombre del Departamento.
      * @param departamento Departamento.
+     * @param codigo Código del Departamento.
      */
     public Departamento(String descripcion, String nombre, String departamento, int codigo) {
         this.descripcion = descripcion;
