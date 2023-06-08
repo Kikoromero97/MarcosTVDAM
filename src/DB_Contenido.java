@@ -135,19 +135,20 @@ public class DB_Contenido extends DBManager{
 
 
 
-    public Peliculas buscarPelicula(String nombre)
+    public List<Peliculas> buscarPelicula(String nombre)
     {
+        List<Peliculas> peliculasEncontradas =  new ArrayList<>();
         for(Peliculas pelicula : tablaPeliculas)
         {
             String nombreEnBD = pelicula.getTitulo().toLowerCase();
             String nombreAComparar = nombre.toLowerCase();
 
-            if (nombreEnBD.equals(nombreAComparar))
+            if (nombreEnBD.contains(nombreAComparar) && !nombreAComparar.equals(""))
             {
-                return pelicula;
+                peliculasEncontradas.add(pelicula);
             }
         }
-        return  null;
+        return  peliculasEncontradas;
     }
 
 /*Documental*/
@@ -234,19 +235,20 @@ public class DB_Contenido extends DBManager{
 
 
 
-    public Documental buscarDocumental(String nombre)
+    public List<Documental> buscarDocumental(String nombre)
     {
+        List<Documental> lstDocumental = new ArrayList<>();
         for(Documental documental : tablaDocumental)
         {
             String nombreEnBD = documental.getTitulo().toLowerCase();
             String nombreAComparar = nombre.toLowerCase();
 
-            if (nombreEnBD.equals(nombreAComparar))
+            if (nombreEnBD.contains(nombreAComparar) && !nombreAComparar.equals(""))
             {
-                return documental;
+                lstDocumental.add(documental);
             }
         }
-        return  null;
+        return  lstDocumental;
     }
 
 
@@ -334,19 +336,20 @@ public class DB_Contenido extends DBManager{
 
 
 
-    public Series buscarSerie(String nombre)
+    public List<Series> buscarSerie(String nombre)
     {
+        List<Series> lstSeries = new ArrayList<>();
         for(Series serie : tablaSeries)
         {
             String nombreEnBD = serie.getTitulo().toLowerCase();
             String nombreAComparar = nombre.toLowerCase();
 
-            if (nombreEnBD.equals(nombreAComparar))
+            if (nombreEnBD.contains(nombreAComparar) && !nombreAComparar.equals(""))
             {
-                return serie;
+                lstSeries.add(serie);
             }
         }
-        return  null;
+        return  lstSeries;
     }
 
 /*Temporadas*/
@@ -520,19 +523,21 @@ public class DB_Contenido extends DBManager{
         }
     }
 
-    public Episodio buscarEpisodio(String nombre)
-    {   for(Episodio episodio : tablaEpisodio)
+    public List<Episodio> buscarEpisodio(String nombre)
+    {
+        List<Episodio> lstEpisodio = new ArrayList<>();
+        for(Episodio episodio : tablaEpisodio)
         {
             String nombreEnBD = episodio.getNombreEpisodio().toLowerCase();
             String nombreABuscar = nombre.toLowerCase();
 
-            if (nombreEnBD.equals(nombreABuscar) )
+            if (nombreEnBD.contains(nombreABuscar) && !nombreABuscar.equals(""))
             {
-                return episodio;
+                lstEpisodio.add(episodio);
             }
         }
 
-        return  null;
+        return lstEpisodio;
     }
 
 

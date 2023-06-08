@@ -75,24 +75,28 @@ public class verPeliculas {
         buscarButtonPelicula.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Peliculas pelicula = contenido_db.buscarPelicula(introPelicula.getText());
 
-                if (pelicula != null)
+                List<Peliculas> peliculas = contenido_db.buscarPelicula(introPelicula.getText());
+
+                if (peliculas.size() > 0)
                 {
-                    peliculasContenido = new Object[1][11];
-                    peliculasContenido[0][0] = pelicula.getCodigo();
-                    peliculasContenido[0][1] = pelicula.getTitulo();
-                    peliculasContenido[0][2] = pelicula.getDescripcion();
-                    peliculasContenido[0][3] = pelicula.getDuracionSegundos();
-                    peliculasContenido[0][4] = pelicula.getValoracion();
-                    peliculasContenido[0][5] = pelicula.getAnyo_lanzamiento();
-                    peliculasContenido[0][6] = pelicula.getPresupuesto();
-                    peliculasContenido[0][7] = pelicula.getFecha_alta();
-                    peliculasContenido[0][9] = pelicula.getDirector();
-                    peliculasContenido[0][10] = pelicula.getTipoContenido();
+                    peliculasContenido = new Object[peliculas.size()][11];
+                    for (int i = 0; i < peliculas.size(); i++) {
+                        peliculasContenido[i][0] = peliculas.get(i).getCodigo();
+                        peliculasContenido[i][1] = peliculas.get(i).getTitulo();
+                        peliculasContenido[i][2] = peliculas.get(i).getDescripcion();
+                        peliculasContenido[i][3] = peliculas.get(i).getDuracionSegundos();
+                        peliculasContenido[i][4] = peliculas.get(i).getValoracion();
+                        peliculasContenido[i][5] = peliculas.get(i).getAnyo_lanzamiento();
+                        peliculasContenido[i][6] = peliculas.get(i).getPresupuesto();
+                        peliculasContenido[i][7] = peliculas.get(i).getFecha_alta();
+                        peliculasContenido[i][9] = peliculas.get(i).getDirector();
+                        peliculasContenido[i][10] = peliculas.get(i).getTipoContenido();
+                    }
 
                     DefaultTableModel model = new DefaultTableModel(peliculasContenido,columnas);
                     table1Pelicula.setModel(model);
+
                 }
                 else
                 {
@@ -111,6 +115,7 @@ public class verPeliculas {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pintarPeliculasTabla();
+                introPelicula.setText("");
             }
         });
     }

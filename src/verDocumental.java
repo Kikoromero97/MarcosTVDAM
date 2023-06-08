@@ -79,22 +79,23 @@ public class verDocumental {
             @Override
             public void actionPerformed(ActionEvent e) {
                 contenido_db = new DB_Contenido();
-                Documental documental = contenido_db.buscarDocumental(introDocumental.getText());
+                List<Documental> documental = contenido_db.buscarDocumental(introDocumental.getText());
 
-                if (documental != null)
+                if (documental.size() > 0)
                 {
-                    documentalContenido = new Object[1][11];
-                    documentalContenido[0][0] = documental.getCodigo();
-                    documentalContenido[0][1] = documental.getTitulo();
-                    documentalContenido[0][2] = documental.getDescripcion();
-                    documentalContenido[0][3] = documental.getDuracionSegundos();
-                    documentalContenido[0][4] = documental.getValoracion();
-                    documentalContenido[0][5] = documental.getAnyo_lanzamiento();
-                    documentalContenido[0][6] = documental.getPresupuesto();
-                    documentalContenido[0][7] = documental.getFecha_alta();
-                    documentalContenido[0][9] = documental.getDirector();
-                    documentalContenido[0][10] = documental.getTipoContenido();
-
+                    documentalContenido = new Object[documental.size()][11];
+                    for (int i = 0; i < documental.size(); i++) {
+                        documentalContenido[i][0] = documental.get(i).getCodigo();
+                        documentalContenido[i][1] = documental.get(i).getTitulo();
+                        documentalContenido[i][2] = documental.get(i).getDescripcion();
+                        documentalContenido[i][3] = documental.get(i).getDuracionSegundos();
+                        documentalContenido[i][4] = documental.get(i).getValoracion();
+                        documentalContenido[i][5] = documental.get(i).getAnyo_lanzamiento();
+                        documentalContenido[i][6] = documental.get(i).getPresupuesto();
+                        documentalContenido[i][7] = documental.get(i).getFecha_alta();
+                        documentalContenido[i][9] = documental.get(i).getDirector();
+                        documentalContenido[i][10] = documental.get(i).getTipoContenido();
+                    }
                     DefaultTableModel model = new DefaultTableModel(documentalContenido,columnas);
                     table1Documental.setModel(model);
                 }
@@ -115,7 +116,9 @@ public class verDocumental {
         verButtonTodasDocumentales.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 pintarDocumentalTabla();
+                introDocumental.setText("");
             }
         });
     }

@@ -111,20 +111,22 @@ public class VerEpisodio {
                     JOptionPane.showMessageDialog(null, "Debes escribir el número del episodio para poder encontrarlo.");
                 }
                 else {
-                    Episodio episodio = contenido_db.buscarEpisodio(introEpisodio.getText());
+                    List<Episodio> episodio = contenido_db.buscarEpisodio(introEpisodio.getText());
 
-                    if (episodio != null) {
-                        episodioContenido = new Object[1][7];
+                    if (episodio.size() > 0)
+                    {
+                        episodioContenido = new Object[episodio.size()][7];
 
-                        episodioContenido[0][0] = episodio.getIdEpisodio();
-                        episodioContenido[0][1] = episodio.getIdTemporada();
-                        episodioContenido[0][2] = episodio.getIdSerie();
-                        episodioContenido[0][3] = episodio.getNombreEpisodio();
-                        episodioContenido[0][4] = episodio.getFechaEpisodio();
-                        episodioContenido[0][5] = episodio.getDuracionEpisodio();
-                        episodioContenido[0][6] = episodio.getDescripcionEpisodio();
-
-                        DefaultTableModel model = new DefaultTableModel(episodioContenido, columnas);
+                        for (int i = 0; i < episodio.size(); i++) {
+                            episodioContenido[i][0] = episodio.get(i).getIdEpisodio();
+                            episodioContenido[i][1] = episodio.get(i).getIdTemporada();
+                            episodioContenido[i][2] = episodio.get(i).getIdSerie();
+                            episodioContenido[i][3] = episodio.get(i).getNombreEpisodio();
+                            episodioContenido[i][4] = episodio.get(i).getFechaEpisodio();
+                            episodioContenido[i][5] = episodio.get(i).getDuracionEpisodio();
+                            episodioContenido[i][6] = episodio.get(i).getDescripcionEpisodio();
+                        }
+                        DefaultTableModel model = new DefaultTableModel(episodioContenido,columnas);
                         table1Episodio.setModel(model);
                     }
                     else
@@ -140,6 +142,7 @@ public class VerEpisodio {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pintarEpisodioTabla();
+                introEpisodio.setText("");
             }
         });
     }

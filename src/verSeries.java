@@ -81,22 +81,24 @@ public class verSeries {
         buscarButtonSerie.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Series serie = contenido_db.buscarSerie(introSerie.getText());
 
-                if (serie != null)
+                List<Series> serie = contenido_db.buscarSerie(introSerie.getText());
+
+                if (serie.size() > 0)
                 {
-                    seriesContenido = new Object[1][11];
-                    seriesContenido[0][0] = serie.getCodigo();
-                    seriesContenido[0][1] = serie.getTitulo();
-                    seriesContenido[0][2] = serie.getDescripcion();
-                    seriesContenido[0][3] = serie.getDuracionSegundos();
-                    seriesContenido[0][4] = serie.getValoracion();
-                    seriesContenido[0][5] = serie.getAnyo_lanzamiento();
-                    seriesContenido[0][6] = serie.getPresupuesto();
-                    seriesContenido[0][7] = serie.getFecha_alta();
-                    seriesContenido[0][9] = serie.getDirector();
-                    seriesContenido[0][10] = serie.getTipoContenido();
-
+                    seriesContenido = new Object[serie.size()][11];
+                    for (int i = 0; i < serie.size(); i++) {
+                        seriesContenido[i][0] = serie.get(i).getCodigo();
+                        seriesContenido[i][1] = serie.get(i).getTitulo();
+                        seriesContenido[i][2] = serie.get(i).getDescripcion();
+                        seriesContenido[i][3] = serie.get(i).getDuracionSegundos();
+                        seriesContenido[i][4] = serie.get(i).getValoracion();
+                        seriesContenido[i][5] = serie.get(i).getAnyo_lanzamiento();
+                        seriesContenido[i][6] = serie.get(i).getPresupuesto();
+                        seriesContenido[i][7] = serie.get(i).getFecha_alta();
+                        seriesContenido[i][9] = serie.get(i).getDirector();
+                        seriesContenido[i][10] = serie.get(i).getTipoContenido();
+                    }
                     DefaultTableModel model = new DefaultTableModel(seriesContenido,columnas);
                     table1Serie.setModel(model);
                 }
@@ -118,6 +120,7 @@ public class verSeries {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pintarSeriesTabla();
+                introSerie.setText("");
             }
         });
         verTemporadasButton.addActionListener(new ActionListener() {
