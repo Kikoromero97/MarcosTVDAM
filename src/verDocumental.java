@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class verDocumental extends JFrame {
-    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO" , "DIRECTOR" , "TIPO CONTENIDO"};
+    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "DIRECTOR"};
 
     private static List<Documental> documentals;
     private JPanel JPanelVerDocumental;
@@ -94,7 +94,8 @@ public class verDocumental extends JFrame {
                         documentalContenido[i][4] = documental.get(i).getValoracion();
                         documentalContenido[i][5] = documental.get(i).getAnyo_lanzamiento();
                         documentalContenido[i][6] = documental.get(i).getPresupuesto();
-                        documentalContenido[i][7] = documental.get(i).getFecha_alta();
+                        documentalContenido[i][7] = documentals.get(i).getEdad_recomendada();
+                        documentalContenido[i][8] = documental.get(i).getFecha_alta();
                         documentalContenido[i][9] = documental.get(i).getDirector();
                         documentalContenido[i][10] = documental.get(i).getTipoContenido();
                     }
@@ -139,7 +140,8 @@ public class verDocumental extends JFrame {
             documentalContenido[i][4] = documentals.get(i).getValoracion();
             documentalContenido[i][5] = documentals.get(i).getAnyo_lanzamiento();
             documentalContenido[i][6] = documentals.get(i).getPresupuesto();
-            documentalContenido[i][7] = documentals.get(i).getFecha_alta();
+            documentalContenido[i][7] = documentals.get(i).getEdad_recomendada();
+            documentalContenido[i][8] = documentals.get(i).getFecha_alta();
             documentalContenido[i][9] = documentals.get(i).getDirector();
             documentalContenido[i][10] = documentals.get(i).getTipoContenido();
         }

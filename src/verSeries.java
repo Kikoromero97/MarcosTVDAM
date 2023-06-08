@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class verSeries extends JFrame{
-    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO PELICULA" , "DIRECTOR" , "TIPO CONTENIDO"};
+    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "DIRECTOR"};
 
     private static List<Series> pelis;
     private JPanel JPanelVerSeries;
@@ -94,7 +94,8 @@ public class verSeries extends JFrame{
                         seriesContenido[i][4] = serie.get(i).getValoracion();
                         seriesContenido[i][5] = serie.get(i).getAnyo_lanzamiento();
                         seriesContenido[i][6] = serie.get(i).getPresupuesto();
-                        seriesContenido[i][7] = serie.get(i).getFecha_alta();
+                        seriesContenido[i][7] = pelis.get(i).getEdad_recomendada();
+                        seriesContenido[i][8] = serie.get(i).getFecha_alta();
                         seriesContenido[i][9] = serie.get(i).getDirector();
                         seriesContenido[i][10] = serie.get(i).getTipoContenido();
                     }
@@ -156,7 +157,8 @@ public class verSeries extends JFrame{
             seriesContenido[i][4] = pelis.get(i).getValoracion();
             seriesContenido[i][5] = pelis.get(i).getAnyo_lanzamiento();
             seriesContenido[i][6] = pelis.get(i).getPresupuesto();
-            seriesContenido[i][7] = pelis.get(i).getFecha_alta();
+            seriesContenido[i][7] = pelis.get(i).getEdad_recomendada();
+            seriesContenido[i][8] = pelis.get(i).getFecha_alta();
             seriesContenido[i][9] = pelis.get(i).getDirector();
             seriesContenido[i][10] = pelis.get(i).getTipoContenido();
         }

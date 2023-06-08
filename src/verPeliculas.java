@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class verPeliculas extends JFrame {
-    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO PELICULA" , "DIRECTOR" , "TIPO CONTENIDO"};
+    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "DIRECTOR"};
 
     private static List<Peliculas> pelis;
     private JPanel JPanelVerPeliculas;
@@ -93,7 +93,8 @@ public class verPeliculas extends JFrame {
                         peliculasContenido[i][4] = peliculas.get(i).getValoracion();
                         peliculasContenido[i][5] = peliculas.get(i).getAnyo_lanzamiento();
                         peliculasContenido[i][6] = peliculas.get(i).getPresupuesto();
-                        peliculasContenido[i][7] = peliculas.get(i).getFecha_alta();
+                        peliculasContenido[i][7] = pelis.get(i).getEdad_recomendada();
+                        peliculasContenido[i][8] = peliculas.get(i).getFecha_alta();
                         peliculasContenido[i][9] = peliculas.get(i).getDirector();
                         peliculasContenido[i][10] = peliculas.get(i).getTipoContenido();
                     }
@@ -138,7 +139,8 @@ public class verPeliculas extends JFrame {
             peliculasContenido[i][4] = pelis.get(i).getValoracion();
             peliculasContenido[i][5] = pelis.get(i).getAnyo_lanzamiento();
             peliculasContenido[i][6] = pelis.get(i).getPresupuesto();
-            peliculasContenido[i][7] = pelis.get(i).getFecha_alta();
+            peliculasContenido[i][7] = pelis.get(i).getEdad_recomendada();
+            peliculasContenido[i][8] = pelis.get(i).getFecha_alta();
             peliculasContenido[i][9] = pelis.get(i).getDirector();
             peliculasContenido[i][10] = pelis.get(i).getTipoContenido();
         }
