@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado.">
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Casi terminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDepartamento.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDepartamento.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDepartamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBDepartamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Departamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ModificarDepartamento.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModificarDepartamento.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ModificarDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModificarDepartamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDepartamento.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDepartamento.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDepartamento.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +52,7 @@
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CrearDepartamento">
+  <component name="RunManager" selected="Application.ModificarDepartamento">
     <configuration name="CrearCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CrearCategoria" />
       <module name="MarcosTVProgramacion" />
@@ -95,9 +89,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CrearDepartamento" />
-        <item itemvalue="Application.VerDepartamento" />
         <item itemvalue="Application.ModificarDepartamento" />
+        <item itemvalue="Application.VerDepartamento" />
+        <item itemvalue="Application.CrearDepartamento" />
         <item itemvalue="Application.CrearCategoria" />
       </list>
     </recent_temporary>
@@ -160,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686214078778</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Casi terminado">
+      <created>1686249052850</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686249052851</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +195,7 @@
     <MESSAGE value="Menu principal Listro para revisiones" />
     <MESSAGE value="CrearSesion actualizado para comprobar el nombre de la sesión y comentado" />
     <MESSAGE value="InicioSesion completado y comentado." />
-    <option name="LAST_COMMIT_MESSAGE" value="InicioSesion completado y comentado." />
+    <MESSAGE value="Casi terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Casi terminado" />
   </component>
 </project>

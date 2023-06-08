@@ -71,9 +71,9 @@ public class ModificarDepartamento extends JFrame {
 
                 try {
                     if (rs.next()) {
-                        String value1 = rs.getString("columna1"); // Reemplaza "columna1" con el nombre real de la columna
-                        String value2 = rs.getString("columna2"); // Reemplaza "columna2" con el nombre real de la columna
-                        int value3 = rs.getInt("columna3"); // Reemplaza "columna3" con el nombre real de la columna
+                        String value1 = rs.getString("nombre");
+                        String value2 = rs.getString("descripcion");
+                        int value3 = rs.getInt("codigo");
 
                         txtFldCodigo.setText(value1);
                         txtFldNombre.setText(value2);
