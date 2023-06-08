@@ -1,0 +1,182 @@
+Index: src/EditarTarjetas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/EditarTarjetas.java b/src/EditarTarjetas.java
+--- a/src/EditarTarjetas.java	
++++ b/src/EditarTarjetas.java	
+@@ -15,22 +15,24 @@
+     public EditarTarjetas() {
+         setContentPane(contentPane);
+         setTitle("Editando tarjeta");
++        setSize(700, 500);
++        setVisible(true);
+         setModal(true);
+         getRootPane().setDefaultButton(volverButton);
++        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+         editarButton.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 JOptionPane.showMessageDialog(null, "Se han editado los campos correctamente.", "Realizado con éxito.", JOptionPane.INFORMATION_MESSAGE);
+-                SwingUtilities.getWindowAncestor(contentPane).dispose();
++                dispose();
++                JDialog dialog = new CrearTarjetas();
+             }
+         });
+         volverButton.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
++                dispose();
+                 JDialog dialog = new CrearTarjetas();
+-                dialog.setSize(700, 500);
+-                dialog.setVisible(true);
+-                SwingUtilities.getWindowAncestor(contentPane).dispose();
+             }
+         });
+     }
+@@ -39,6 +41,5 @@
+         EditarTarjetas dialog = new EditarTarjetas();
+         dialog.setSize(700, 500);
+         dialog.setVisible(true);
+-        System.exit(0);
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Terminada todas las pantallas.">
++    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Creada rama para modificar botones.">
++      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearTarjetas.form" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/CrearTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearTarjetas.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/EditarTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarTarjetas.java" afterDir="false" />
+     </list>
+@@ -43,8 +43,8 @@
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+   }
+ }</component>
+-  <component name="RunManager" selected="Application.CrearTarjetas">
+-    <configuration name="CrearTarjetas (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="Application.EditarTarjetas (2)">
++    <configuration name="CrearTarjetas (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+@@ -58,15 +58,15 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="CrearTarjetas (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
++    <configuration name="EditarTarjetas (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="CrearTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="CrearTarjetas" />
++    <configuration name="EditarTarjetas (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
+       <module name="MarcosTVProgramacion" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -81,11 +81,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.CrearTarjetas" />
+-        <item itemvalue="Application.CrearTarjetas (4)" />
++        <item itemvalue="Application.EditarTarjetas (2)" />
+         <item itemvalue="Application.CrearTarjetas (3)" />
+-        <item itemvalue="Application.CrearTarjetas (2)" />
++        <item itemvalue="Application.CrearTarjetas (1)" />
+         <item itemvalue="Application.EditarTarjetas" />
++        <item itemvalue="Application.EditarTarjetas (1)" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -126,7 +126,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1685377804246</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="Creada rama para modificar botones.">
++      <created>1685525607645</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1685525607645</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -145,6 +152,7 @@
+     <MESSAGE value="commit Tarjeta" />
+     <MESSAGE value="3 tablas: Tarjeta, Idioma, Pais" />
+     <MESSAGE value="2 tablas: Director, Categoria" />
+-    <option name="LAST_COMMIT_MESSAGE" value="2 tablas: Director, Categoria" />
++    <MESSAGE value="Creada rama para modificar botones." />
++    <option name="LAST_COMMIT_MESSAGE" value="Creada rama para modificar botones." />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/CrearTarjetas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/CrearTarjetas.java b/src/CrearTarjetas.java
+--- a/src/CrearTarjetas.java	
++++ b/src/CrearTarjetas.java	
+@@ -16,8 +16,11 @@
+     public CrearTarjetas() {
+         setContentPane(contentPane);
+         setTitle("Tarjeta");
++        setSize(700, 500);
++        setVisible(true);
+         setModal(true);
+         getRootPane().setDefaultButton(btnVolver);
++        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+         btnEliminar.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+@@ -30,10 +33,15 @@
+         btnEditar.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
++                dispose();
+                 JDialog dialog = new EditarTarjetas();
+-                dialog.setSize(700, 500);
+-                dialog.setVisible(true);
+-                CrearTarjetas.this.dispose();
++            }
++        });
++        btnVolver.addActionListener(new ActionListener() {
++            @Override
++            public void actionPerformed(ActionEvent e) {
++                dispose();
++                JDialog dialog = new InfoUsuario();
+             }
+         });
+     }
+@@ -42,6 +50,5 @@
+         CrearTarjetas dialog = new CrearTarjetas();
+         dialog.setSize(700, 500);
+         dialog.setVisible(true);
+-        System.exit(0);
+     }
+ }

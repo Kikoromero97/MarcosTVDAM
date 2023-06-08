@@ -3,19 +3,31 @@ import java.sql.*;
 
 public class DBEmpleados extends DBManager{
 
+    // Tablas
     private static final String DB_EMP = "dbo.empleado";
-
     private static final String DB_SES = "dbo.sesion";
     private static final String DB_EMP_LIMITED = "dbo.informacionLimitadaEmpleado";
+
+    private static final String DB_DEP = "dbo.departamento";
+
+
+    // Selects de la tabla empleado
     private static final String SELECT_EMPLEADOS = "SELECT * FROM " + DB_EMP;
+    private static final String SELECT_EMPLEADO_CUSTOM_WHERE = "SELECT codigo, nif, (nombre + ' ' + primer_apellido + ' ' + segundo_apellido) AS 'Nombre Completo'  FROM " + DB_EMP + " WHERE ";
     private static final String SELECT_EMPLEADO_POR_CODIGO = SELECT_EMPLEADOS + " WHERE codigo = ";
+    private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif LIKE '";
+
+
+    // Select de la tabla empleadoLimitado
     private static final String SELECT_EMPLEADOS_LIMITADO = "SELECT * FROM " + DB_EMP_LIMITED;
 
-    private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif = ";
 
-    private static final String PROCEDURE_NEW_SESION = "EXEC dbo.newSesion @nif=?, @nombre=?, @contrasenya=?, @rol=?, @return=?";
-
+    // Selects de la tabla sesion
     private static final String SELECT_SESIONES = "SELECT * FROM " + DB_SES;
+
+
+    // Procedures de sesion
+    private static final String PROCEDURE_NEW_SESION = "EXEC dbo.newSesion @nif=?, @nombre=?, @contrasenya=?, @rol=?, @return=?";
 
     /**
      * Constructor que implementa DBManager.
@@ -25,13 +37,26 @@ public class DBEmpleados extends DBManager{
     }       
 
     /**
-     * Función que devuelve un empleado especifico.
+     * Función que devuelve un empleado específico.
      *
      * @param codigo codigo del empleado.
      * @return ResultSet con todos los datos del empleado (Solo lectura).
      */
     public ResultSet verEmpleado(int codigo){
         return verSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
+    }
+
+    public boolean delete(int codigo){
+        try {
+            ResultSet rs = getSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
+            rs.last();
+            rs.deleteRow();
+            rs.close();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
 
     /**
@@ -95,5 +120,39 @@ public class DBEmpleados extends DBManager{
      */
     public ResultSet verSesiones(){
         return verSelect(SELECT_SESIONES);
+    }
+
+
+    /**
+     * Función para buscar empleados mediante un custom WHERE.
+     *
+     * @param whereParameters custom WHERE.
+     * @return ResultSet los empleados que coinciden con el custom WHERE.
+     */
+    public ResultSet verEmpleadosCustom(String whereParameters){
+        return verSelect(SELECT_EMPLEADO_CUSTOM_WHERE + whereParameters);
+    }
+
+    public boolean modify(int codigo, String nif, String nombre, String primer_apellido, String segundo_apellido, String direccion, String email, int departamento, int telefono) {
+        try{
+            ResultSet rs = getSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
+
+            rs.last();
+            rs.updateString("nif", nif);
+            rs.updateString("nombre", nombre);
+            rs.updateString("primer_apellido", primer_apellido);
+            rs.updateString("segundo_apellido", segundo_apellido);
+            rs.updateString("direccion", direccion);
+            rs.updateString("email", email);
+            rs.updateInt("codigo_departamento", departamento);
+            rs.updateInt("telefono", telefono);
+
+            rs.updateRow();
+            rs.close();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }

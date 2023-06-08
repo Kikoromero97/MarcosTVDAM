@@ -26,7 +26,7 @@ public class Utilitis {
      * @param data Datos que deseas
      * @return
      */
-    private static String[][] deleteNulls(String[][] data) {
+    public static String[][] deleteNulls(String[][] data) {
         int count = 0;
         for (String[] strings : data) {
             if (strings[0] != null) {
@@ -58,7 +58,7 @@ public class Utilitis {
             while (rs.next()) {
                 if (result[count] != null) {
                     for (int i = 0; i < cantidadColumnas; i++) {
-                        result[count][i] = rs.getString(i);
+                        result[count][i] = rs.getString(i +1);
                     }
                 }
                 count++;

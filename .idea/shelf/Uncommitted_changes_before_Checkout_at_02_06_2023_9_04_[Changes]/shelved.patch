@@ -1,0 +1,18 @@
+Index: src/EditarTarjetas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\n\r\npublic class EditarTarjetas extends JDialog {\r\n    private JPanel contentPane;\r\n    private JButton buttonOK;\r\n    private JTextField textField1;\r\n    private JTextField textField2;\r\n    private JTextField textField3;\r\n    private JTextField textField4;\r\n    private JTextField textField5;\r\n    private JButton editarButton;\r\n    private JButton volverButton;\r\n    private JButton buttonCancel;\r\n\r\n    public EditarTarjetas() {\r\n        setContentPane(contentPane);\r\n        setModal(true);\r\n        getRootPane().setDefaultButton(buttonOK);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        EditarTarjetas dialog = new EditarTarjetas();\r\n        dialog.setSize(700, 500);\r\n        dialog.setVisible(true);\r\n        System.exit(0);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/EditarTarjetas.java b/src/EditarTarjetas.java
+--- a/src/EditarTarjetas.java	(revision 3a43a5a33e147265d1e28084b66c782efcda1720)
++++ b/src/EditarTarjetas.java	(date 1685689438420)
+@@ -18,6 +18,7 @@
+         getRootPane().setDefaultButton(buttonOK);
+     }
+ 
++
+     public static void main(String[] args) {
+         EditarTarjetas dialog = new EditarTarjetas();
+         dialog.setSize(700, 500);
