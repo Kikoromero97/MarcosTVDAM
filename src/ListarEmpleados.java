@@ -1,5 +1,9 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ListarEmpleados extends JFrame{
     private JPanel panelBusqueda;
@@ -27,6 +31,50 @@ public class ListarEmpleados extends JFrame{
         setVisible(true);
         setContentPane(panelPrincipal);
         loadEmpleados();
+        tableEmpleados.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                seleccionaEmpleado(e);
+            }
+        });
+        confirmarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                search();
+            }
+        });
+    }
+
+    private void search() {
+        JTextField[] fields = {txtFldCodigo, txtFldNif, txtFldNombre, txtFldTelefono, txtFldEmail, txtFldDepartamento};
+        int count = 0;
+        for (JTextField field : fields){
+            if (hasParameter(field)){
+                count++;
+            }
+        }
+        searchByX(count);
+    }
+
+    private void searchByX(int x) {
+        switch (x){
+            case 1 ->
+        }
+    }
+
+    private boolean hasParameter(JTextField fiel){
+        return fiel.getText().equals("");
+    }
+
+    private void seleccionaEmpleado(MouseEvent e) {
+        if (e.getClickCount() == 1){
+            JTable table = (JTable) e.getSource();
+            int row = table.getSelectedRow();
+            int codigo = (Integer) table.getValueAt(row, 0);
+            VerEmpleado.mostrarVerEmpleado(codigo);
+            dispose();
+        }
     }
 
     public static void mostrarListarEmpleados(){
@@ -38,5 +86,9 @@ public class ListarEmpleados extends JFrame{
         tableEmpleados.setModel(table);
         Utilitis.centerTable(tableEmpleados);
         tableEmpleados.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        mostrarListarEmpleados();
     }
 }
