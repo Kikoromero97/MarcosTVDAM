@@ -1,4 +1,5 @@
-import java.sql.ResultSet;
+import java.lang.reflect.Type;
+import java.sql.*;
 
 public class DBEmpleados extends DBManager{
 
@@ -9,6 +10,8 @@ public class DBEmpleados extends DBManager{
     private static final String SELECT_EMPLEADOS_LIMITADO = "SELECT * FROM " + DB_EMP_LIMITED;
 
     private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif = ";
+
+    private static final String PROCEDURE_NEW_SESION = "EXEC dbo.newSesion @nif=?, @nombre=?, @contrasenya=?, @rol=?, @return=?";
 
     /**
      * Constructor que implementa DBManager.
@@ -54,5 +57,31 @@ public class DBEmpleados extends DBManager{
      */
     public ResultSet listarEmpleadosLimitado(){
         return verSelect(SELECT_EMPLEADOS_LIMITADO);
+    }
+
+    /**
+     * Función que intenta crear una nueva sesión en la base de datos.
+     *
+     * @param nif Nif del empleado que desea crear una nueva sesión.
+     * @param nombre Nombre de la sesión.
+     * @param contrasenya Contraseña de la sesión.
+     * @param rol Rol de la sesión.
+     * @return int -2: error con la bd, -1: el nif no está registrado, 0: el nif ya tiene sesión y 1: creado exitosamente.
+     */
+    public int procedureNewSesion(String nif, String nombre, String contrasenya, String rol){
+        try{
+            CallableStatement cs = getConn().prepareCall(PROCEDURE_NEW_SESION);
+
+            cs.registerOutParameter("@return", Types.INTEGER);
+            cs.setString("@nif", nif);
+            cs.setString("@nombre", nombre);
+            cs.setString("@contrasenya", contrasenya);
+            cs.setString("@rol", rol);
+            cs.execute();
+            return cs.getInt("@return");
+        } catch (SQLException e){
+            e.printStackTrace();
+            return -2;
+        }
     }
 }
