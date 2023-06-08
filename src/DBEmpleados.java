@@ -3,19 +3,30 @@ import java.sql.*;
 
 public class DBEmpleados extends DBManager{
 
+    // Tablas
     private static final String DB_EMP = "dbo.empleado";
-
     private static final String DB_SES = "dbo.sesion";
     private static final String DB_EMP_LIMITED = "dbo.informacionLimitadaEmpleado";
+
+
+    // Selects de la tabla empleado
     private static final String SELECT_EMPLEADOS = "SELECT * FROM " + DB_EMP;
+    private static final String SELECT_EMPLEADO_CUSTOM_WHERE = "SELECT codigo, nif, (nombre + ' ' + primer_apellido + ' ' + segundo_apellido) AS 'Nombre Completo'  FROM " + DB_EMP + " WHERE ";
     private static final String SELECT_EMPLEADO_POR_CODIGO = SELECT_EMPLEADOS + " WHERE codigo = ";
+    private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif LIKE '";
+
+
+    // Select de la tabla empleadoLimitado
     private static final String SELECT_EMPLEADOS_LIMITADO = "SELECT * FROM " + DB_EMP_LIMITED;
 
-    private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif = ";
 
+    // Selects de la tabla sesion
+    private static final String SELECT_SESIONES = "SELECT * FROM " + DB_SES;
+
+
+    // Procedures de sesion
     private static final String PROCEDURE_NEW_SESION = "EXEC dbo.newSesion @nif=?, @nombre=?, @contrasenya=?, @rol=?, @return=?";
 
-    private static final String SELECT_SESIONES = "SELECT * FROM " + DB_SES;
 
     /**
      * Constructor que implementa DBManager.
@@ -25,7 +36,7 @@ public class DBEmpleados extends DBManager{
     }       
 
     /**
-     * Función que devuelve un empleado especifico.
+     * Función que devuelve un empleado específico.
      *
      * @param codigo codigo del empleado.
      * @return ResultSet con todos los datos del empleado (Solo lectura).
@@ -95,5 +106,16 @@ public class DBEmpleados extends DBManager{
      */
     public ResultSet verSesiones(){
         return verSelect(SELECT_SESIONES);
+    }
+
+
+    /**
+     * Función para buscar empleados mediante un custom WHERE.
+     *
+     * @param whereParameters custom WHERE.
+     * @return ResultSet los empleados que coinciden con el custom WHERE.
+     */
+    public ResultSet verEmpleadosCustom(String whereParameters){
+        return verSelect(SELECT_EMPLEADO_CUSTOM_WHERE + whereParameters);
     }
 }

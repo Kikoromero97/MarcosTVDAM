@@ -26,7 +26,7 @@ public class Utilitis {
      * @param data Datos que deseas
      * @return
      */
-    public static String[][] deleteNulls(String[][] data) {
+    private static String[][] deleteNulls(String[][] data) {
         int count = 0;
         for (String[] strings : data) {
             if (strings[0] != null) {
@@ -58,7 +58,7 @@ public class Utilitis {
             while (rs.next()) {
                 if (result[count] != null) {
                     for (int i = 0; i < cantidadColumnas; i++) {
-                        result[count][i] = rs.getString(i + 1);
+                        result[count][i] = rs.getString(i +1);
                     }
                 }
                 count++;
@@ -105,7 +105,7 @@ public class Utilitis {
      *
      * @return String con el contenido de la celda.
      */
-    public static String getCell(JTable table, int columna, int rowY) {
+    private String getCell(JTable table, int columna, int rowY) {
         int rowLine = rowY / ROW_INTERVALS;
         return (String) table.getValueAt(rowLine, columna);
     }
