@@ -26,7 +26,7 @@ public class Utilitis {
      * @param data Datos que deseas
      * @return
      */
-    private static String[][] deleteNulls(String[][] data) {
+    public static String[][] deleteNulls(String[][] data) {
         int count = 0;
         for (String[] strings : data) {
             if (strings[0] != null) {
