@@ -8,6 +8,8 @@ public class DBEmpleados extends DBManager{
     private static final String DB_SES = "dbo.sesion";
     private static final String DB_EMP_LIMITED = "dbo.informacionLimitadaEmpleado";
 
+    private static final String DB_DEP = "dbo.departamento";
+
 
     // Selects de la tabla empleado
     private static final String SELECT_EMPLEADOS = "SELECT * FROM " + DB_EMP;
@@ -26,7 +28,6 @@ public class DBEmpleados extends DBManager{
 
     // Procedures de sesion
     private static final String PROCEDURE_NEW_SESION = "EXEC dbo.newSesion @nif=?, @nombre=?, @contrasenya=?, @rol=?, @return=?";
-
 
     /**
      * Constructor que implementa DBManager.
