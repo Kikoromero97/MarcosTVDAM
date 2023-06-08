@@ -28,6 +28,10 @@ public class ListarEmpleados extends JFrame{
         setContentPane(panelPrincipal);
         loadEmpleados();
     }
+
+    public static void mostrarListarEmpleados(){
+        JFrame frame = new ListarEmpleados();
+    }
     public void loadEmpleados(){
         String[][] datos = Utilitis.getDataFromResultSet(db.listarEmpleadosLimitado(), COLUMNAS);
         DefaultTableModel table = new DefaultTableModel(datos, COLUMNAS);
