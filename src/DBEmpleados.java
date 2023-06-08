@@ -11,16 +11,13 @@ public class DBEmpleados extends DBManager{
 
     // Selects de la tabla empleado
     private static final String SELECT_EMPLEADOS = "SELECT * FROM " + DB_EMP;
+    private static final String SELECT_EMPLEADO_CUSTOM_WHERE = "SELECT codigo, nif, (nombre + ' ' + primer_apellido + ' ' + segundo_apellido) AS 'Nombre Completo'  FROM " + DB_EMP + " WHERE ";
     private static final String SELECT_EMPLEADO_POR_CODIGO = SELECT_EMPLEADOS + " WHERE codigo = ";
     private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif LIKE '";
-    private static final String SELECT_EMPLEADO_POR_TELEFONO = SELECT_EMPLEADOS + " WHERE telefono = ";
-    private static final String SELECT_EMPLEADO_POR_EMAIL = SELECT_EMPLEADOS + " WHERE email LIKE '";
-    private static final String SELECT_EMPLEADO_POR_DEPARTAMENTO = SELECT_EMPLEADOS + " WHERE codigo_departamento = ";
 
 
     // Select de la tabla empleadoLimitado
     private static final String SELECT_EMPLEADOS_LIMITADO = "SELECT * FROM " + DB_EMP_LIMITED;
-    private static final String SELECT_EMPLEADO_POR_NOMBRE = SELECT_EMPLEADOS_LIMITADO + " WHERE [Nombre Completo] LIKE '%";
 
 
     // Selects de la tabla sesion
@@ -111,27 +108,14 @@ public class DBEmpleados extends DBManager{
         return verSelect(SELECT_SESIONES);
     }
 
-    public ResultSet verEmpleadosCodigo(int codigo){
-        return verSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
-    }
 
-    public ResultSet verEmpleadosNif(String nif){
-        return verSelect(SELECT_EMPLEADO_POR_NIF + nif + "'");
-    }
-
-    public ResultSet verEmpleadosNombre(String nombre){
-        return verSelect(SELECT_EMPLEADO_POR_NOMBRE + nombre + "%'");
-    }
-
-    public ResultSet verEmpleadosTelefono(int telefono){
-        return verSelect(SELECT_EMPLEADO_POR_TELEFONO + telefono);
-    }
-
-    public ResultSet verEmpleadosEmail(String email){
-        return verSelect(SELECT_EMPLEADO_POR_EMAIL + email + "%'");
-    }
-
-    public ResultSet verEmpleadosDepartamento(int dep){
-        return verSelect(SELECT_EMPLEADO_POR_DEPARTAMENTO + dep);
+    /**
+     * Función para buscar empleados mediante un custom WHERE.
+     *
+     * @param whereParameters custom WHERE.
+     * @return ResultSet los empleados que coinciden con el custom WHERE.
+     */
+    public ResultSet verEmpleadosCustom(String whereParameters){
+        return verSelect(SELECT_EMPLEADO_CUSTOM_WHERE + whereParameters);
     }
 }

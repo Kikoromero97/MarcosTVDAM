@@ -7,8 +7,9 @@
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerEmpleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686214078778</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Probando cosas">
+      <created>1686219903865</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686219903865</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +170,18 @@
     <MESSAGE value="Menu principal Listro para revisiones" />
     <MESSAGE value="CrearSesion actualizado para comprobar el nombre de la sesión y comentado" />
     <MESSAGE value="InicioSesion completado y comentado." />
-    <option name="LAST_COMMIT_MESSAGE" value="InicioSesion completado y comentado." />
+    <MESSAGE value="Probando cosas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Probando cosas" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ListarEmpleados.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
