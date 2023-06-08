@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Creado Documental">
-      <change afterPath="$PROJECT_DIR$/src/Series.java" afterDir="false" />
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="por fin conexión">
+      <change afterPath="$PROJECT_DIR$/src/verTemporada.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/verTemporada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearSerie.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearSerie.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearSerie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearSerie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB_Contenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB_Contenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Episodio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Episodio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Temporada.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Temporada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Temporada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verSeries.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/verSeries.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verSeries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/verSeries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +47,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "83",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "274",
-    "last_opened_file_path": "D:/Raquel/DAM/Programacion/Repositorios/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
@@ -128,38 +118,19 @@
       <option name="project" value="LOCAL" />
       <updated>1685446749519</updated>
     </task>
-    <task id="LOCAL-00005" summary="Mostrar tabla y eliminar">
-      <created>1686160881321</created>
+    <task id="LOCAL-00005" summary="por fin conexión">
+      <created>1686137928280</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1686160881321</updated>
+      <updated>1686137928280</updated>
     </task>
-    <task id="LOCAL-00006" summary="Peliculas completadas">
-      <created>1686177881962</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1686177881962</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Creado Documental">
-      <created>1686187429222</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1686187429222</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="89b7670c-834c-4d48-8a88-07be39e904cc">
-          <value>
-            <State />
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -168,7 +139,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="empleado" />
+                        <option value="botonesContenido" />
                       </list>
                     </value>
                   </entry>
@@ -179,44 +150,14 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="89b7670c-834c-4d48-8a88-07be39e904cc" value="TOOL_WINDOW" />
-      </map>
-    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pantalla inicio de sesion" />
     <MESSAGE value="Pantalla crear pelicula" />
     <MESSAGE value="Pantalla crear serie" />
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
-    <MESSAGE value="Mostrar tabla y eliminar" />
-    <MESSAGE value="Peliculas completadas" />
-    <MESSAGE value="Creado Documental" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creado Documental" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/verDocumental.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DB_Contenido.java</url>
-          <line>177</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/verDocumental.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MarcosTVDAM$Main.ic" NAME="Main Coverage Results" MODIFIED="1686167875955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <MESSAGE value="por fin conexión" />
+    <option name="LAST_COMMIT_MESSAGE" value="por fin conexión" />
   </component>
 </project>

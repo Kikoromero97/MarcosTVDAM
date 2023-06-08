@@ -19,6 +19,7 @@ public class verSeries {
     private JLabel logoMarcosTV;
     private JPanel JPanelSeries;
     private JButton verButtonTodasSeries;
+    private JButton verTemporadasButton;
 
     public static Object[][] seriesContenido;
     private static DB_Contenido contenido_db;
