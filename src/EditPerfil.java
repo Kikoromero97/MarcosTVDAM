@@ -50,6 +50,23 @@ public class EditPerfil extends JDialog {
             }
         });
 
+        btnEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int opt = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere borrar el usuario con el id " + txtIDPerf.getText() + "?", "Confirmación", JOptionPane.YES_NO_OPTION);
+                if (opt == 0) {
+                    int code = Integer.parseInt(txtIDPerf.getText());
+                    DBUsuarios DBUSERS = new DBUsuarios();
+                    if (DBUSERS.deletePerfil(code)) {
+                        dispose();
+                        new Perfiles();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error inesperado");
+                    }
+                }
+            }
+        });
+
         
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);

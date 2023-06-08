@@ -16,7 +16,7 @@ public class InfoUsuario extends JDialog {
     private JButton btnBorrar;
     private ArrayList<String> info = new ArrayList<>();
     public static int num = 5;
-    
+
     public InfoUsuario() {
         setContentPane(contentPane);
         setTitle("Menú de usuarios y suscripciones");
@@ -26,7 +26,7 @@ public class InfoUsuario extends JDialog {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(btnCancelar);
-        
+
         btnEditar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -34,7 +34,7 @@ public class InfoUsuario extends JDialog {
                 eu.llenarCampos(info);
             }
         });
-        
+
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -55,14 +55,20 @@ public class InfoUsuario extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int opt = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere borrar el usuario con el id " + idUsuario.getText() + "?", "Confirmación", JOptionPane.YES_NO_OPTION);
-            if (opt == 0){
-                /*TODO DEL USER*/
-                System.out.println(":v");
-            }
+                if (opt == 0) {
+                    int code = Integer.parseInt(idUsuario.getText());
+                    DBUsuarios DBUSERS = new DBUsuarios();
+                    if (DBUSERS.deleteUsuario(code)) {
+                        dispose();
+                        new CuentasUser();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error inesperado");
+                    }
+                }
             }
         });
 
-        
+
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -70,7 +76,7 @@ public class InfoUsuario extends JDialog {
                 dispose();
             }
         });
-        
+
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -91,9 +97,10 @@ public class InfoUsuario extends JDialog {
 
     }
 
-    public static int NumeroaPasar(){
+    public static int NumeroaPasar() {
         return InfoUsuario.num;
     }
+
     public static void main(String[] args) {
         InfoUsuario dialog = new InfoUsuario();
         dialog.pack();

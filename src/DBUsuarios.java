@@ -222,4 +222,45 @@ public class DBUsuarios extends DBManager{
             return -1;
         }
     }
+
+
+
+    public boolean deleteUsuario(int codigo) {
+        try {
+            try (ResultSet rs = getUsuariosSorted(codigo)) {
+                rs.moveToInsertRow();
+                if (rs.first()) {
+                    rs.deleteRow();
+                    JOptionPane.showMessageDialog(null, "Se ha borrado el usuario correctamente.");
+                    return true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    public boolean deletePerfil(int codigo) {
+        try {
+            try (ResultSet rs = getPerfilesSorted(codigo)) {
+                rs.moveToInsertRow();
+                if (rs.first()) {
+                    rs.deleteRow();
+                    JOptionPane.showMessageDialog(null, "Se ha borrado el usuario correctamente.");
+                    return true;
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado el usuario.");
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
