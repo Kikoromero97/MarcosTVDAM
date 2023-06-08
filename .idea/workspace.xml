@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Pantalla inicio de sesion">
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Pantalla Tarjeta totalmente funcional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBTarjetas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerDirector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDirector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerIdiomas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerIdiomas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerPaises.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerPaises.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerTarjetas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerTarjetas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +69,7 @@
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VerTarjetas">
+  <component name="RunManager" selected="Application.VerCategoria">
     <configuration name="EditarTarjetas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EditarTarjetas" />
       <module name="MarcosTVProgramacion" />
@@ -115,10 +107,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VerCategoria" />
         <item itemvalue="Application.VerTarjetas" />
         <item itemvalue="Application.EditarTarjetas" />
         <item itemvalue="Application.VerPaises" />
-        <item itemvalue="Application.VerCategoria" />
         <item itemvalue="Application.VerDirector" />
       </list>
     </recent_temporary>
@@ -202,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686162410592</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pantalla Tarjeta totalmente funcional">
+      <created>1686214039138</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686214039138</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,7 +226,8 @@
     <MESSAGE value="Verificacion de solo int en el TextField &quot;codigo&quot; al pulsar el boton Buscar." />
     <MESSAGE value="Funciones Director." />
     <MESSAGE value="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pantallas &quot;idioma&quot;, &quot;pais&quot;, &quot;Categoria&quot;, &quot;Director&quot; funcionales EXCEPTO Tarjetas." />
+    <MESSAGE value="Pantalla Tarjeta totalmente funcional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pantalla Tarjeta totalmente funcional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

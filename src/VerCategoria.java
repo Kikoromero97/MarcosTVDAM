@@ -18,7 +18,7 @@ public class VerCategoria extends JDialog {
     public VerCategoria() {
         setContentPane(contentPane);
         setVisible(true);
-        setSize(700, 500);
+        setSize(1920, 980);
         setTitle("Categorías");
         setModal(true);
         getRootPane().setDefaultButton(btnVolver);
