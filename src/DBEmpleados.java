@@ -4,6 +4,8 @@ import java.sql.*;
 public class DBEmpleados extends DBManager{
 
     private static final String DB_EMP = "dbo.empleado";
+
+    private static final String DB_SES = "dbo.sesion";
     private static final String DB_EMP_LIMITED = "dbo.informacionLimitadaEmpleado";
     private static final String SELECT_EMPLEADOS = "SELECT * FROM " + DB_EMP;
     private static final String SELECT_EMPLEADO_POR_CODIGO = SELECT_EMPLEADOS + " WHERE codigo = ";
@@ -12,6 +14,8 @@ public class DBEmpleados extends DBManager{
     private static final String SELECT_EMPLEADO_POR_NIF = SELECT_EMPLEADOS + " WHERE nif = ";
 
     private static final String PROCEDURE_NEW_SESION = "EXEC dbo.newSesion @nif=?, @nombre=?, @contrasenya=?, @rol=?, @return=?";
+
+    private static final String SELECT_SESIONES = "SELECT * FROM " + DB_SES;
 
     /**
      * Constructor que implementa DBManager.
@@ -66,7 +70,7 @@ public class DBEmpleados extends DBManager{
      * @param nombre Nombre de la sesión.
      * @param contrasenya Contraseña de la sesión.
      * @param rol Rol de la sesión.
-     * @return int -2: error con la bd, -1: el nif no está registrado, 0: el nif ya tiene sesión y 1: creado exitosamente.
+     * @return int -3: error con la bd, -2: el nombre de la sesión ya existe, -1: el nif no está registrado, 0: el nif ya tiene sesión y 1: creado exitosamente.
      */
     public int procedureNewSesion(String nif, String nombre, String contrasenya, String rol){
         try{
@@ -81,7 +85,15 @@ public class DBEmpleados extends DBManager{
             return cs.getInt("@return");
         } catch (SQLException e){
             e.printStackTrace();
-            return -2;
+            return -3;
         }
+    }
+
+    /**
+     * Función para ver las sesiones.
+     * @return ResultSet devuelve las sesiones almacenadas en la base de datos.
+     */
+    public ResultSet verSesiones(){
+        return verSelect(SELECT_SESIONES);
     }
 }

@@ -43,6 +43,7 @@ public class CrearSesion extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 if(createSesion()){
                     menuPrincipal.mostrarMenuPrincipal();
+                    dispose();
                 }
             }
         });
@@ -62,14 +63,15 @@ public class CrearSesion extends JFrame{
         int respuesta = db.procedureNewSesion(nif, nombre, contrasenya, rol);
 
         switch (respuesta){
-            case 0 -> JOptionPane.showMessageDialog(null, "EL empleado ya tiene un usuario", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
+            case 0 -> JOptionPane.showMessageDialog(null, "EL empleado ya tiene una sesión", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
             case 1 -> {
-                JOptionPane.showMessageDialog(null, "EL usuario se ha creado", "MARCOS TV", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "La sesión se ha creado", "MARCOS TV", JOptionPane.INFORMATION_MESSAGE);
                 UserManager.newUser(nombre, contrasenya, rol);
                 return true;
             }
             case -1 -> JOptionPane.showMessageDialog(null, "EL empleado no está registrado", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
-            case -2 -> JOptionPane.showMessageDialog(null, "ERROR CON LA BASE DE DATOS", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
+            case -2 -> JOptionPane.showMessageDialog(null, "El nombre de la sesión ya existe", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
+            case -3 -> JOptionPane.showMessageDialog(null, "ERROR CON LA BASE DE DATOS", "MARCOS TV", JOptionPane.ERROR_MESSAGE);
         }
         return false;
     }
