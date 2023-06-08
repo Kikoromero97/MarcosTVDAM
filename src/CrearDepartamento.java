@@ -2,9 +2,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ModificarDepartamento extends JFrame {
+public class CrearDepartamento extends JFrame{
+
     private JPanel panelPrincipal;
-    private JComboBox comboBoxDepartamentos;
     private JTextField txtFldNombre;
     private JTextField txtFldCodigo;
     private JTextArea txtDescripcion;
@@ -13,18 +13,16 @@ public class ModificarDepartamento extends JFrame {
     private JButton confirmarButton;
     private JButton cancelarButton;
 
-    public static void mostrarModificarDepartamento(String[] args) {
-        JFrame frame = new JFrame("ModificarDepartamento");
+    public static void mostrarCrearDepartamento() {
+        JFrame frame = new JFrame("CrearDepartamento");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
 
-
-    public ModificarDepartamento() {
-        super("ModificarDepartamento");
+    public CrearDepartamento() {
+        super("CrearDepartamento");
         setContentPane(panelPrincipal);
-
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,21 +32,20 @@ public class ModificarDepartamento extends JFrame {
                 }
             }
         });
-
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // ListarEmpleados.mostrarListarEmpleados();
+              //  ListarEmpleados.mostrarListarEmpleados;
+                dispose();
+            }
+        });
+        confirmarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CrearDepartamento.mostrarCrearDepartamento();
                 dispose();
             }
         });
 
-        confirmarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               // ListarEmpleados.mostrarListarEmpleados();
-                dispose();
-            }
-        });
     }
 }
