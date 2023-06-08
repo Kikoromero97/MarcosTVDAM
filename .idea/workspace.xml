@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="por fin conexión">
+
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearDocumental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDocumental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearSerie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearSerie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearTemporada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearTemporada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PanelPrincipalContenido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerCategoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerEpisodio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerEpisodio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerIdiomas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerIdiomas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VerPaises.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerPaises.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/crearPelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/crearPelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verDocumental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/verDocumental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verPeliculas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/verPeliculas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verSeries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/verSeries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/verTemporada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/verTemporada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListarEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListarEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +49,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;featuresInicioSession&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/troy_/Documents/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
@@ -137,7 +133,22 @@
       <option name="project" value="LOCAL" />
       <updated>1686137928280</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+
+    <task id="LOCAL-00007" summary="InicioSesion completado y comentado.">
+      <created>1686214078777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686214078778</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Probando cosas">
+      <created>1686219903865</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686219903865</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,10 +184,21 @@
     <MESSAGE value="Pantalla crear pelicula" />
     <MESSAGE value="Pantalla crear serie" />
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
-    <MESSAGE value="por fin conexión" />
-    <option name="LAST_COMMIT_MESSAGE" value="por fin conexión" />
+    <MESSAGE value="Menu principal Listro para revisiones" />
+    <MESSAGE value="CrearSesion actualizado para comprobar el nombre de la sesión y comentado" />
+    <MESSAGE value="InicioSesion completado y comentado." />
+    <MESSAGE value="Probando cosas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Probando cosas" />
   </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MarcosTVDAM$Main.ic" NAME="Main Coverage Results" MODIFIED="1686167875955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ListarEmpleados.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
