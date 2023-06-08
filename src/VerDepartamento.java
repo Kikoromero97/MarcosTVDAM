@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VerDepartamento {
+public class VerDepartamento extends JFrame{
     private JPanel panelPrincipal;
     private JLabel logoMARCOSTV;
     private JComboBox comboBoxDepartamentos;
@@ -14,9 +14,8 @@ public class VerDepartamento {
     private JButton volverButton;
     private JButton crearButton;
 
-    public static void main(String[] args) {
+    public static void mostrarVerDepartamento() {
         JFrame frame = new JFrame("VerDepartamento");
-        frame.setContentPane(new VerDepartamento().panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(700, 500);
         frame.setVisible(true);
@@ -26,31 +25,30 @@ public class VerDepartamento {
         volverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                menuPrincipal menu = new menuPrincipal();
-                menu.setVisible(true);
-                menu.setSize(700, 500);
+             //   menuPrincipal.mostrarmenuPrincipal;
+                dispose();
             }
         });
         areaDeEmpleadosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListarEmpleados listar = new ListarEmpleados();
-                listar.setVisible(true);
-                listar.setSize(700, 500);
+                //  AreaDeEmpleados.mostrarAreaDeEmpleados();
+                dispose();
             }
         });
+
         crearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                CrearDepartamento.mostrarCrearDepartamento();
+                dispose();
             }
         });
         modificarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ModificarDepartamento modificar = new ModificarDepartamento();
-                modificar.setVisible(true);
-                modificar.setSize(700,500);
+               // ModificarDepartamento.mostrarModificarDepartamento();
+                dispose();
             }
         });
     }

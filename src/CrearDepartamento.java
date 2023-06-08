@@ -13,9 +13,8 @@ public class CrearDepartamento extends JFrame{
     private JButton confirmarButton;
     private JButton cancelarButton;
 
-    public static void main(String[] args) {
+    public static void mostrarCrearDepartamento() {
         JFrame frame = new JFrame("CrearDepartamento");
-        frame.setContentPane(new CrearDepartamento().panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -36,17 +35,15 @@ public class CrearDepartamento extends JFrame{
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListarEmpleados empleados = new ListarEmpleados();
-                empleados.setVisible(true);
-                empleados.setSize(700, 500);
+              //  ListarEmpleados.mostrarListarEmpleados;
+                dispose();
             }
         });
         confirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListarEmpleados empleados = new ListarEmpleados();
-                empleados.setVisible(true);
-                empleados.setSize(700, 500);
+                CrearDepartamento.mostrarCrearDepartamento();
+                dispose();
             }
         });
 

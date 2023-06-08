@@ -13,7 +13,7 @@ public class DBEmpleados extends DBManager{
      */
     public DBEmpleados(){
         super();
-    }
+    }       
 
     /**
      * Función que devuelve un empleado especifico.

@@ -13,14 +13,12 @@ public class ModificarDepartamento extends JFrame {
     private JButton confirmarButton;
     private JButton cancelarButton;
 
-    public static void main(String[] args) {
+    public static void mostrarModificarDepartamento(String[] args) {
         JFrame frame = new JFrame("ModificarDepartamento");
-        frame.setContentPane(new ModificarDepartamento().panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
-
 
 
     public ModificarDepartamento() {
@@ -40,17 +38,16 @@ public class ModificarDepartamento extends JFrame {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListarEmpleados empleados = new ListarEmpleados();
-                empleados.setVisible(true);
-                empleados.setSize(700, 500);
+               // ListarEmpleados.mostrarListarEmpleados();
+                dispose();
             }
         });
+
         confirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListarEmpleados empleados = new ListarEmpleados();
-                empleados.setVisible(true);
-                empleados.setSize(700, 500);
+               // ListarEmpleados.mostrarListarEmpleados();
+                dispose();
             }
         });
     }
