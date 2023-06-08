@@ -45,6 +45,19 @@ public class DBEmpleados extends DBManager{
         return verSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
     }
 
+    public boolean delete(int codigo){
+        try {
+            ResultSet rs = getSelect(SELECT_EMPLEADO_POR_CODIGO + codigo);
+            rs.last();
+            rs.deleteRow();
+            rs.close();
+            return true;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     /**
      * Función que devuelve empleados con el mismo nif proporcionado.
      *
