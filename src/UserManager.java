@@ -73,4 +73,46 @@ public class UserManager {
         user = null;
         return userSessionFile.delete();
     }
+
+    /**
+     * Setter para el usuario.
+     *
+     * @param user usuario.
+     */
+    public static void setUser(Usuario_bd user) {
+        UserManager.user = user;
+    }
+
+    /**
+     * Setter para el usuario.
+     *
+     * @param user nombre del usuario.
+     * @param pass contraseña del usuario.
+     * @param rol rol del usuario.
+     */
+    public static void setUser(String user, String pass, String rol) {
+        UserManager.user = new Usuario_bd(user, pass, rol);
+    }
+
+    /**
+     * Función que asigna un usuario nuevo y lo guarda en cache.
+     *
+     * @param user nombre del usuario.
+     * @param pass contraseña del usuario.
+     * @param rol rol del usuario.
+     */
+    public static void newUser(String user, String pass, String rol){
+        UserManager.setUser(user, pass, rol);
+        UserManager.saveSession();
+    }
+
+    /**
+     * Función que asigna un usuario nuevo y lo guarda en cache.
+     *
+     * @param user usuario a asignar.
+     */
+    public static void newUser(Usuario_bd user){
+        UserManager.setUser(user);
+        UserManager.saveSession();
+    }
 }

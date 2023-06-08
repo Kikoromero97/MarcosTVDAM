@@ -23,7 +23,7 @@ public class InicioSesion extends JFrame {
         registrarseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // CrearSession.mostrarCrearSession();
+                CrearSesion.mostrarCrearSesion();
                 dispose();
             }
         });
