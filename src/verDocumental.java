@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Properties;
 
-public class verDocumental {
+public class verDocumental extends JFrame {
     final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO" , "DIRECTOR" , "TIPO CONTENIDO"};
 
     private static List<Documental> documentals;
@@ -25,26 +25,26 @@ public class verDocumental {
     public static Object[][] documentalContenido;
     private static DB_Contenido contenido_db;
 
-    static verDocumental panelVerDocumental = new verDocumental();
     static JFrame frame = new JFrame("verDocumental");
 
-    public static void mostrarPantallaVerDocumental(DB_Contenido db_contenido) {
-
-        frame.setContentPane( panelVerDocumental.JPanelDocumental);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-
+    public static void mostrarPantallaVerDocumental() {
+        JFrame frame = new verDocumental();
     }
 
     public verDocumental() {
+        super("Documental");
+        setContentPane(JPanelDocumental);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        setLocationRelativeTo(null);
         pintarDocumentalTabla();
 
     buttonVolverDocumental.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+            dispose();
+            PanelPrincipalContenido.mostrarpanelPrincipalContenido();
         }
     });
 

@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class verTemporada {
+public class verTemporada extends JFrame {
     final String[] columnas = {"CODIGO", "CODIGO SERIE", "RESUMEN"};
 
     private static List<Temporada> temps;
@@ -28,38 +28,36 @@ public class verTemporada {
     public static Object[][] temporadaContenido;
     private static DB_Contenido contenido_db;
 
-    static verTemporada panelVerTemporada;
-    static JFrame frame = new JFrame("verTemporada");
-
     static CrearTemporada crearTemporada;
-    static VerEpisodio panelverEpisodio;
+
     static private int idSerie;
 
-    public void mostrarPantallaVerTemporada(DB_Contenido db_contenido, int codigoSerie) {
-
-        idSerie = codigoSerie;
-        frame.setContentPane(this.JPanelTemporada);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-        panelVerTemporada = this;
+    public static void mostrarPantallaVerTemporada( int codigoSerie) {
+        JFrame frame = new verTemporada(codigoSerie);
     }
 
     public static void setIdSerie(int idSerie) {
         verTemporada.idSerie = idSerie;
     }
 
-    public verTemporada() {
-        pintarTemporadaTabla();
+    public verTemporada(int codigoSerie) {
+        super ("Temporadas");
+        idSerie = codigoSerie;
+        setContentPane(this.JPanelTemporada);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        setLocationRelativeTo(null);
 
-        panelverEpisodio = new VerEpisodio();
+        pintarTemporadaTabla();
 
 
         buttonVolverTemporada.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+
+            verSeries.mostrarPantallaVerSeries();
+            dispose();
         }
     });
 
@@ -67,7 +65,7 @@ public class verTemporada {
     crearButtonTemporada.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            crearTemporada = new CrearTemporada(panelVerTemporada, contenido_db);
+            crearTemporada = new CrearTemporada(idSerie);
             crearTemporada.verPanelCrearTemporada();
         }
     });
@@ -135,9 +133,8 @@ public class verTemporada {
                     int codigoTemporada  = (int) temporadaContenido[filaSeleccionada][0];
                     int codigoSerie = (int)  temporadaContenido[filaSeleccionada][1];
 
-
-                    panelverEpisodio.mostrarPantallaVerEpisodio(contenido_db, codigoSerie,codigoTemporada);
-                    panelverEpisodio.pintarEpisodioTabla();
+                    VerEpisodio.mostrarPantallaVerEpisodio(codigoSerie,codigoTemporada);
+                    dispose();
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Debes seleccionar una temporada de la que ver los capítulos","Error",JOptionPane.ERROR_MESSAGE);

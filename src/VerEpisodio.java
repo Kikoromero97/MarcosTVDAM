@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class VerEpisodio {
+public class VerEpisodio extends JFrame {
     final String[] columnas = {"CODIGO", "CODIGO TEMPORADA", "CODIGO SERIE", "NOMBRE", "FECHA DE LANZAMIENTO", "DURACION", "DESCRIPCION"};
 
     private static List<Episodio> caps;
@@ -29,22 +29,13 @@ public class VerEpisodio {
     private static DB_Contenido contenido_db;
 
     static VerEpisodio panelVerEpisodio;
-    static JFrame frame = new JFrame("verEpisodio");
 
     static CrearEpisodio crearEpisodio;
     static private int idSerie;
     static private int idTemporada;
 
-    public void mostrarPantallaVerEpisodio(DB_Contenido db_contenido, int codigoSerie, int codigoTemporada) {
-
-        idSerie = codigoSerie;
-        idTemporada = codigoTemporada;
-        frame.setContentPane(this.JPanelEpisodio);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        panelVerEpisodio = this;
-        frame.setLocationRelativeTo(null);
+    public static void mostrarPantallaVerEpisodio(int codigoSerie, int codigoTemporada) {
+        JFrame frame = new VerEpisodio(codigoSerie, codigoTemporada);
     }
 
     public static void setIdSerieYTemporada(int idSerie, int idTemporada)
@@ -53,13 +44,24 @@ public class VerEpisodio {
         VerEpisodio.idTemporada = idTemporada;
     }
 
-    public VerEpisodio() {
+    public VerEpisodio(int codigoSerie, int codigoTemporada) {
+
+        super("Episodios");
+        idSerie = codigoSerie;
+        idTemporada = codigoTemporada;
+        setContentPane(this.JPanelEpisodio);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        panelVerEpisodio = this;
+        setLocationRelativeTo(null);
         pintarEpisodioTabla();
 
     buttonVolverEpisodio.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+            verTemporada.mostrarPantallaVerTemporada(codigoSerie);
+            dispose();
         }
     });
 

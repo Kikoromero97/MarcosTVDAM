@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class verPeliculas {
+public class verPeliculas extends JFrame {
     final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO PELICULA" , "DIRECTOR" , "TIPO CONTENIDO"};
 
     private static List<Peliculas> pelis;
@@ -24,24 +24,27 @@ public class verPeliculas {
     public static Object[][] peliculasContenido;
     private static DB_Contenido contenido_db;
 
-    static verPeliculas panelVerPeliculas = new verPeliculas();
-    static JFrame frame = new JFrame("verPeliculas");
 
-    public static void mostrarPantallaVerPelicula(DB_Contenido db_contenido) {
-        frame.setContentPane( panelVerPeliculas.JPanelPeliculas);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
+    public static void mostrarPantallaVerPelicula() {
+        JFrame frame = new verPeliculas();
     }
 
     public verPeliculas() {
+
+        super("Peliculas");
+        setContentPane( JPanelPeliculas);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        setLocationRelativeTo(null);
+
         pintarPeliculasTabla();
 
     buttonVolverPeliculas.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+            PanelPrincipalContenido.mostrarpanelPrincipalContenido();
+            dispose();
         }
     });
 

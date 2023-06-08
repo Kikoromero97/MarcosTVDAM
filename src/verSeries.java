@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class verSeries {
+public class verSeries extends JFrame{
     final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO PELICULA" , "DIRECTOR" , "TIPO CONTENIDO"};
 
     private static List<Series> pelis;
@@ -24,28 +24,27 @@ public class verSeries {
     public static Object[][] seriesContenido;
     private static DB_Contenido contenido_db;
 
-    static verSeries panelVerSeries = new verSeries();
-    static JFrame frame = new JFrame("verSeries");
-
-    private static verTemporada panelVerTemporada  = new verTemporada();
-
-
-    public static void mostrarPantallaVerSeries(DB_Contenido db_contenido) {
-
-        frame.setContentPane( panelVerSeries.JPanelSeries);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
+    public static void mostrarPantallaVerSeries() {
+        JFrame frame = new verSeries();
     }
 
     public verSeries() {
+
+        super("Serie");
+        setContentPane( JPanelSeries);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        setLocationRelativeTo(null);
+
         pintarSeriesTabla();
 
     buttonVolverSeries.addActionListener(new ActionListener() {
         @Override
-        public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+        public void actionPerformed(ActionEvent e)
+        {
+            PanelPrincipalContenido.mostrarpanelPrincipalContenido();
+            dispose();
         }
     });
 
@@ -136,9 +135,8 @@ public class verSeries {
                 {
                     int codigoSerie = (int) seriesContenido[selectedRow][0];
                     verTemporada.setIdSerie(codigoSerie);
-                    panelVerTemporada.mostrarPantallaVerTemporada(contenido_db,codigoSerie);
-                    panelVerTemporada.pintarTemporadaTabla();
-
+                    verTemporada.mostrarPantallaVerTemporada(codigoSerie);
+                    dispose();
                 }
             }
         });

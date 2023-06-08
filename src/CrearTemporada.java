@@ -16,6 +16,8 @@ public class CrearTemporada {
 
     private JButton cancelarButton;
 
+    private static int idSerie;
+
     static JFrame frame = new JFrame("crearTemporada");
 
 
@@ -42,7 +44,9 @@ public class CrearTemporada {
 
     }
 
-    public CrearTemporada(verTemporada panelVerTemporada, DB_Contenido contenido_db) {
+    public CrearTemporada(int codigoSerie) {
+
+        idSerie = codigoSerie;
         anyadirButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -55,11 +59,12 @@ public class CrearTemporada {
 
                     Temporada temporada = new Temporada (numTemporada, codigoSerie, resumen);
 
+                    DB_Contenido contenido_db = new DB_Contenido();
                     creado = contenido_db.anyadirTemporada(temporada);
 
                     if (creado == true)
                     {
-                        panelVerTemporada.pintarTemporadaTabla();
+                        verTemporada.mostrarPantallaVerTemporada(idSerie);
                         JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la nueva  temporada ","Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
@@ -77,7 +82,9 @@ public class CrearTemporada {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+
+                verTemporada.mostrarPantallaVerTemporada(idSerie);
+                frame.dispose();
             }
         });
     }

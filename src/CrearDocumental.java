@@ -56,7 +56,7 @@ public class CrearDocumental {
 
     }
 
-    public CrearDocumental(verDocumental panelVerDocumental, DB_Contenido contenido_db) {
+    public CrearDocumental(DB_Contenido contenido_db) {
         crearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -80,7 +80,7 @@ public class CrearDocumental {
 
                     if (creado == true)
                     {
-                        panelVerDocumental.pintarDocumentalTabla();
+                        verDocumental.mostrarPantallaVerDocumental();
                         JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente el documental " + titulo,"Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
@@ -104,7 +104,7 @@ public class CrearDocumental {
     }
 
     public static void verPanelCrearDocumental(DB_Contenido contenido_db){
-        frame.setContentPane(new CrearDocumental(verDocumental.panelVerDocumental, contenido_db).JPanelCrearDocumental);
+        frame.setContentPane(new CrearDocumental(contenido_db).JPanelCrearDocumental);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(700,500);

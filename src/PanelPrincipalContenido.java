@@ -16,11 +16,9 @@ public class PanelPrincipalContenido extends JFrame{
     private JButton documentalButton;
     private JButton salirButton;
     private JLabel logoMarcosTV;
-    private static DB_Contenido dbContenido = new DB_Contenido();
 
-    private static verPeliculas panelVerPeliculas = new verPeliculas();
-    private static verDocumental panelVerDocumental = new verDocumental();
-    private static verSeries panelVerSeries  = new verSeries();
+    private verPeliculas panelVerPelis;
+    private static DB_Contenido dbContenido = new DB_Contenido();
 
 
 
@@ -31,6 +29,7 @@ public class PanelPrincipalContenido extends JFrame{
 
     public PanelPrincipalContenido() {
 
+        super("Contenido");
         setContentPane(JPanelPrincipal);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(700,500);
@@ -41,9 +40,8 @@ public class PanelPrincipalContenido extends JFrame{
         public void actionPerformed(ActionEvent e) {
 
             dbContenido = new DB_Contenido();
-            panelVerPeliculas.mostrarPantallaVerPelicula(dbContenido);
-            dbContenido.printTablaPeliculas();
-
+            verPeliculas.mostrarPantallaVerPelicula();
+            dispose();
         }
     });
 
@@ -51,8 +49,8 @@ public class PanelPrincipalContenido extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             dbContenido = new DB_Contenido();
-            panelVerDocumental.mostrarPantallaVerDocumental(dbContenido);
-            dbContenido.printTablaDocumental();
+            verDocumental.mostrarPantallaVerDocumental();
+            dispose();
         }
     });
 
@@ -60,10 +58,9 @@ public class PanelPrincipalContenido extends JFrame{
     serieButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-
             dbContenido = new DB_Contenido();
-            panelVerSeries.mostrarPantallaVerSeries(dbContenido);
-            dbContenido.printTablaSeries();
+            verSeries.mostrarPantallaVerSeries();
+            dispose();
         }
     });
 
