@@ -68,7 +68,7 @@ public class CrearTarjetas extends JDialog {
                 int cvv = Integer.parseInt(txtFldCVV.getText());
                 String banco = txtFldBanco.getText();
                 Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidadSql, titular, cvv, banco);
-                tarj.crearTarjeta(tarjetaNew, 4);
+                tarj.crearTarjeta(tarjetaNew, idUsuario);
                 dispose();
                 JDialog dialog = new VerTarjetas();
             }

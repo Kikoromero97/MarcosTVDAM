@@ -116,7 +116,7 @@ public class DBUsuarios extends DBManager{
             rs.updateString("nacionalidad", cli.getLocalizacion());
             rs.updateRow();
 
-            JOptionPane.showMessageDialog(null, "Creado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Editado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

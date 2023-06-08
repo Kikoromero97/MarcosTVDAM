@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.sql.Date;
 
 public class EditarTarjetas extends JDialog {
     private JPanel contentPane;
@@ -65,7 +64,7 @@ public class EditarTarjetas extends JDialog {
             int cvv = Integer.parseInt(txtFldCVV.getText());
             String banco = txtFldBanco.getText();
             Tarjeta tarjetaNew = new Tarjeta(numero, fechaCaducidadSql, titular, cvv, banco);
-            tarj.editarTarjeta(tarjetaNew, 4, numero);
+            tarj.editarTarjeta(tarjetaNew, idUsuario, numero);
             JOptionPane.showMessageDialog(null, "Se ha editado correctamente.", "Realizado con éxito", JOptionPane.INFORMATION_MESSAGE);
             dispose();
             JDialog dialog = new VerTarjetas();
