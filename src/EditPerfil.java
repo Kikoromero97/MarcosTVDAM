@@ -26,11 +26,16 @@ public class EditPerfil extends JDialog {
             public void actionPerformed(ActionEvent e) {
 
                 String perfname = txtPerfil.getText();
+                int PerfID = Integer.parseInt(txtIDPerf.getText());
+                int codigoUsuario = Integer.parseInt(txtIDUsu.getText());
+                DBUsuarios Dbuser = new DBUsuarios();
+                PerfilesDeUsuario Perf = new PerfilesDeUsuario(perfname, codigoUsuario);
+
 
                 if (perfname.length() < 2){
                     JOptionPane.showMessageDialog(null, "Nombre de perfil demasiado corto", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Nombre de perfil modificado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    Dbuser.editarPerfil(Perf, PerfID);
                     dispose();
                     new Perfiles();
                     /*TODO Guardar Nombre Perfil en la BBDD*/

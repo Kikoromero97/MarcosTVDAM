@@ -17,7 +17,7 @@ public class DBUsuarios extends DBManager{
     private static final String SELECT_USUARIOS_WHERE = SELECT_USUARIOS + " WHERE ";
 
     private static final String SELECT_PERFILES = "SELECT * FROM " + DB_PER;
-    private static final String SELECT_PERFILES_WHERE = SELECT_PERFILES + " WHERE codigoUsuario = ";
+    private static final String SELECT_PERFILES_WHERE = SELECT_PERFILES + " WHERE ";
 
     private static final String SELECT_SUS = "SELECT * FROM " + DB_SUS;
 
@@ -32,6 +32,15 @@ public class DBUsuarios extends DBManager{
 
     public ResultSet getUsuariosSorted(int codigo){
         return getSelect(SELECT_USUARIOS_WHERE + "codigo = " + codigo);
+    }
+
+
+    public ResultSet getPerfiles(){
+        return getSelect(SELECT_PERFILES);
+    }
+
+    public ResultSet getPerfilesSorted(int codigo){
+        return getSelect(SELECT_PERFILES_WHERE + "codigoPerfil = " + codigo);
     }
     /**
      * Busqueda de usuarios en CuentasUser.java
@@ -59,7 +68,7 @@ public class DBUsuarios extends DBManager{
      * NO CODIGO DE PERFIL
      * */
     public ResultSet verPerfilesSorted(int code){
-        return verSelect(SELECT_PERFILES_WHERE + code);
+        return verSelect(SELECT_PERFILES_WHERE + " codigoUsuario = " + code);
     }
 
 
@@ -71,7 +80,7 @@ public class DBUsuarios extends DBManager{
             if (edad == -1){
                 return false;
             }
-        int code = getNewCodigo(DB_USU);
+        int code = getNewCodigo("codigo", DB_USU);
 
             rs.moveToInsertRow();
             rs.updateInt("codigo", code);
@@ -116,21 +125,74 @@ public class DBUsuarios extends DBManager{
         }
     }
 
-    /*public boolean existsDirector(int codigo) {
-        try (ResultSet rs = verDirectorEsp(codigo)) {
-            return rs.first();
+
+
+    public Boolean crearPerfil(PerfilesDeUsuario per) {
+        try (ResultSet rs = getPerfiles()) {
+
+            /*Comprobar la edad*/
+
+            int code = getNewCodigo("codigoPerfil", DB_PER);
+
+            rs.moveToInsertRow();
+            rs.updateInt("codigoPerfil", code);
+            rs.updateString("nombre", per.getNombre());
+            rs.updateInt("codigoUsuario", per.getCodigoUsuario());
+            rs.insertRow();
+            JOptionPane.showMessageDialog(null, "Creado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se ha podido crear el usuario", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
-    }*/
+    }
+
+
+    public Boolean editarPerfil(PerfilesDeUsuario per, int codigo) {
+        try (ResultSet rs = getPerfilesSorted(codigo)) {
+
+            /*Comprobar la edad*/
+
+            int code = getNewCodigo("codigoPerfil", DB_PER);
+
+            rs.first();
+            rs.updateString("nombre", per.getNombre());
+            rs.updateRow();
+
+            JOptionPane.showMessageDialog(null, "Editado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se ha podido editar el usuario", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+    }
 
 
 
 
-    public int getNewCodigo(String tabla){
+    public boolean existeUsuario(int code) {
+        try {
+            ResultSet rs = getUsuariosSorted(code);
+            if (rs.next()) {
+                int count = rs.getInt(1);
+
+                return count > 0;
+            }
+        }catch (SQLException exception){
+            JOptionPane.showMessageDialog(null, "error");
+            exception.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
+
+
+    public int getNewCodigo(String columna, String tabla){
         try{
-            ResultSet rs = verSelect("SELECT MAX(codigo) FROM " + tabla);
+            ResultSet rs = verSelect("SELECT MAX(" + columna + ") FROM " + tabla);
             int newId = 1;
             while (rs.next()){
                 newId += rs.getInt(1);

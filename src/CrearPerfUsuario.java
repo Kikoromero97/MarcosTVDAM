@@ -1,15 +1,18 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 
 public class CrearPerfUsuario extends JDialog {
     private JPanel contentPane;
     private JButton btnCrear;
     private JButton btnCancelar;
     private JTextField txtPerfil;
-    
+    private JTextField txtIDUsuario;
+
     public CrearPerfUsuario() {
         setContentPane(contentPane);
         setTitle("Menú de usuarios y suscripciones");
+
         setVisible(true);
         setModal(true);
         setSize(700, 500);
@@ -19,16 +22,27 @@ public class CrearPerfUsuario extends JDialog {
         
         btnCrear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String perfname = txtPerfil.getText();
+                try {
+                    String perfname = txtPerfil.getText();
+                    int codigoUsuario = Integer.parseInt(txtIDUsuario.getText());
+                    DBUsuarios Dbuser = new DBUsuarios();
 
-                if (perfname.length() < 2){
-                    JOptionPane.showMessageDialog(null, "Nombre de perfil demasiado corto", "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Nombre de perfil modificado correctamente", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
-                    new Perfiles();
+                    if (perfname.length() < 2) {
+                        JOptionPane.showMessageDialog(null, "Nombre de perfil demasiado corto", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        if (Dbuser.existeUsuario(codigoUsuario)){
+                            PerfilesDeUsuario Perf = new PerfilesDeUsuario(perfname, codigoUsuario);
+                            Dbuser.crearPerfil(Perf);
+                            dispose();
+                            new Perfiles();
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No existe el usuario");
+                        }
+                    }
+                }catch (NumberFormatException ex){
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "El id del perfil no es válido", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                /*TODO Crear Perfil en la BBDD*/
             }
         });
 

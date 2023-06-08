@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="Creacion y modificacion de usuarios HECHO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CuentasUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CuentasUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearPerfUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearPerfUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditPerfil.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EditPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Perfiles.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Perfiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UsuariosClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuariosClientes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685812380867</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Creacion y modificacion de usuarios HECHO">
+      <created>1686247423955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686247423955</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Creacion y modificacion de usuarios HECHO">
+      <created>1686247446246</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686247446246</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +183,7 @@
     <MESSAGE value="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL" />
     <MESSAGE value="Vinculación de botones de mi programa. Sin finalizar." />
     <MESSAGE value="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Vinculación de botones de mi programa. 1ra parte hecha, aún sin finalizar." />
+    <MESSAGE value="Creacion y modificacion de usuarios HECHO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion y modificacion de usuarios HECHO" />
   </component>
 </project>
