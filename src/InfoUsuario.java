@@ -46,8 +46,8 @@ public class InfoUsuario extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num = Integer.parseInt(idUsuario.getText());
+                new VerTarjetas();
                 dispose();
-                /*new VerTarjetas();*/
             }
         });
 

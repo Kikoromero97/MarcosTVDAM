@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-usr1;;admin
-=======
-troy;123;admin
->>>>>>> origin/develop
