@@ -56,6 +56,7 @@ public class VerEmpleado extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ModificarEmpleado.mostrarModificarEmpleado(codigo);
+                dispose();
             }
         });
     }
