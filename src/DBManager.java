@@ -5,7 +5,7 @@ public abstract class DBManager {
     private static Connection conn = null;
 
     // Configuración de la conexión a la base de datos
-   //private static final String DB_HOST = "192.168.7.208\\SQLEXPRESS";
+   private static final String DB_HOST = "192.168.7.208\\SQLEXPRESS";
     private static final String DB_NAME = "databaseName=MARCOSTV";
     private static final String DB_PORT = "1433";
     private static final String DB_TRUST_SERVER = "TrustServerCertificate=true";
@@ -107,3 +107,4 @@ public abstract class DBManager {
         return conn;
     }
 }
+

@@ -1,5 +1,8 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class CrearCategoria extends JDialog {
     private JPanel contentPane;
@@ -22,3 +25,5 @@ public class CrearCategoria extends JDialog {
         System.exit(0);
     }
 }
+
+

@@ -70,7 +70,7 @@
           </grid>
         </constraints>
         <properties>
-          <editable value="true"/>
+          <editable value="false"/>
         </properties>
       </component>
       <component id="fc02f" class="javax.swing.JLabel">

@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado." />
+    <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="InicioSesion completado y comentado.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearCategoria.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearCategoria.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearCategoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearCategoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearDepartamento.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearDepartamento.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBDepartamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModificarDepartamento.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModificarDepartamento.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ModificarDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ModificarDepartamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerDepartamento.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDepartamento.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VerDepartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VerDepartamento.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,11 +37,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -48,22 +54,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "featuresInicioSession",
-    "last_opened_file_path": "C:/Users/troy_/Documents/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.ModificarDepartamento">
+    <configuration name="CrearCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CrearCategoria" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModificarDepartamento" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ModificarDepartamento" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VerDepartamento" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VerDepartamento" />
+      <module name="MarcosTVProgramacion" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CrearCategoria" />
+      <item itemvalue="Application.VerDepartamento" />
+      <item itemvalue="Application.ModificarDepartamento" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ModificarDepartamento" />
+        <item itemvalue="Application.VerDepartamento" />
+        <item itemvalue="Application.CrearCategoria" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -148,6 +177,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Pantalla inicio de sesion" />
