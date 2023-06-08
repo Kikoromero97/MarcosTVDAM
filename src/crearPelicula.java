@@ -76,7 +76,7 @@ public class crearPelicula {
                     int duracion = Integer.parseInt(introDuracion.getText());
 
                     Peliculas pelicula = new Peliculas(cod, titulo, descripcion, duracion, valoracion, fecha, presupuesto, introEdad, fechaAlta, codDirector, introCont);
-                    contenido_db.anyadirPelicula(pelicula);
+                    creado = contenido_db.anyadirPelicula(pelicula);
 
                     if(creado == true)
                     {
