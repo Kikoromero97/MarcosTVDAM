@@ -56,7 +56,7 @@ public class crearPelicula {
 
     }
 
-    public crearPelicula(verPeliculas panelVerPeliculas, DB_Contenido contenido_db) {
+    public crearPelicula(DB_Contenido contenido_db) {
         crearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,11 +76,11 @@ public class crearPelicula {
                     int duracion = Integer.parseInt(introDuracion.getText());
 
                     Peliculas pelicula = new Peliculas(cod, titulo, descripcion, duracion, valoracion, fecha, presupuesto, introEdad, fechaAlta, codDirector, introCont);
-                    contenido_db.anyadirPelicula(pelicula);
+                    creado = contenido_db.anyadirPelicula(pelicula);
 
                     if(creado == true)
                     {
-                        panelVerPeliculas.pintarPeliculasTabla();
+                        verPeliculas.mostrarPantallaVerPelicula();
                         JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película "+titulo ,"Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                     }
@@ -104,7 +104,7 @@ public class crearPelicula {
     }
 
     public static void verPanelCrearPelicula(DB_Contenido contenido_db){
-        frame.setContentPane(new crearPelicula(verPeliculas.panelVerPeliculas, contenido_db).JPanelCrearPelicula);
+        frame.setContentPane(new crearPelicula(contenido_db).JPanelCrearPelicula);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(700,500);

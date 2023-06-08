@@ -12,7 +12,7 @@
         <margin top="10" left="10" bottom="10" right="10"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="2000" height="500"/>
+            <minimum-size width="700" height="500"/>
             <maximum-size width="2000" height="2000"/>
           </grid>
         </constraints>

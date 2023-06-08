@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class verSeries {
-    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "CODIGO PELICULA" , "DIRECTOR" , "TIPO CONTENIDO"};
+public class verSeries extends JFrame{
+    final String[] columnas = {"CODIGO", "TITULO", "DESCRIPCIÓN", "DURACIÓN", "VALORACIÓN", "AÑO LANZAMIENTO", "PRESUPUESTO", "EDAD RECOMENDADA","FECHA-ALTA", "DIRECTOR"};
 
     private static List<Series> pelis;
     private JPanel JPanelVerSeries;
@@ -24,28 +24,27 @@ public class verSeries {
     public static Object[][] seriesContenido;
     private static DB_Contenido contenido_db;
 
-    static verSeries panelVerSeries = new verSeries();
-    static JFrame frame = new JFrame("verSeries");
-
-    private static verTemporada panelVerTemporada  = new verTemporada();
-
-
-    public static void mostrarPantallaVerSeries(DB_Contenido db_contenido) {
-
-        frame.setContentPane( panelVerSeries.JPanelSeries);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
+    public static void mostrarPantallaVerSeries() {
+        JFrame frame = new verSeries();
     }
 
     public verSeries() {
+
+        super("Serie");
+        setContentPane( JPanelSeries);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
+        setLocationRelativeTo(null);
+
         pintarSeriesTabla();
 
     buttonVolverSeries.addActionListener(new ActionListener() {
         @Override
-        public void actionPerformed(ActionEvent e) {
-            frame.dispose();
+        public void actionPerformed(ActionEvent e)
+        {
+            PanelPrincipalContenido.mostrarpanelPrincipalContenido();
+            dispose();
         }
     });
 
@@ -95,7 +94,8 @@ public class verSeries {
                         seriesContenido[i][4] = serie.get(i).getValoracion();
                         seriesContenido[i][5] = serie.get(i).getAnyo_lanzamiento();
                         seriesContenido[i][6] = serie.get(i).getPresupuesto();
-                        seriesContenido[i][7] = serie.get(i).getFecha_alta();
+                        seriesContenido[i][7] = pelis.get(i).getEdad_recomendada();
+                        seriesContenido[i][8] = serie.get(i).getFecha_alta();
                         seriesContenido[i][9] = serie.get(i).getDirector();
                         seriesContenido[i][10] = serie.get(i).getTipoContenido();
                     }
@@ -136,9 +136,8 @@ public class verSeries {
                 {
                     int codigoSerie = (int) seriesContenido[selectedRow][0];
                     verTemporada.setIdSerie(codigoSerie);
-                    panelVerTemporada.mostrarPantallaVerTemporada(contenido_db,codigoSerie);
-                    panelVerTemporada.pintarTemporadaTabla();
-
+                    verTemporada.mostrarPantallaVerTemporada(codigoSerie);
+                    dispose();
                 }
             }
         });
@@ -158,7 +157,8 @@ public class verSeries {
             seriesContenido[i][4] = pelis.get(i).getValoracion();
             seriesContenido[i][5] = pelis.get(i).getAnyo_lanzamiento();
             seriesContenido[i][6] = pelis.get(i).getPresupuesto();
-            seriesContenido[i][7] = pelis.get(i).getFecha_alta();
+            seriesContenido[i][7] = pelis.get(i).getEdad_recomendada();
+            seriesContenido[i][8] = pelis.get(i).getFecha_alta();
             seriesContenido[i][9] = pelis.get(i).getDirector();
             seriesContenido[i][10] = pelis.get(i).getTipoContenido();
         }

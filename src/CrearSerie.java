@@ -58,7 +58,7 @@ public class CrearSerie {
 
     }
 
-    public CrearSerie(verSeries panelVerSeries, DB_Contenido contenido_db) {
+    public CrearSerie(DB_Contenido contenido_db) {
         crearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +82,7 @@ public class CrearSerie {
 
                     if (creado == true)
                     {
-                        panelVerSeries.pintarSeriesTabla();
+                        PanelPrincipalContenido.mostrarpanelPrincipalContenido();
 
                         JOptionPane.showMessageDialog(null, "Se ha creado satisfactoriamente la película " + titulo,"Información",JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
@@ -107,7 +107,7 @@ public class CrearSerie {
     }
 
     public static void verPanelCrearSerie(DB_Contenido contenido_db){
-        frame.setContentPane(new CrearSerie(verSeries.panelVerSeries, contenido_db).JPanelCrearSerie);
+        frame.setContentPane(new CrearSerie(contenido_db).JPanelCrearSerie);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(700,500);
