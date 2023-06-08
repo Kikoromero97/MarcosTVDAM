@@ -66,7 +66,7 @@ public class DBEmpleados extends DBManager{
      * @param nombre Nombre de la sesión.
      * @param contrasenya Contraseña de la sesión.
      * @param rol Rol de la sesión.
-     * @return int -2: error con la bd, -1: el nif no está registrado, 0: el nif ya tiene sesión y 1: creado exitosamente.
+     * @return int -3: error con la bd, -2: el nombre de la sesión ya existe, -1: el nif no está registrado, 0: el nif ya tiene sesión y 1: creado exitosamente.
      */
     public int procedureNewSesion(String nif, String nombre, String contrasenya, String rol){
         try{
@@ -81,7 +81,7 @@ public class DBEmpleados extends DBManager{
             return cs.getInt("@return");
         } catch (SQLException e){
             e.printStackTrace();
-            return -2;
+            return -3;
         }
     }
 }
