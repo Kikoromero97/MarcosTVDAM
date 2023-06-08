@@ -25,45 +25,47 @@ public class EditarUser extends JDialog {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(btnCancelar);
-        
+
         btnguardar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String code = idUsuario.getText();
-                String name = txtname.getText();
-                String tlf = txtTel.getText();
-                String mail = txtEmail.getText();
-                String edad = txtedad.getText();
-                String localidad = (String) txtNacion.getSelectedItem();
-                ArrayList<String> ChangedData = new ArrayList<>();
+                try {
+                    String code = idUsuario.getText();
+                    String name = txtname.getText();
+                    String tlf = txtTel.getText();
+                    String mail = txtEmail.getText();
+                    String edad = txtedad.getText();
+                    String localidad = (String) txtNacion.getSelectedItem();
+                    ArrayList<String> ChangedData = new ArrayList<>();
+                    DBUsuarios usuariosDB = new DBUsuarios();
 
-                UsuariosClientes usu;
+                    if (name.equals("") || tlf.equals("") || mail.equals("") || edad.equals("") || txtNacion.getSelectedIndex() == -1) {
+                        JOptionPane.showMessageDialog(null, "Campo vacio detectado, rellene todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-                if (name.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || txtNacion.getSelectedIndex() == -1){
-                    JOptionPane.showMessageDialog(null, "Campo vacio detectado, rellene todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
-
-                } else {
-                    try{
-                        usu = new UsuariosClientes(name, tlf, mail,edad, localidad);
-                        ChangedData.add(code);
-                        ChangedData.add(name);
-                        ChangedData.add(tlf);
-                        ChangedData.add(mail);
-                        ChangedData.add(edad);
-                        ChangedData.add(localidad);
-                    } catch(IncorrectMailException exc){
-                        exc.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Error al editar el usuario, e-mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        int codigo = Integer.parseInt(code);
+                        UsuariosClientes usu = new UsuariosClientes(name, tlf, mail, edad, localidad);
+                        /*Arraylist*/
+                        if (usuariosDB.editarUsuario(usu, codigo)) {
+                            ChangedData.add(code);
+                            ChangedData.add(name);
+                            ChangedData.add(tlf);
+                            ChangedData.add(mail);
+                            ChangedData.add(edad);
+                            ChangedData.add(localidad);
+                            dispose();
+                            InfoUsuario IU = new InfoUsuario();
+                            IU.llenarCampos(ChangedData);
+                        }
                     }
-                    JOptionPane.showMessageDialog(null, "Usuario Editado Correctamente", "Creado", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
-                    InfoUsuario IU = new InfoUsuario();
-                    IU.llenarCampos(ChangedData);
-
-                    /*TODO OPERACION DB MANAGER*/
+                } catch (IncorrectMailException exc) {
+                    exc.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al editar el usuario, e-mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
                 }
+
+                /*TODO OPERACION DB MANAGER*/
             }
         });
-        
+
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
@@ -71,7 +73,7 @@ public class EditarUser extends JDialog {
                 IU.llenarCampos(infor);
             }
         });
-        
+
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -79,7 +81,7 @@ public class EditarUser extends JDialog {
                 dispose();
             }
         });
-        
+
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -98,6 +100,7 @@ public class EditarUser extends JDialog {
         txtNacion.setSelectedItem(datos.get(5));
 
     }
+
     public static void main(String[] args) {
         EditarUser dialog = new EditarUser();
         dialog.pack();

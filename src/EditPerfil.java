@@ -1,13 +1,16 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class EditPerfil extends JDialog {
     private JPanel contentPane;
     private JButton btnguardar;
     private JButton btnCancelar;
     private JTextField txtPerfil;
-    private JTextField textField2;
-    private JTextField textField3;
+    private JTextField txtIDPerf;
+    private JTextField txtIDUsu;
+    private JButton btnEliminar;
+    private ArrayList<String> info = new ArrayList<>();
     
     public EditPerfil() {
         setContentPane(contentPane);
@@ -57,6 +60,15 @@ public class EditPerfil extends JDialog {
                 dispose();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+
+
+    public void llenarCampos(ArrayList<String> datos) {
+        info = datos;
+        txtIDPerf.setText(datos.get(0));
+        txtPerfil.setText(datos.get(1));
+        txtIDUsu.setText(datos.get(2));
     }
 
     

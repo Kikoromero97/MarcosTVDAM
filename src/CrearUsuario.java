@@ -6,11 +6,11 @@ public class CrearUsuario extends JDialog {
     private JButton btnCrear;
     private JButton btnCancelar;
     private JTextField txtname;
-    private JTextField txtDir;
     private JTextField txtTel;
     private JTextField txtEmail;
     private JTextField txtedad;
     private JComboBox txtNacion;
+
     
     public CrearUsuario() {
         setContentPane(contentPane);
@@ -31,27 +31,27 @@ public class CrearUsuario extends JDialog {
         btnCrear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            /*Insert usuario en la DB*/
                 String name = txtname.getText();
-                String dir = txtDir.getText();
                 String tlf = txtTel.getText();
                 String mail = txtEmail.getText();
                 String edad = txtedad.getText();
                 String localidad = (String) txtNacion.getSelectedItem();
+                DBUsuarios usuariosDB = new DBUsuarios();
 
-                if (name.equals("") || dir.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || txtNacion.getSelectedIndex() == -1){
+                if (name.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || txtNacion.getSelectedIndex() == -1){
                     JOptionPane.showMessageDialog(null, "Campo vacio detectado, rellene todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
                 } else {
                     try{
                       UsuariosClientes usu = new UsuariosClientes(name, tlf, mail,edad, localidad);
-                    } catch(IncorrectMailException exc){
+                      //Solo si crea el usuario te devuelve al menu principal
+                     if (usuariosDB.crearUsuario(usu)){
+                         dispose();
+                         new SeleccionUser();
+                     }
+                    } catch(IncorrectMailException  exc){
                         exc.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
-                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "Creado", JOptionPane.INFORMATION_MESSAGE);
-                    dispose();
-                    new SeleccionUser();
-                    /*TODO OPERACION DB MANAGER*/
                 }
             }
         });

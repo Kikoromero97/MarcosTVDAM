@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ public class CuentasUser extends JDialog {
     private JButton btnmasinfo;
     private JButton btnCancelar;
     private JTable TablaUsuarios;
-    private JTextField textField1;
+    private JTextField txtBuscar;
     private JButton btnbuscar;
     
     public CuentasUser() {
@@ -27,12 +28,6 @@ public class CuentasUser extends JDialog {
         
         Image icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("imagen/iconoMarcosVentana.png"))).getImage();
         setIconImage(icon);
-        btnmasinfo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new InfoUsuario();
-            }
-        });
         
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -45,7 +40,8 @@ public class CuentasUser extends JDialog {
         btnbuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*TODO Busqueda*/
+                String nombre = txtBuscar.getText();
+                crearTablaSorted(nombre);
             }
         });
         
@@ -100,7 +96,16 @@ public class CuentasUser extends JDialog {
     public void crearTabla() {
         DBUsuarios CuentUsers = new DBUsuarios();
         String[][] tabla = Utilitis.getDataFromResultSet(CuentUsers.verUsuarios() , 6);
-        String[] columnasVisitas = {"codigo", "nombre", "telefono", "email", "edad", "lcalidad"};
+        String[] columnasVisitas = {"codigo", "nombre", "telefono", "email", "edad", "localidad"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        TablaUsuarios.setModel(table);
+        Utilitis.centerTable(TablaUsuarios);
+    }
+
+    public void crearTablaSorted(String name) {
+        DBUsuarios CuentUsers = new DBUsuarios();
+        String[][] tabla = Utilitis.getDataFromResultSet(CuentUsers.verUsuariosSorted(name) , 6);
+        String[] columnasVisitas = {"codigo", "nombre", "telefono", "email", "edad", "localidad"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         TablaUsuarios.setModel(table);
         Utilitis.centerTable(TablaUsuarios);

@@ -1,12 +1,13 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Perfiles extends JDialog {
     private JPanel contentPane;
     private JButton brnEditar;
     private JButton btnCancelar;
-    private JTextField textField1;
+    private JTextField txtBuscar;
     private JButton btnbuscar;
     private JButton btnNuevoPerfil;
     private JTable TablaPerfiles;
@@ -14,19 +15,16 @@ public class Perfiles extends JDialog {
     public Perfiles() {
         setContentPane(contentPane);
         setTitle("Menú de usuarios y suscripciones");
+        UserManager.loadSession();
         setVisible(true);
         setModal(true);
         setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(btnCancelar);
-        
-        brnEditar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new EditPerfil();
-            }
-        });
+        crearTabla();
+
+
         
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -38,7 +36,12 @@ public class Perfiles extends JDialog {
         btnbuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*TODO Buscar id users*/
+                try{
+                    int numero = Integer.parseInt(txtBuscar.getText());
+                    crearTablaSorted(numero);
+                } catch (NumberFormatException exc){
+                    JOptionPane.showMessageDialog(null, "Usuario no encontrado", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
@@ -64,27 +67,50 @@ public class Perfiles extends JDialog {
                 dispose();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        TablaPerfiles.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                seleccionarInsert(e);
+            }
+        });
     }
 
 
+    public void seleccionarInsert(MouseEvent e) {
+        if (e.getClickCount() == 1) {
+            JTable table = (JTable) e.getSource();
+            int row = table.getSelectedRow();
+            String codigo = (String) table.getValueAt(row, 0);
+            String nombre = (String) table.getValueAt(row, 1);
+            String codigoUsuario = (String) table.getValueAt(row, 2);
+            ArrayList<String> datos = new ArrayList<>();
+            datos.add(codigo);
+            datos.add(nombre);
+            datos.add(codigoUsuario);
+            EditPerfil edit = new EditPerfil();
+            edit.llenarCampos(datos);
+            dispose();
+        }
+    }
 
-    /*public void crearTabla() {
-        Perfiles per = new Perfiles();
-        String[][] tabla = Utilitis.getDataFromResultSet( , 3);
-        String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
+
+    public void crearTabla() {
+        DBUsuarios CuentUsers = new DBUsuarios();
+        String[][] tabla = Utilitis.getDataFromResultSet(CuentUsers.verPerfiles() , 3);
+        String[] columnasVisitas = {"codigoPerfil", "nombre", "idUsuario"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         TablaPerfiles.setModel(table);
         Utilitis.centerTable(TablaPerfiles);
-    }*/
+    }
 
-    /*public void crearTablaEsp(int codigo) {
-        DBCategorias categoria = new DBCategorias();
-        String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategoriaEsp(codigo), 3);
-        String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
+    public void crearTablaSorted(int id) {
+        DBUsuarios CuentUsers = new DBUsuarios();
+        String[][] tabla = Utilitis.getDataFromResultSet(CuentUsers.verPerfilesSorted(id) , 3);
+        String[] columnasVisitas = {"codigoPerfil", "nombre", "codigoUsuario"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
-        tablaCat.setModel(table);
-        Utilitis.centerTable(tablaCat);
-    }*/
+        TablaPerfiles.setModel(table);
+        Utilitis.centerTable(TablaPerfiles);
+    }
 
     
     public static void main(String[] args) {

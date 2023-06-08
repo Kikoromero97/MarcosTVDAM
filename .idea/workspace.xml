@@ -5,23 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e01a84d-9f13-4afb-a118-0660f614f771" name="Changes" comment="PANTALLAS VER SERIE, PELUCULA Y DOCUMENTAL">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_05_2023_9_02__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/usr - copia.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cache/usr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CrearUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CrearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CrearUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CuentasUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CuentasUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CuentasUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditarUser.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarUser.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditPerfil.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditPerfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditPerfil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EditarUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditarUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InfoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Perfiles.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Perfiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Perfiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suscripciones.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suscripciones.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Suscripciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Suscripciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UsuariosClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UsuariosClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilitis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilitis.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,18 +87,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dam_mbc/Desktop/Proyect/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Nitropc/OneDrive/Escritorio/MarcosTVDAM/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\troy_\Documents\MarcosTV\src" />
