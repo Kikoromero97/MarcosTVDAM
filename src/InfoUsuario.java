@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class InfoUsuario extends JDialog {
     private JPanel contentPane;
@@ -7,12 +8,13 @@ public class InfoUsuario extends JDialog {
     private JButton btnCancelar;
     private JTextField idUsuario;
     private JTextField txtname;
-    private JTextField txtDir;
     private JTextField txtTel;
     private JTextField txtEmail;
     private JTextField txtedad;
     private JComboBox txtNacion;
     private JButton btnTarjeta;
+    private JButton btnBorrar;
+    private ArrayList<String> info = new ArrayList<>();
     public static int num = 5;
     
     public InfoUsuario() {
@@ -28,7 +30,8 @@ public class InfoUsuario extends JDialog {
         btnEditar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new EditarUser();
+                EditarUser eu = new EditarUser();
+                eu.llenarCampos(info);
             }
         });
         
@@ -48,6 +51,17 @@ public class InfoUsuario extends JDialog {
             }
         });
 
+        btnBorrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int opt = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere borrar el usuario con el id " + idUsuario.getText() + "?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (opt == 0){
+                /*TODO DEL USER*/
+                System.out.println(":v");
+            }
+            }
+        });
+
         
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -63,6 +77,18 @@ public class InfoUsuario extends JDialog {
                 dispose();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+
+
+    public void llenarCampos(ArrayList<String> datos) {
+        info = datos;
+        idUsuario.setText(datos.get(0));
+        txtname.setText(datos.get(1));
+        txtTel.setText(datos.get(2));
+        txtEmail.setText(datos.get(3));
+        txtedad.setText(datos.get(4));
+        txtNacion.setSelectedItem(datos.get(5));
+
     }
 
     public static int NumeroaPasar(){

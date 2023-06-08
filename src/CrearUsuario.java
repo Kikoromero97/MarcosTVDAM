@@ -37,19 +37,18 @@ public class CrearUsuario extends JDialog {
                 String tlf = txtTel.getText();
                 String mail = txtEmail.getText();
                 String edad = txtedad.getText();
-                int loca = txtNacion.getSelectedIndex();
+                String localidad = (String) txtNacion.getSelectedItem();
 
-                if (name.equals("") || dir.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || loca == 0){
+                if (name.equals("") || dir.equals("") || tlf.equals("") ||  mail.equals("") || edad.equals("") || txtNacion.getSelectedIndex() == -1){
                     JOptionPane.showMessageDialog(null, "Campo vacio detectado, rellene todos los campos", "ERROR", JOptionPane.ERROR_MESSAGE);
-
                 } else {
                     try{
-                      UsuariosClientes usu = new UsuariosClientes(name, dir, tlf, mail,edad);
+                      UsuariosClientes usu = new UsuariosClientes(name, tlf, mail,edad, localidad);
                     } catch(IncorrectMailException exc){
                         exc.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Mail inválido", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
-                    JOptionPane.showMessageDialog(null, "Usuario Creado Correctamente", "Creado", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Usuario creado correctamente", "Creado", JOptionPane.INFORMATION_MESSAGE);
                     dispose();
                     new SeleccionUser();
                     /*TODO OPERACION DB MANAGER*/

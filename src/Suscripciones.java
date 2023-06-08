@@ -1,9 +1,10 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.*;
 
 public class Suscripciones extends JDialog {
     private JPanel contentPane;
-    private JTable table1;
+    private JTable TablaSuscripciones;
     private JTextField textField1;
     private JButton btnbuscar;
     private JButton btnCancelar;
@@ -13,12 +14,14 @@ public class Suscripciones extends JDialog {
     public Suscripciones() {
         setContentPane(contentPane);
         setTitle("Menú de usuarios y suscripciones");
+        UserManager.loadSession();
         setVisible(true);
         setModal(true);
         setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getRootPane().setDefaultButton(btnCancelar);
+        crearTabla();
 
 
 
@@ -53,7 +56,14 @@ public class Suscripciones extends JDialog {
     }
 
 
-
+    public void crearTabla() {
+        DBUsuarios CuentUsers = new DBUsuarios();
+        String[][] tabla = Utilitis.getDataFromResultSet(CuentUsers.verSuscripciones() , 6);
+        String[] columnasVisitas = {"id", "nombre", "descripcion", "precio", "duracion_meses", "cantidaPersona"};
+        DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
+        TablaSuscripciones.setModel(table);
+        Utilitis.centerTable(TablaSuscripciones);
+    }
     
     public static void main(String[] args) {
         Suscripciones dialog = new Suscripciones();

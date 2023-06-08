@@ -6,9 +6,9 @@ public abstract class DBManager {
 
     // Configuración de la conexión a la base de datos
 
-    /*private static final String DB_HOST = "192.168.7.208\\SQLEXPRESS";*/
+    private static final String DB_HOST = "192.168.7.208\\SQLEXPRESS";
 
-    private static final String DB_HOST = "DESKTOP-00LQ1SJ\\SQLEXPRESS";
+    /*private static final String DB_HOST = "DESKTOP-00LQ1SJ\\SQLEXPRESS";*/
     private static final String DB_NAME = "databaseName=MARCOSTV";
     private static final String DB_PORT = "1433";
     private static final String DB_TRUST_SERVER = "TrustServerCertificate=true";
@@ -20,7 +20,7 @@ public abstract class DBManager {
     /*private static String user = "programa";
     private static String pass = "1234";*/
 
-    private static final String user = "AdminSV";
+    private static final String user = "Carlos";
     private static final String pass = "1234";
 
     // Configuración de mensajes de respuesta

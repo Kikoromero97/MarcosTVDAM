@@ -69,8 +69,8 @@ public class Perfiles extends JDialog {
 
 
     /*public void crearTabla() {
-        Perfiles categoria = new Perfiles();
-        String[][] tabla = Utilitis.getDataFromResultSet(categoria.verCategorias(), 3);
+        Perfiles per = new Perfiles();
+        String[][] tabla = Utilitis.getDataFromResultSet( , 3);
         String[] columnasVisitas = {"Código", "Nombre", "Descripción"};
         DefaultTableModel table = new DefaultTableModel(tabla, columnasVisitas);
         TablaPerfiles.setModel(table);

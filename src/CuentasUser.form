@@ -35,7 +35,10 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <editable value="true"/>
+              <enabled value="true"/>
+            </properties>
           </component>
           <component id="a0f9c" class="javax.swing.JButton" binding="btnbuscar">
             <constraints>
@@ -52,9 +55,12 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="a7967" class="javax.swing.JTable" binding="table1" default-binding="true">
+              <component id="a7967" class="javax.swing.JTable" binding="TablaUsuarios">
                 <constraints/>
-                <properties/>
+                <properties>
+                  <cellSelectionEnabled value="true"/>
+                  <columnSelectionAllowed value="true"/>
+                </properties>
               </component>
             </children>
           </scrollpane>
