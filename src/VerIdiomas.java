@@ -32,7 +32,7 @@ public class VerIdiomas extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                JFrame frame = new PanelPrincipalContenido();
+                PanelPrincipalContenido.mostrarpanelPrincipalContenido();
             }
         });
         btnCrear.addActionListener(new ActionListener() {

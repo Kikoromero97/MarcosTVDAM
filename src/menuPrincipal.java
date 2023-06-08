@@ -60,7 +60,7 @@ public class menuPrincipal extends JFrame{
         areaContenidoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // PanelPrincipalContenido.mostrarpanelPrincipalContenido();
+                PanelPrincipalContenido.mostrarpanelPrincipalContenido();
                 dispose();
             }
         });

@@ -99,6 +99,7 @@ public class CrearEpisodio {
         frame.setContentPane(this.JPanelGeneral);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-        frame.setSize(700,500);
+        frame.setSize(500,500);
+        frame.setLocationRelativeTo(null);
     }
 }

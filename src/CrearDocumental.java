@@ -108,5 +108,6 @@ public class CrearDocumental {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setSize(700,500);
+        frame.setLocationRelativeTo(null);
     }
 }

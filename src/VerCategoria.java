@@ -32,7 +32,7 @@ public class VerCategoria extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                JFrame frame = new PanelPrincipalContenido();
+                PanelPrincipalContenido.mostrarpanelPrincipalContenido();
             }
         });
 
