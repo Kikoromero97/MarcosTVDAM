@@ -18,7 +18,9 @@ public class PanelPrincipalContenido {
     private JLabel logoMarcosTV;
     private static DB_Contenido dbContenido = new DB_Contenido();
 
-    private static verPeliculas panelVerPeliculas;
+    private static verPeliculas panelVerPeliculas = new verPeliculas();
+    private static verDocumental panelVerDocumental = new verDocumental();
+    private static verSeries panelVerSeries  = new verSeries();
 
 
 
@@ -38,7 +40,7 @@ public class PanelPrincipalContenido {
         public void actionPerformed(ActionEvent e) {
 
             dbContenido = new DB_Contenido();
-            panelVerPeliculas.mostrarPatallaVerPelicula(dbContenido);
+            panelVerPeliculas.mostrarPantallaVerPelicula(dbContenido);
             dbContenido.printTablaPeliculas();
 
         }
@@ -47,7 +49,9 @@ public class PanelPrincipalContenido {
     documentalButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            verDocumental.mostrarPantallaVerDocumental();
+            dbContenido = new DB_Contenido();
+            panelVerDocumental.mostrarPantallaVerDocumental(dbContenido);
+            dbContenido.printTablaDocumental();
         }
     });
 
@@ -55,7 +59,10 @@ public class PanelPrincipalContenido {
     serieButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            verSeries.mostrarPantallaVerSeries();
+
+            dbContenido = new DB_Contenido();
+            panelVerSeries.mostrarPantallaVerSeries(dbContenido);
+            dbContenido.printTablaSeries();
         }
     });
 

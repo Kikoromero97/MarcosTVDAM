@@ -1,11 +1,16 @@
-import javax.swing.*;
-
 public class Temporada {
-    private JPanel panelTemporada;
-    private JPanel JPanelTemporada;
-    private JTextField introNombre;
-    private JTextField introNumero;
-    private JButton eliminarButton;
-    private JButton editarButton;
-    private JButton salirButton;
+    private int numero;
+    private int codSerie;
+    private String resumen;
+
+    public Temporada(int numero, int codSerie, String resumen) {
+        this.numero = numero;
+        this.codSerie = codSerie;
+        this.resumen = resumen;
+    }
+
+    public int getNumeroTemporada()
+    {
+        return numero;
+    }
 }
